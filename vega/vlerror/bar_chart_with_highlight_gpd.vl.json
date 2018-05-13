@@ -1,0 +1,440 @@
+{
+    "layer": [{
+        "mark": "bar",
+        "data": {
+            "format": {
+                "property": "features",
+                "type": "json"
+            },
+            "values": {
+                "features": [{
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 1,
+                        "Value": 54.8
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 2,
+                        "Value": 112.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 3,
+                        "Value": 63.6
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 4,
+                        "Value": 37.6
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 5,
+                        "Value": 79.7
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 6,
+                        "Value": 137.9
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 7,
+                        "Value": 120.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 8,
+                        "Value": 103.3
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 9,
+                        "Value": 394.8
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 10,
+                        "Value": 199.5
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 11,
+                        "Value": 72.3
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 12,
+                        "Value": 51.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 13,
+                        "Value": 112.0
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 14,
+                        "Value": 174.5
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 15,
+                        "Value": 130.5
+                    }
+                }],
+                "type": "FeatureCollection"
+            }
+        },
+        "encoding": {
+            "y": {
+                "type": "quantitative",
+                "title": "Value",
+                "field": "properties.Value"
+            },
+            "x": {
+                "type": "ordinal",
+                "title": "Day",
+                "field": "properties.Day"
+            }
+        }
+    }, {
+        "mark": {
+            "align": "left",
+            "type": "text",
+            "dy": -5,
+            "dx": 215
+        },
+        "data": {
+            "format": {
+                "property": "features",
+                "type": "json"
+            },
+            "values": {
+                "features": [{
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "ThresholdValue": 300,
+                        "Threshold": "hazardous"
+                    }
+                }],
+                "type": "FeatureCollection"
+            }
+        },
+        "encoding": {
+            "text": {
+                "value": "hazardous"
+            },
+            "y": {
+                "axis": {
+                    "title": "PM2.5 Value"
+                },
+                "type": "quantitative",
+                "title": "ThresholdValue",
+                "field": "properties.ThresholdValue"
+            }
+        }
+    }, {
+        "mark": {
+            "color": "#e45755",
+            "type": "bar"
+        },
+        "transform": [{
+            "filter": "datum.Value >= 300"
+        }, {
+            "calculate": "300",
+            "as": "baseline"
+        }],
+        "encoding": {
+            "y": {
+                "type": "quantitative",
+                "field": "baseline"
+            },
+            "y2": {
+                "type": "quantitative",
+                "title": "Value",
+                "field": "properties.Value"
+            },
+            "x": {
+                "type": "ordinal",
+                "title": "Day",
+                "field": "properties.Day"
+            }
+        },
+        "data": {
+            "format": {
+                "property": "features",
+                "type": "json"
+            },
+            "values": {
+                "features": [{
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 1,
+                        "Value": 54.8
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 2,
+                        "Value": 112.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 3,
+                        "Value": 63.6
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 4,
+                        "Value": 37.6
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 5,
+                        "Value": 79.7
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 6,
+                        "Value": 137.9
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 7,
+                        "Value": 120.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 8,
+                        "Value": 103.3
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 9,
+                        "Value": 394.8
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 10,
+                        "Value": 199.5
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 11,
+                        "Value": 72.3
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 12,
+                        "Value": 51.1
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 13,
+                        "Value": 112.0
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 14,
+                        "Value": 174.5
+                    }
+                }, {
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "Day": 15,
+                        "Value": 130.5
+                    }
+                }],
+                "type": "FeatureCollection"
+            }
+        }
+    }, {
+        "mark": "rule",
+        "data": {
+            "format": {
+                "property": "features",
+                "type": "json"
+            },
+            "values": {
+                "features": [{
+                    "geometry": {
+                        "coordinates": [125.6, 10.1],
+                        "type": "Point"
+                    },
+                    "type": "Feature",
+                    "properties": {
+                        "ThresholdValue": 300,
+                        "Threshold": "hazardous"
+                    }
+                }],
+                "type": "FeatureCollection"
+            }
+        },
+        "encoding": {
+            "y": {
+                "type": "quantitative",
+                "title": "ThresholdValue",
+                "field": "properties.ThresholdValue"
+            }
+        }
+    }],
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.4.1.json",
+    "config": {
+        "view": {
+            "width": 400,
+            "height": 300
+        }
+    }
+}

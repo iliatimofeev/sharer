@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Unit test report (test_geopandas_examples)</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
+
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+  <link rel="stylesheet" href="assets/css/helpers.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/landing-2.css">
+  <style>
+    .vega-view canvas {
+      width: 100%;
+      height: 100%;
+      min-height: 100px;
+      min-width: 100px;
+    }
+    .vega-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100px;
+      min-width: 100px;
+    }
+    .chart-vega{
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+ 
+    }
+    
+    
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+  <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Altair-GeoPandas test report</a>
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#probootstrap-navbar" aria-controls="probootstrap-navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span>
+          <i class="ion-navicon"></i>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="probootstrap-navbar">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#section-overview">Overview</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#section-identical">Identical</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="#section-different">Different</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-fail">Failed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section-no_pandas">No Pandas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
+
+
+
+
+  <section class="pb_cover_v3 overflow-hidden cover-bg-indigo cover-bg-opacity text-left pb_gradient_v1 pb_slant-light" id="section-overview">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-md-5">
+          <h2 class="heading mb-3">Idea behind</h2>
+          <div class="sub-heading">
+            <p class="mb-4"><strong>GeoDataFrame</strong> should result the same image as <strong>DataFrame</strong>
+              So test compares results of from <a href="https://altair-viz.github.io/gallery/index.html">examples collection</a> 
+              with them self but on GeoDataFrame
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-6 relative align-self-center">
+
+          <div class="sub-heading text-left">
+              <!--h6 class="heading mb-3"></h6-->
+              <caption class="heading mb-4 text-right">Test results (<span id="stats_timestamp">?</span>)</caption>
+              <table class="table table-sm ">
+                  <thead>
+                    <tr>
+                        <th scope="col">Count</th>
+                        <th scope="col">Result</th>
+                      <th scope="col">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <th scope="row" id="stats_identical">?</th>
+                          <td><a href="#section-identical">Identical</a</td>
+                          <td>Chart are equal</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="stats_different" >?</th>
+                            <td><a href="#section-different">Different</a</td>
+                              
+                            <td>Chart are nonidentical</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="stats_fail"><?/th>
+                        <td><a href="#section-fail">Failed</a</td>
+                      <td>Can't obtain chart</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="stats_no_pandas">?</th>
+                        <td><a href="#section-no_pandas">No Pandas</a</td>
+                      <td>Example don't use Pandas</td>
+
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END section-overview-->
+
+  <section class="pb_section bg-light pb_slant-white pb_pb-250" id="section-identical">
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-6 text-center mb-5">
+          <h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2">
+            <strong>Identical</strong>
+          </h5>
+          <h2>Chart are equal</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row text-left align-items-center justify-content-center" id="items_identical">
+          <script type="text/template" data-template="chart_pair">
+            <div class="container-fluid" id = "{key}">
+                <p class="lead h3 pt-md-4 pb-md-2"> Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a></p> 
+            </div>
+            <figure class="col figure bg-white" id="{key}_pd">
+                <figcaption class="figure-caption py-md-3">pd.DataFrame <a href="report/${pd_vl}">Vega-lite source</a></figcaption>
+                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${pd_vl}">
+                  </div>
+                </div>
+            </figure>
+            <figure class="col figure bg-white" id="{key}_pd">
+                <figcaption class="figure-caption py-md-3">GeoDataFrame <a href="report/${gpd_vl}">Vega-lite source</a></figcaption>
+                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}">
+                  </div>
+                </div>
+            </figure>            
+          </script>
+        </div>  
+      </div>     
+  </section>
+  <!-- END section -->
+  <section class="pb_section bg-light pb_slant-white pb_pb-250" id="section-different">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 text-center mb-5">
+            <h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2">
+              <strong>Different</strong>
+            </h5>
+            <h2>Chart are nonidentical</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-left  justify-content-center align-items-stretch" id="items_different">
+          </div>  
+        </div>     
+    </section>
+  <!-- END section -->
+  
+  <section class="pb_section bg-light pb_slant-white pb_pb-250" id="section-fail">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 text-center mb-5">
+            <h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2">
+              <strong>Fail</strong>
+            </h5>
+            <h2>Can't execute chart</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-left align-items-center justify-content-center" id="items_fail">
+              <script type="text/template" data-template="chart_gpd">
+                <div class="container-fluid" id = "{key}">
+                    <p class="lead h3 pt-md-4 pb-md-2"> Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a></p> 
+                    <figure class="figure bg-white" id="{key}_gpd">
+                        <figcaption class="figure-caption py-md-3">GeoDataFrame <a href="report/${gpd_vl}">Vega-lite source</a></figcaption>
+                          <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}">
+                          </div>
+                        </div>
+                    </figure>
+                    </div>
+              </script>
+              </div>  
+        </div>     
+    </section>
+  <!-- END section -->
+
+
+  <section class="pb_section bg-light pb_slant-white pb_pb-250" id="section-no_pandas">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 text-center mb-5">
+            <h5 class="text-uppercase pb_font-15 mb-2 pb_color-dark-opacity-3 pb_letter-spacing-2">
+              <strong>No Pandas</strong>
+            </h5>
+            <h2>Pandas DataFrame has not used in example</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row text-left align-items-center justify-content-center" id="items_no_pandas">
+              <script type="text/template" data-template="no_pandas">
+                <div class="media-body">
+                  <li class="media" id = "{key}">
+                      <img width="64" height="64" src="https://altair-viz.github.io/_static/${key}-thumb.png">
+                      <p class="mt-0 mb-1"> Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a></p> 
+                  </li>
+                </div>
+              </script>
+            
+          </div>  
+        </div>     
+    </section>
+  <!-- END section -->
+
+
+
+  <footer class="pb_footer bg-light" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <p class="pb_font-14">&copy; 2017
+            <a href="https://uicookies.com/">Landing</a> Free Bootstrap4. All Rights Reserved.
+            <br> Designed &amp; Developed by
+            <a href="https://uicookies.com/">uicookies.com</a>
+            <small>(Don't remove credit link on this footer. See
+              <a href="https://uicookies.com/license/" target="_blank">license</a>)</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="pb_loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1d82ff" />
+    </svg>
+  </div>
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm//vega@3.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-lite@2.4.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-embed@3.0"></script>
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
