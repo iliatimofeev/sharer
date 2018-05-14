@@ -158,18 +158,24 @@
       <div class="container">
         <div class="row text-left align-items-center justify-content-center" id="items_identical">
           <script type="text/template" data-template="chart_pair">
-            <div class="container-fluid" id = "{key}">
-                <p class="lead h3 pt-md-4 pb-md-2"> Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a></p> 
+            <div class="container-fluid" id = "${key}">
+                <p class="lead h3 pt-md-4 pb-md-2"> 
+                    <a class="btn btn-sm btn-outline-primary vegarun" data-torun="${key}_pd,${key}_gpd" href="#" role="button">Run Vega-lite</a>
+                    Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a>
+                 
+               </p>
             </div>
-            <figure class="col figure bg-white" id="{key}_pd">
+            <figure class="col figure bg-white" >
                 <figcaption class="figure-caption py-md-3">pd.DataFrame <a href="report/${pd_vl}">Vega-lite source</a></figcaption>
-                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${pd_vl}">
+                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${pd_vl}" id="${key}_pd">
+                    <img class="figure-img img-fluid" src="report/${pd_png}"/>
                   </div>
                 </div>
             </figure>
-            <figure class="col figure bg-white" id="{key}_pd">
+            <figure class="col figure bg-white" >
                 <figcaption class="figure-caption py-md-3">GeoDataFrame <a href="report/${gpd_vl}">Vega-lite source</a></figcaption>
-                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}">
+                  <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}" id="${key}_gpd">
+                    <img class="figure-img img-fluid" src="report/${gpd_png}"/>
                   </div>
                 </div>
             </figure>            
@@ -209,10 +215,13 @@
           <div class="row text-left align-items-center justify-content-center" id="items_fail">
               <script type="text/template" data-template="chart_gpd">
                 <div class="container-fluid" id = "{key}">
-                    <p class="lead h3 pt-md-4 pb-md-2"> Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a></p> 
-                    <figure class="figure bg-white" id="{key}_gpd">
+                    <p class="lead h3 pt-md-4 pb-md-2"> 
+                        <a class="btn btn-sm btn-outline-primary vegarun" data-torun="${key}_gpd" href="#" role="button">Run Vega-lite</a>
+                      Example: <strong> ${key} </strong> <a href="https://altair-viz.github.io/gallery/${key}.html">Python source</a>
+                    </p> 
+                    <figure class="figure bg-white" >
                         <figcaption class="figure-caption py-md-3">GeoDataFrame <a href="report/${gpd_vl}">Vega-lite source</a></figcaption>
-                          <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}">
+                          <div class="chart-vega figure-img img-fluid " data-vega-src="report/${gpd_vl}" id="${key}_gpd" >
                           </div>
                         </div>
                     </figure>

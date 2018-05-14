@@ -257,8 +257,33 @@ $.getJSON( "report/report.json", function( data ) {
 		$("#stats_"+key).text(value)
 	});
 	$("#stats_timestamp").text(data["timestamp"])
+
+	var embed_opt = {"mode": "vega-lite","actions":{export:false, source:false, compiled:true, editor:true}};
+
+	function showError(el, error){
+			el.append ('<div class="bg-warning">'
+											+ '<p>JavaScript Error: ' + error.message + '</p>'
+											+ "<p>"+error.stack+"</p>"
+											+ '</div>');
+			//throw error;
+	}
+
+	$('.vegarun').each(function (i, obj) {
+		$(obj).click(function(e) {
+			e.preventDefault(); 
+			$($(e.target).data('torun').split(',')).each(function (i, obj){
+				vegaEmbed($('#'+obj).get(0), $('#'+obj).data('vega-src'), embed_opt)
+				.catch(error => showError($('#'+obj), error));
 	
-	initVegaCharts()
+			});
+			
+    });
+		
+	//btn btn-outline-primary btn-sm
+
+});
+	
+	//initVegaCharts()
 	
 
 });
