@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Unit test report (test_geopandas_examples)</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
+
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+  <link rel="stylesheet" href="assets/css/helpers.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/landing-2.css">
+  <style>
+    .vega-view canvas {
+      width: 100%;
+      height: 100%;
+      min-height: 100px;
+      min-width: 100px;
+    }
+    .vega-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100px;
+      min-width: 100px;
+    }
+    .chart-vega{
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+ 
+    }
+    
+    
+  </style>
+</head>
+
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+
+
+  <section class="pb_section bg-white" id="section-no_pandas">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-6 text-center mb-5 pre-scrollable">
+              <table class="table table-striped small table-sm " >
+                  <thead>
+                    <tr scope="row">
+                      <th></th>
+                      <th>pop_est</th>
+                      <th>gdp_md_est</th>
+                    </tr>
+                    <tr>
+                      <th>name</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Angola</th>
+                      <td>12799293.0</td>
+                      <td>110300.0</td>
+                    </tr>
+                    <tr>
+                      <th>Burundi</th>
+                      <td>8988091.0</td>
+                      <td>3102.0</td>
+                    </tr>
+                    <tr>
+                      <th>Benin</th>
+                      <td>8791832.0</td>
+                      <td>12830.0</td>
+                    </tr>
+                    <tr>
+                      <th>Burkina Faso</th>
+                      <td>15746232.0</td>
+                      <td>17820.0</td>
+                    </tr>
+                    <tr>
+                      <th>Botswana</th>
+                      <td>1990876.0</td>
+                      <td>27060.0</td>
+                    </tr>
+                    <tr>
+                      <th>Central African Rep.</th>
+                      <td>4511488.0</td>
+                      <td>3198.0</td>
+                    </tr>
+                    <tr>
+                      <th>Côte d'Ivoire</th>
+                      <td>20617068.0</td>
+                      <td>33850.0</td>
+                    </tr>
+                    <tr>
+                      <th>Cameroon</th>
+                      <td>18879301.0</td>
+                      <td>42750.0</td>
+                    </tr>
+                    <tr>
+                      <th>Dem. Rep. Congo</th>
+                      <td>68692542.0</td>
+                      <td>20640.0</td>
+                    </tr>
+                    <tr>
+                      <th>Congo</th>
+                      <td>4012809.0</td>
+                      <td>15350.0</td>
+                    </tr>
+                    <tr>
+                      <th>Djibouti</th>
+                      <td>516055.0</td>
+                      <td>1885.0</td>
+                    </tr>
+                    <tr>
+                      <th>Algeria</th>
+                      <td>34178188.0</td>
+                      <td>232900.0</td>
+                    </tr>
+                    <tr>
+                      <th>Egypt</th>
+                      <td>83082869.0</td>
+                      <td>443700.0</td>
+                    </tr>
+                    <tr>
+                      <th>Eritrea</th>
+                      <td>5647168.0</td>
+                      <td>3945.0</td>
+                    </tr>
+                    <tr>
+                      <th>Ethiopia</th>
+                      <td>85237338.0</td>
+                      <td>68770.0</td>
+                    </tr>
+                    <tr>
+                      <th>Gabon</th>
+                      <td>1514993.0</td>
+                      <td>21110.0</td>
+                    </tr>
+                    <tr>
+                      <th>Ghana</th>
+                      <td>23832495.0</td>
+                      <td>34200.0</td>
+                    </tr>
+                    <tr>
+                      <th>Guinea</th>
+                      <td>10057975.0</td>
+                      <td>10600.0</td>
+                    </tr>
+                    <tr>
+                      <th>Gambia</th>
+                      <td>1782893.0</td>
+                      <td>2272.0</td>
+                    </tr>
+                    <tr>
+                      <th>Guinea-Bissau</th>
+                      <td>1533964.0</td>
+                      <td>904.2</td>
+                    </tr>
+                    <tr>
+                      <th>Eq. Guinea</th>
+                      <td>650702.0</td>
+                      <td>14060.0</td>
+                    </tr>
+                    <tr>
+                      <th>Kenya</th>
+                      <td>39002772.0</td>
+                      <td>61510.0</td>
+                    </tr>
+                    <tr>
+                      <th>Liberia</th>
+                      <td>3441790.0</td>
+                      <td>1526.0</td>
+                    </tr>
+                    <tr>
+                      <th>Libya</th>
+                      <td>6310434.0</td>
+                      <td>88830.0</td>
+                    </tr>
+                    <tr>
+                      <th>Lesotho</th>
+                      <td>2130819.0</td>
+                      <td>3293.0</td>
+                    </tr>
+                    <tr>
+                      <th>Morocco</th>
+                      <td>34859364.0</td>
+                      <td>136600.0</td>
+                    </tr>
+                    <tr>
+                      <th>Madagascar</th>
+                      <td>20653556.0</td>
+                      <td>20130.0</td>
+                    </tr>
+                    <tr>
+                      <th>Mali</th>
+                      <td>12666987.0</td>
+                      <td>14590.0</td>
+                    </tr>
+                    <tr>
+                      <th>Mozambique</th>
+                      <td>21669278.0</td>
+                      <td>18940.0</td>
+                    </tr>
+                    <tr>
+                      <th>Mauritania</th>
+                      <td>3129486.0</td>
+                      <td>6308.0</td>
+                    </tr>
+                    <tr>
+                      <th>Malawi</th>
+                      <td>14268711.0</td>
+                      <td>11810.0</td>
+                    </tr>
+                    <tr>
+                      <th>Namibia</th>
+                      <td>2108665.0</td>
+                      <td>13250.0</td>
+                    </tr>
+                    <tr>
+                      <th>Niger</th>
+                      <td>15306252.0</td>
+                      <td>10040.0</td>
+                    </tr>
+                    <tr>
+                      <th>Nigeria</th>
+                      <td>149229090.0</td>
+                      <td>335400.0</td>
+                    </tr>
+                    <tr>
+                      <th>Rwanda</th>
+                      <td>10473282.0</td>
+                      <td>9706.0</td>
+                    </tr>
+                    <tr>
+                      <th>W. Sahara</th>
+                      <td>-99.0</td>
+                      <td>-99.0</td>
+                    </tr>
+                    <tr>
+                      <th>Sudan</th>
+                      <td>25946220.0</td>
+                      <td>88080.0</td>
+                    </tr>
+                    <tr>
+                      <th>S. Sudan</th>
+                      <td>10625176.0</td>
+                      <td>13227.0</td>
+                    </tr>
+                    <tr>
+                      <th>Senegal</th>
+                      <td>13711597.0</td>
+                      <td>21980.0</td>
+                    </tr>
+                    <tr>
+                      <th>Sierra Leone</th>
+                      <td>6440053.0</td>
+                      <td>4285.0</td>
+                    </tr>
+                    <tr>
+                      <th>Somaliland</th>
+                      <td>3500000.0</td>
+                      <td>12250.0</td>
+                    </tr>
+                    <tr>
+                      <th>Somalia</th>
+                      <td>9832017.0</td>
+                      <td>5524.0</td>
+                    </tr>
+                    <tr>
+                      <th>Swaziland</th>
+                      <td>1123913.0</td>
+                      <td>5702.0</td>
+                    </tr>
+                    <tr>
+                      <th>Chad</th>
+                      <td>10329208.0</td>
+                      <td>15860.0</td>
+                    </tr>
+                    <tr>
+                      <th>Togo</th>
+                      <td>6019877.0</td>
+                      <td>5118.0</td>
+                    </tr>
+                    <tr>
+                      <th>Tunisia</th>
+                      <td>10486339.0</td>
+                      <td>81710.0</td>
+                    </tr>
+                    <tr>
+                      <th>Tanzania</th>
+                      <td>41048532.0</td>
+                      <td>54250.0</td>
+                    </tr>
+                    <tr>
+                      <th>Uganda</th>
+                      <td>32369558.0</td>
+                      <td>39380.0</td>
+                    </tr>
+                    <tr>
+                      <th>South Africa</th>
+                      <td>49052489.0</td>
+                      <td>491000.0</td>
+                    </tr>
+                    <tr>
+                      <th>Zambia</th>
+                      <td>11862740.0</td>
+                      <td>17500.0</td>
+                    </tr>
+                    <tr>
+                      <th>Zimbabwe</th>
+                      <td>12619600.0</td>
+                      <td>9323.0</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+          <div class="col-md-6 text-center mb-5">
+              <div class="chart-vega figure-img img-fluid " data-vega-src="vega_html/vh.vl.json" id="chart">
+              </div>
+        </div>
+
+        </div>
+    </section>
+  <!-- END section -->
+
+
+
+  <footer class="pb_footer bg-light" role="contentinfo">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <p class="pb_font-14">&copy; 2017
+            <a href="https://uicookies.com/">Landing</a> Free Bootstrap4. All Rights Reserved.
+            <br> Designed &amp; Developed by
+            <a href="https://uicookies.com/">uicookies.com</a>
+            <small>(Don't remove credit link on this footer. See
+              <a href="https://uicookies.com/license/" target="_blank">license</a>)</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="pb_loader" class="show fullscreen">
+    <svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#1d82ff" />
+    </svg>
+  </div>
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/slick.min.js"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+
+  <script src="assets/js/jquery.waypoints.min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm//vega@3.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-lite@2.4.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm//vega-embed@3.0"></script>
+  <script src="assets/js/base_main.js"></script>
+
+
+</body>
+
+</html>
