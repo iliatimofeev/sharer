@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Interactive Plots with Selections &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Bind a Selection" href="bind.html" />
+    <link rel="prev" title="Scale and Guide Resolution" href="../composition/resolve.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Interactive Plots with Selections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">Selection Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-properties">Selection Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-transformations">Selection Transformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-selections">Using Selections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolve">Resolving Selections in Data-Driven Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Selection Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bind.html">Bind a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nearest.html">Nearest Value to a Discrete Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html">Project a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toggle.html">Toggling a Multi Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="translate.html">Translating an Interval Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zoom.html">Zooming an Interval Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Interactive Plots with Selections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">Selection Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-properties">Selection Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-transformations">Selection Transformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-selections">Using Selections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolve">Resolving Selections in Data-Driven Views</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Selection Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="bind.html">Bind a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nearest.html">Nearest Value to a Discrete Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="project.html">Project a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toggle.html">Toggling a Multi Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="translate.html">Translating an Interval Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zoom.html">Zooming an Interval Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Interactive Plots with Selections</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/selection/selection.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="selection">
+<h1>Interactive Plots with Selections<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h1>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;selection&quot;: {  // Key-value mappings between selection names and definitions.
+    ...: {&quot;type&quot;: &quot;single&quot;},
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>Selections are the basic building block in Vega-Lite’s <em>grammar of interaction.</em> They map user input (e.g., mouse moves and clicks, touch presses, etc.) into data queries, which can subsequently be used to drive conditional encoding rules, filter data points, or determine scale domains.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="type">
+<h2>Selection Types<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h2>
+<p>Selections are defined within single views, and their simplest definition consists of a <strong>name</strong> and a <strong>type</strong>. The selection type determines the default events that trigger a selection and the resultant data query.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>table_block stub
+| Property | Type   | Description    |
+| :--------| :----: | :------------- |
+| type     | String | _**Required.**_ Determines the default event processing and data query for the selection. Vega-Lite currently supports three selection types: &lt;br/&gt;`single` -- to select a single discrete data value on `click`. &lt;br/&gt;`multi` -- to select multiple discrete data value; the first value is selected on `click` and additional values toggled on shift-`click`. &lt;br/&gt;`interval` -- to select a continuous range of data values on `drag`. |
+</pre></div>
+</div>
+<p>For example, try the different types against the example selection (named <code class="docutils literal notranslate"><span class="pre">pts</span></code>) below: <select onchange="changeSpec('selection_type', 'selection_type_' + this.value)"></p>
+</div>
+<div class="section" id="selection-properties">
+<h2>Selection Properties<a class="headerlink" href="#selection-properties" title="Permalink to this headline">¶</a></h2>
+<p>
+While selection types provide useful defaults, it can often be useful to override these properties to customize the interaction design. The following properties are available to do so:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;on,empty,resolve,mark&quot; source=&quot;IntervalSelection&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For instance, with the <code class="docutils literal notranslate"><span class="pre">on</span></code> property, a single rectangle in the heatmap below can now be selected on double-click instead.</p>
+<p></p>
+<div class="section" id="interval-mark">
+<h3>Interval Selection Marks<a class="headerlink" href="#interval-mark" title="Permalink to this headline">¶</a></h3>
+<p>Every interval selection also adds a rectangle mark to the visualization, to depict the extents of the selected region. The appearance of this mark can be customized with the following properties, specified under <code class="docutils literal notranslate"><span class="pre">mark</span></code>.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;fill,fillOpacity,stroke,strokeOpacity,strokeWidth,strokeDash,strokeDashOffset&quot; source=&quot;BrushConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the spec below imagines two users, Alex and Morgan, who can each drag out an interval selection. To prevent collision between the two selections, Morgan must press the shift key while dragging out their interval (while Alex must not). Morgan’s interval is depicted with the default grey rectangle, and Morgan’s with a customized red rectangle.</p>
+<p><em>Note:</em> the two intervals do not have any effect on the visualization yet (we’ll cover that next!).</p>
+</div>
+</div>
+<div class="section" id="selection-transformations">
+<h2>Selection Transformations<a class="headerlink" href="#selection-transformations" title="Permalink to this headline">¶</a></h2>
+<p>Vega-Lite provides a number of selection <em>transformations</em> to further customize the behaviour of a selection. These include:</p>
+<ul class="simple">
+<li>For <code class="docutils literal notranslate"><span class="pre">single</span></code> selections:<ul>
+<li><a class="reference internal" href="bind.html"><span class="doc">bind</span></a> to input elements (also known as dynamic query widgets).</li>
+<li><a class="reference internal" href="nearest.html"><span class="doc">nearest</span></a> to accelerate selecting values.</li>
+<li>project over <a class="reference internal" href="project.html"><span class="doc">fields</span></a> or <a class="reference internal" href="project.html"><span class="doc">encodings</span></a> to change the inclusion criteria (or data query).</li>
+</ul>
+</li>
+<li>For <code class="docutils literal notranslate"><span class="pre">multi</span></code> selections:<ul>
+<li><a class="reference internal" href="toggle.html"><span class="doc">toggle</span></a> to insert or remove data values based on their membership within the selection.</li>
+<li><a class="reference internal" href="nearest.html"><span class="doc">nearest</span></a> to accelerate selecting values.</li>
+<li>project over <a class="reference internal" href="project.html"><span class="doc">fields</span></a> or <a class="reference internal" href="project.html"><span class="doc">encodings</span></a> to change the inclusion criteria (or data query).</li>
+</ul>
+</li>
+<li>For <code class="docutils literal notranslate"><span class="pre">interval</span></code> selections:<ul>
+<li><a class="reference internal" href="bind.html"><span class="doc">bind</span></a> to scale functions to enable panning &amp; zooming.</li>
+<li>project over <a class="reference internal" href="project.html"><span class="doc">fields</span></a> or <a class="reference internal" href="project.html"><span class="doc">encodings</span></a> to change the inclusion criteria (or data query).</li>
+<li><a class="reference internal" href="translate.html"><span class="doc">translate</span></a> to move the selection back-and-forth.</li>
+<li><a class="reference internal" href="zoom.html"><span class="doc">zoom</span></a> to resize the selection.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="using-selections">
+<h2>Using Selections<a class="headerlink" href="#using-selections" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conditional-encodings">
+<h3>Conditional Encodings<a class="headerlink" href="#conditional-encodings" title="Permalink to this headline">¶</a></h3>
+<p>Selections can be used to conditionally specify visual encodings – encode data values one way if they fall within the selection, and another if they do not. For instance, in the first two examples on this page, rectangles are colored based on whether or not their data values fall within the <code class="docutils literal notranslate"><span class="pre">pts</span></code> selection. If they do, they are colored by the number of records; and, if they do not, they are left grey.</p>
+<p>In this example, a selection (named <code class="docutils literal notranslate"><span class="pre">paintbrush</span></code>) is used to resize the points in the scatterplot on hover. This example is also useful for understanding the difference when empty selections are set to contain <select onchange="changeSpec('paintbrush_simple', 'paintbrush_simple_' + this.value)"></p>
+<p>See the <a class="reference external" href="condition"><code class="docutils literal notranslate"><span class="pre">condition</span></code></a> documentation for more information.</p>
+</div>
+<div class="section" id="filtering-data">
+<h3>Filtering Data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">¶</a></h3>
+<p>Selections in one view can also be used to filter input data to another view. In the example below, two scatterplots are concatenated vertically. An interval selection (named <code class="docutils literal notranslate"><span class="pre">brush</span></code>) is defined in the first plot and is used to filter the points in the second. Thus, the <code class="docutils literal notranslate"><span class="pre">Acceleration</span> <span class="pre">x</span> <span class="pre">Displacement</span></code> scatterplot only visualizes points that fall within the brushed region.</p>
+</div>
+<div class="section" id="scale-domains">
+<h3>Scale Domains<a class="headerlink" href="#scale-domains" title="Permalink to this headline">¶</a></h3>
+<p>With multiview displays, selections can also be used to determine the domains of scales in other views. For example, in the specification below, the bottom plot contains an interval selection named <code class="docutils literal notranslate"><span class="pre">brush</span></code>. We use this <code class="docutils literal notranslate"><span class="pre">brush</span></code> selection to parameterize the  <code class="docutils literal notranslate"><span class="pre">domain</span></code> of the top plot’s x-scale to make it show only the selected interval. This technique is called an overview+detail display.</p>
+<p>An alternate way to construct this technique would be to filter out the input data to the top (detail) view like so:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;vconcat&quot;: [{
+    &quot;transform&quot;: [{&quot;filter&quot;: {&quot;selection&quot;: &quot;brush&quot;}}],
+    ...
+  }]
+}
+</pre></div>
+</div>
+<p>However, setting the scale domains (rather than filtering data out) yields superior interactive performance. Rather than testing whether each data value falls within the selection or not, the scale domains are changed directly to the brush extents.</p>
+<p>If the selection is <a class="reference internal" href="project.html"><span class="doc">projected</span></a> over <em>multiple</em> fields or encodings, one must be given as part of the scale domain definition. Vega-Lite automatically infers this property if the selection is only projected over a single field or encoding. Thus, with the above example, the scale domain can be specified more explicitly as:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;scale&quot;:</span> <span class="pre">{&quot;domain&quot;:</span> <span class="pre">{&quot;selection&quot;:</span> <span class="pre">&quot;brush&quot;,</span> <span class="pre">&quot;encoding&quot;:</span> <span class="pre">&quot;x&quot;}}</span></code> or</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;scale&quot;:</span> <span class="pre">{&quot;domain&quot;:</span> <span class="pre">{&quot;selection&quot;:</span> <span class="pre">&quot;brush&quot;,</span> <span class="pre">&quot;field&quot;:</span> <span class="pre">&quot;date&quot;}}</span></code></li>
+</ul>
+<p><em>Note:</em> For a selection to manipulate the scales of its own view, use the <a class="reference external" href="scale-binding">bind</a> operator instead.</p>
+<p></p>
+</div>
+<div class="section" id="compose">
+<h3>Composing Multiple Selections<a class="headerlink" href="#compose" title="Permalink to this headline">¶</a></h3>
+<p>So far, we have only considered how to use one selection at a time. Vega-Lite also supports combining multiple selections using the <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">and</span></code> logical composition operators.</p>
+<p>For example, we had previously seen how we could setup two interval selections for our users Alex and Morgan. Now, we color the rectangles when they fall within Alex’s <select onchange="changeSpec('selection_composition', 'selection_composition_' + this.value)"></p>
+<p>With these operators, selections can be combined in arbitrary ways:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;selection&quot;:</span> <span class="pre">{&quot;not&quot;:</span> <span class="pre">{&quot;and&quot;:</span> <span class="pre">[&quot;alex&quot;,</span> <span class="pre">&quot;morgan&quot;]}}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;selection&quot;:</span> <span class="pre">{&quot;or&quot;:</span> <span class="pre">[&quot;alex&quot;,</span> <span class="pre">{&quot;not&quot;:</span> <span class="pre">&quot;morgan&quot;}]}</span></code></li>
+</ul>
+<p>When using selections with filter operators, logical composition can be used to mix selections with other filter operators. For example, as shown below, the <code class="docutils literal notranslate"><span class="pre">Displacement</span> <span class="pre">x</span> <span class="pre">Acceleration</span></code> scatterplot now visualizes points that lie within the brushed region <strong>and</strong> have a <code class="docutils literal notranslate"><span class="pre">Weight_in_lbs</span> <span class="pre">&gt;</span> <span class="pre">3000</span></code>.</p>
+<p><em>Note:</em> Logical composition is <strong>not</strong> supported when selections are used to drive scale domains.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="resolve">
+<h2>Resolving Selections in Data-Driven Views<a class="headerlink" href="#resolve" title="Permalink to this headline">¶</a></h2>
+<p>When a selection is defined within a data-driven view (i.e., a view that is part of a <a class="reference external" href="facet">facet</a> or <a class="reference external" href="repeat">repeat</a>), the desired behaviour can be ambiguous. Consider the scatterplot matrix (SPLOM) example below, which has an interval selection named <code class="docutils literal notranslate"><span class="pre">brush</span></code>. Should there be only one brush across all cells, or should each cell have its own brush? In the latter case, how should points be highlighted in all the other cells?</p>
+<p>The aptly named <code class="docutils literal notranslate"><span class="pre">resolve</span></code> property addresses this ambiguity, and can be set to one of the following values (click to apply it to the SPLOM example, and drag out an interval in different cells):</p>
+<ul class="simple">
+<li><a href="javascript:changeSpec('selection_resolution', 'selection_resolution_global')"><code class="docutils literal notranslate"><span class="pre">global</span></code></a> (<strong>default</strong>) – only one brush exists for the entire SPLOM. When the user begins to drag, any previous brushes are cleared, and a new one is constructed.</li>
+<li><a href="javascript:changeSpec('selection_resolution', 'selection_resolution_union')"><code class="docutils literal notranslate"><span class="pre">union</span></code></a> – each cell contains its own brush, and points are highlighted if they lie within <em>any</em> of these individual brushes.</li>
+<li><a href="javascript:changeSpec('selection_resolution', 'selection_resolution_intersect')"><code class="docutils literal notranslate"><span class="pre">intersect</span></code></a> – each cell contains its own brush, and points are highlighted only if they fall within <em>all</em> of these individual brushes.</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="config">
+<h2>Selection Configuration<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...,
+  &quot;config&quot;: {          // Configuration Object
+    &quot;selection&quot;: { ... },   // - Selection Configuration
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">selection</span></code> property of the <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> object determines the default properties and transformations applied to different types of <a class="reference internal" href="#"><span class="doc">selections</span></a>.
+The selection config can contain the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;single,multi,interval&quot; source=&quot;SelectionConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bind.html" class="btn btn-neutral float-right" title="Bind a Selection" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../composition/resolve.html" class="btn btn-neutral" title="Scale and Guide Resolution" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

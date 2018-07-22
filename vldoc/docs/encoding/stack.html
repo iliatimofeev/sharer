@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stack &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Type" href="type.html" />
+    <link rel="prev" title="Sorting" href="sort.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bar">Stack Bar Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#area">Stack Area Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normalized">Normalized Stacked Bar and Area Charts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#streamgraph">Streamgraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layered-bar-chart">Layered Bar Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#order">Sorting Stack Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layering-lines-on-top-of-stacked-area-chart">Layering Lines on top of Stacked Area Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Stack</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bar">Stack Bar Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#area">Stack Area Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normalized">Normalized Stacked Bar and Area Charts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#streamgraph">Streamgraph</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layered-bar-chart">Layered Bar Chart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#order">Sorting Stack Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layering-lines-on-top-of-stacked-area-chart">Layering Lines on top of Stacked Area Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Stack</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/stack.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stack">
+<h1>Stack<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">stack</span></code> property of a <a class="reference external" href="position-field-def">position field definition</a>
+determines type of stacking offset if the field should be stacked.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;stack&quot; source=&quot;PositionFieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;encoding&quot;: {     // Encoding
+    &quot;x&quot; or &quot;y&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: &quot;quantitative&quot;,
+      &quot;stack&quot;: ..., // Stack
+      ...
+    },
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="bar">
+<h2>Stack Bar Chart<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h2>
+<p>Adding a color field to a bar chart also creates stacked bar chart by default.</p>
+<p><span class="vl-example" data-name="stacked_bar_v"></span></p>
+<p></p>
+</div>
+<div class="section" id="area">
+<h2>Stack Area Chart<a class="headerlink" href="#area" title="Permalink to this headline">¶</a></h2>
+<p>Similarly, adding a color field to area chart also creates stacked area chart by default.</p>
+<p><span class="vl-example" data-name="stacked_area"></span></p>
+<p></p>
+</div>
+<div class="section" id="normalized">
+<h2>Normalized Stacked Bar and Area Charts<a class="headerlink" href="#normalized" title="Permalink to this headline">¶</a></h2>
+<p>You can set <code class="docutils literal notranslate"><span class="pre">stack</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;normalize&quot;</span></code> to create normalized (or percentage) stacked bar and area charts.</p>
+</div>
+<div class="section" id="streamgraph">
+<h2>Streamgraph<a class="headerlink" href="#streamgraph" title="Permalink to this headline">¶</a></h2>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">stack</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;center&quot;</span></code> for a stacked area chart creates a streamgraph:</p>
+</div>
+<div class="section" id="layered-bar-chart">
+<h2>Layered Bar Chart<a class="headerlink" href="#layered-bar-chart" title="Permalink to this headline">¶</a></h2>
+<p>If <code class="docutils literal notranslate"><span class="pre">stack</span></code> is <code class="docutils literal notranslate"><span class="pre">null</span></code>, the marks will be layered on top of each other.
+In this example, setting the mark’s <code class="docutils literal notranslate"><span class="pre">opacity</span></code> to be semi-transparent (<code class="docutils literal notranslate"><span class="pre">0.6</span></code>) creates a layered bar chart.</p>
+<p></p>
+</div>
+<div class="section" id="order">
+<h2>Sorting Stack Order<a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<p>You can use the order channel to sort the order of stacked marks.</p>
+<p>For example, given a stacked bar chart for the barley dataset:</p>
+<p>By default, the stacked bar are sorted by the stack grouping fields (<code class="docutils literal notranslate"><span class="pre">color</span></code> in this example).</p>
+<p>Mapping the sum of yield to <code class="docutils literal notranslate"><span class="pre">order</span></code> channel will sort the layer of stacked bar by the sum of yield instead.</p>
+<p>Here we can see that site with higher yields for each type of barley are put on the top of the stack (rightmost).</p>
+<p>If you want to define custom sort order, you can derive a new field using the <a class="reference external" href="calculate"><code class="docutils literal notranslate"><span class="pre">calculate</span></code> transform</a> and sort by that field instead.  For example, the following plot makes “University Farm” and “Grand Rapids” be the first (<code class="docutils literal notranslate"><span class="pre">0</span></code>) and second values in the stack order:</p>
+<p>Note: we plan to have <a class="reference external" href="https://github.com/vega/vega-lite/issues/2915">a better syntax for customized sort order</a> in the future.</p>
+</div>
+<div class="section" id="layering-lines-on-top-of-stacked-area-chart">
+<h2>Layering Lines on top of Stacked Area Chart<a class="headerlink" href="#layering-lines-on-top-of-stacked-area-chart" title="Permalink to this headline">¶</a></h2>
+<p>Since <code class="docutils literal notranslate"><span class="pre">line</span></code> marks are not stacked by default, to layer lines on top of stacked area charts, you have to manually set the <code class="docutils literal notranslate"><span class="pre">stack</span></code> offset for the lines.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="type.html" class="btn btn-neutral float-right" title="Type" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sort.html" class="btn btn-neutral" title="Sorting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

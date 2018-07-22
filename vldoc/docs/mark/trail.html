@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Trail &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Encoding" href="../encoding.html" />
+    <link rel="prev" title="Tick" href="tick.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Trail</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Trail Mark Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Trail Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Trail</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Trail Mark Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Trail Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Trail</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/mark/trail.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="trail">
+<h1>Trail<a class="headerlink" href="#trail" title="Permalink to this headline">¶</a></h1>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: &quot;trail&quot;,
+  &quot;encoding&quot;: ... ,
+  ...
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">trail</span></code> mark represents the data points stored in a field with a line connecting all of these points. Trail is similar to the <code class="docutils literal notranslate"><span class="pre">line</span></code> mark but a trail can have variable widths determined by backing data. Unlike lines, trails do not support different interpolation methods and use <code class="docutils literal notranslate"><span class="pre">fill</span></code> (not <code class="docutils literal notranslate"><span class="pre">stroke</span></code>) for their color. Trail marks are useful if you want to draw lines with changing size to reflect the underlying data.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="properties">
+<h2>Trail Mark Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  ...
+  &quot;mark&quot;: {
+    &quot;type&quot;: &quot;trail&quot;,
+    ...
+  },
+  &quot;encoding&quot;: ... ,
+  ...
+}
+</pre></div>
+</div>
+<p>A trail mark definition can contain any <a class="reference external" href="mark-def">standard mark properties</a> and the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;orient&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-line-chart-with-varying-size-using-trail-mark">
+<h3>A Line Chart with varying size using <code class="docutils literal notranslate"><span class="pre">trail</span></code> mark<a class="headerlink" href="#a-line-chart-with-varying-size-using-trail-mark" title="Permalink to this headline">¶</a></h3>
+<p><span class="vl-example" data-name="trail_color"></span></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Trail Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;trail&quot;: ...,
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">trail</span></code> property of the top-level <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> object sets the default properties for all trail marks.  If <a class="reference external" href="mark-prop">mark property encoding channels</a> are specified for marks, these config values will be overridden.</p>
+<p>The trail config can contain any <a class="reference external" href="properties">trail mark properties</a> (except <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code>, and <code class="docutils literal notranslate"><span class="pre">clip</span></code>).</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../encoding.html" class="btn btn-neutral float-right" title="Encoding" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tick.html" class="btn btn-neutral" title="Tick" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

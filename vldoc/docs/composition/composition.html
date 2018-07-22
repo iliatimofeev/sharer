@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Composing Layered &amp; Multi-view Plots &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Concatenating views" href="concat.html" />
+    <link rel="prev" title="Value" href="../encoding/value.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Composing Layered &amp; Multi-view Plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#faceting">Faceting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layering">Layering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#concatenation">Concatenation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repeating">Repeating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolution">Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concat.html">Concatenating views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="facet.html">Faceting a Plot into a Trellis Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Composing Layered &amp; Multi-view Plots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#faceting">Faceting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layering">Layering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#concatenation">Concatenation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repeating">Repeating</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolution">Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="concat.html">Concatenating views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="facet.html">Faceting a Plot into a Trellis Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Composing Layered &amp; Multi-view Plots</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/composition/composition.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="composition">
+<h1>Composing Layered &amp; Multi-view Plots<a class="headerlink" href="#composition" title="Permalink to this headline">¶</a></h1>
+<p>With Vega-Lite, you can not only create single view visualizations, but also <a class="reference internal" href="facet.html"><span class="doc">facet</span></a>, <a class="reference internal" href="layer.html"><span class="doc">layer</span></a>, <a class="reference internal" href="concat.html"><span class="doc">concatenate</span></a>, and <a class="reference internal" href="repeat.html"><span class="doc">repeat</span></a> these views into layered or multiview displays.</p>
+<p>A layered or multi-view display can also be composed with other views. Through this <strong>hierarchical composition</strong>, you can create a whole dashboard as a single specification.</p>
+<p>Vega-Lite’s compiler infers how input data should be reused across constituent views, and whether scale domains should be unioned or remain independent.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="faceting">
+<h2>Faceting<a class="headerlink" href="#faceting" title="Permalink to this headline">¶</a></h2>
+<p>With the <code class="docutils literal notranslate"><span class="pre">facet</span></code> operator, you can partition the data and create a view for each subset to create a <a class="reference external" href="https://en.wikipedia.org/wiki/Small_multiple">trellis plot</a>. As a shortcut, Vega-Lite also has the <a class="reference internal" href="facet.html"><span class="doc">column and row encoding channels</span></a> to quickly create a faceted view.</p>
+<p>Learn how to use it on the <a class="reference internal" href="facet.html"><span class="doc">facet page</span></a>.</p>
+</div>
+<div class="section" id="layering">
+<h2>Layering<a class="headerlink" href="#layering" title="Permalink to this headline">¶</a></h2>
+<p>With the <code class="docutils literal notranslate"><span class="pre">layer</span></code> operator, you can place multiple views on top of each other. This can be useful to add annotations to views. Vega-Lite automatically unions scale domains and combines axes and legends.</p>
+<p>However, Vega-Lite can not enforce that a unioned domain is <em>semantically meaningful</em>. To prohibit layering of composite views with incompatible layouts, the layer operator restricts its operands to be single or layered views.</p>
+<p>Learn how to use it on the <a class="reference internal" href="layer.html"><span class="doc">layering page</span></a>.</p>
+</div>
+<div class="section" id="concatenation">
+<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
+<p>To place views side-by-side, Vega-Lite provides operators for horizontal (<code class="docutils literal notranslate"><span class="pre">hconcat</span></code>) and vertical (<code class="docutils literal notranslate"><span class="pre">vconcat</span></code>) concatenation.</p>
+<p>Learn how to use it on the <a class="reference internal" href="concat.html"><span class="doc">concatenation page</span></a>.</p>
+</div>
+<div class="section" id="repeating">
+<h2>Repeating<a class="headerlink" href="#repeating" title="Permalink to this headline">¶</a></h2>
+<p>Often, you may concatenate similar views where the only difference is the field that is used in an encoding. The <code class="docutils literal notranslate"><span class="pre">repeat</span></code> operator is a shortcut that creates a view for each entry in an array of fields.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">repeat</span></code> operator generates multiple plots like <code class="docutils literal notranslate"><span class="pre">facet</span></code>. However, unlike <code class="docutils literal notranslate"><span class="pre">facet</span></code> it allows full replication of a data set in each view.</p>
+<p>Learn how to use it on the <a class="reference internal" href="repeat.html"><span class="doc">repeat page</span></a>.</p>
+</div>
+<div class="section" id="resolution">
+<h2>Resolution<a class="headerlink" href="#resolution" title="Permalink to this headline">¶</a></h2>
+<p>Vega-Lite determines whether scale domains should be unioned. If the scale domain is unioned, axes and legends can be merged. Otherwise they have to be independent.</p>
+<p>To override scale, axis, and legend resolution, you can set the <a class="reference internal" href="resolve.html"><span class="doc">resolve</span></a> property.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="concat.html" class="btn btn-neutral float-right" title="Concatenating views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../encoding/value.html" class="btn btn-neutral" title="Value" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

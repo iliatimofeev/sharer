@@ -1,0 +1,420 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bar &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Circle" href="circle.html" />
+    <link rel="prev" title="Area" href="area.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Bar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Bar Mark Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Bar Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Bar</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Bar Mark Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Bar Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Bar</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/mark/bar.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bar">
+<h1>Bar<a class="headerlink" href="#bar" title="Permalink to this headline">¶</a></h1>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: &quot;bar&quot;,
+  &quot;encoding&quot;: ... ,
+  ...
+}
+</pre></div>
+</div>
+<p>Bar marks are useful in many visualizations, including bar charts, <a class="reference external" href="stack">stacked bar charts</a>, and <a class="reference external" href="ranged">timelines</a>.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="properties">
+<h2>Bar Mark Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  ...
+  &quot;mark&quot;: {
+    &quot;type&quot;: &quot;bar&quot;,
+    ...
+  },
+  &quot;encoding&quot;: ... ,
+  ...
+}
+</pre></div>
+</div>
+<p>A bar mark definition can contain any <a class="reference external" href="mark-def">standard mark properties</a> and the following special properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;orient,binSpacing,cornerRadius&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="single-bar-chart">
+<h3>Single Bar Chart<a class="headerlink" href="#single-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>Mapping a quantitative field to either <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code> of the <code class="docutils literal notranslate"><span class="pre">bar</span></code> mark produces a single bar chart.</p>
+<p><span class="vl-example" data-name="bar_1d"></span></p>
+</div>
+<div class="section" id="bar-chart">
+<h3>Bar Chart<a class="headerlink" href="#bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>If we map a different discrete field to the <code class="docutils literal notranslate"><span class="pre">y</span></code> channel, we can produce a horizontal bar chart. Specifying <code class="docutils literal notranslate"><span class="pre">scale.rangeStep</span></code> of the discrete field will adjust the <a class="reference external" href="band">band and point scale’s range step</a>.</p>
+<p><span class="vl-example" data-name="bar_aggregate"></span></p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">bar</span></code> mark typically uses the x and y channels to encode a pair of discrete and continuous fields, it can also be used with continuous fields on both channels.
+For example, given a bar chart with a temporal field on x, we can see that the x-scale is a continuous scale. By default, the size of bars on continuous scales will be set based on the <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">continuousBandSize</span></code> config</a>.</p>
+<p><span class="vl-example" data-name="bar_month_temporal"></span></p>
+<p>If you want to use a discrete scale instead, you can cast the field to have an <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> type. This casting strategy can be useful for time units with low cardinality such as <code class="docutils literal notranslate"><span class="pre">&quot;month&quot;</span></code>.</p>
+<p><span class="vl-example" data-name="bar_month"></span></p>
+</div>
+<div class="section" id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">¶</a></h3>
+<p>If the data is not pre-aggregated (i.e. each record in the data field represents one item),
+mapping a <a class="reference external" href="bin">binned</a> quantitative field to <code class="docutils literal notranslate"><span class="pre">x</span></code> and aggregate <code class="docutils literal notranslate"><span class="pre">count</span></code> to <code class="docutils literal notranslate"><span class="pre">y</span></code> produces a histogram.</p>
+<p><span class="vl-example" data-name="histogram"></span></p>
+<p>If you prefer to have histogram without gaps between bars, you can set the <a class="reference external" href="properties"><code class="docutils literal notranslate"><span class="pre">binSpacing</span></code> mark property</a> to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p><span class="vl-example" data-name="histogram_no_spacing"></span></p>
+<p></p>
+</div>
+<div class="section" id="stack">
+<h3>Stacked Bar Chart<a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h3>
+<p>Adding color to the bar chart (by using the <code class="docutils literal notranslate"><span class="pre">color</span></code> attribute) creates a stacked bar chart by default. Here we also customize the color’s scale range to make the color a little nicer.
+(See <a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a> for more details about customizing stack.)</p>
+<p><span class="vl-example" data-name="stacked_bar_population"></span></p>
+</div>
+<div class="section" id="layered-bar-chart">
+<h3>Layered Bar Chart<a class="headerlink" href="#layered-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>To disable stacking, you can alternatively set <a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a> to <code class="docutils literal notranslate"><span class="pre">null</span></code>.
+This produces a layered bar chart.
+To make it clear that bars are layered, we can make marks semi-transparent by setting the <code class="docutils literal notranslate"><span class="pre">opacity</span></code> to a value between 0 and 1 (e.g., <code class="docutils literal notranslate"><span class="pre">0.7</span></code>).</p>
+<p><span class="vl-example" data-name="bar_layered_transparent"></span></p>
+</div>
+<div class="section" id="normalized-stacked-bar-chart">
+<h3>Normalized Stacked Bar Chart<a class="headerlink" href="#normalized-stacked-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>You can also create a normalized stacked bar chart by setting <a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a> to <code class="docutils literal notranslate"><span class="pre">&quot;normalize&quot;</span></code>. Here we can easily see the percentage of male and female population at different ages.</p>
+<p><span class="vl-example" data-name="stacked_bar_normalize"></span></p>
+</div>
+<div class="section" id="grouped-bar-chart">
+<h3>Grouped Bar Chart<a class="headerlink" href="#grouped-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="facet">Faceting</a> a bar chart produces a grouped bar chart.</p>
+<p><span class="vl-example" data-name="bar_grouped"></span></p>
+<p></p>
+</div>
+<div class="section" id="ranged">
+<h3>Ranged Bars<a class="headerlink" href="#ranged" title="Permalink to this headline">¶</a></h3>
+<p>Specifying <code class="docutils literal notranslate"><span class="pre">x2</span></code> or <code class="docutils literal notranslate"><span class="pre">y2</span></code> for the quantitative axis of bar marks creates ranged bars.
+For example, we can use ranged bars to create a gantt chart.</p>
+<p><span class="vl-example" data-name="bar_gantt"></span></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Bar Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;bar&quot;: ...,
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">bar</span></code> property of the top-level <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> object sets the default properties for all bar marks.  If <a class="reference external" href="mark-prop">mark property encoding channels</a> are specified for marks, these config values will be overridden.</p>
+<p>Besides standard <a class="reference external" href="properties">mark properties</a>, bar config can contain the following additional properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;binSpacing,continuousBandSize,discreteBandSize&quot; source=&quot;BarConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="circle.html" class="btn btn-neutral float-right" title="Circle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="area.html" class="btn btn-neutral" title="Area" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

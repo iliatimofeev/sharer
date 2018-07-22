@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Porting Guide from Vega-lite 1 &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Porting Guide from Vega-lite 1</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/portingguide.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="porting-guide">
+<h1>Porting Guide from Vega-lite 1<a class="headerlink" href="#porting-guide" title="Permalink to this headline">¶</a></h1>
+<p>This document describes the various changes needed to port Vega-Lite 1.x visualizations to the 2.0 specification. It also introduces a subset of the new features introduced in Vega-Lite 2. While the listing below is intended to cover the most salient differences between these major versions, readers are also encouraged to dive in and study the <a class="reference external" href="examples">example gallery</a>.</p>
+<div class="section" id="interaction-and-composition">
+<h2>Interaction and Composition<a class="headerlink" href="#interaction-and-composition" title="Permalink to this headline">¶</a></h2>
+<p>The key new features for Vega-Lite 2.0 are the <a class="reference external" href="selection"><code class="docutils literal notranslate"><span class="pre">selection</span></code></a> operator for specifying interactions and <a class="reference external" href="composition">view composition operators</a> for creating multi-view and layered plots. Moreover, Vega-Lite now generates Vega 3 and uses a number of new features that improve performance, add new features, and produce better visualizations.</p>
+</div>
+<div class="section" id="general">
+<h2>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="compile"><code class="docutils literal notranslate"><span class="pre">vl.compile</span></code></a> takes an <code class="docutils literal notranslate"><span class="pre">options</span></code> object as a second argument.</li>
+<li><code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> properties at new top-level properties (of a single view and layered view specification).</li>
+<li>The top-level property <code class="docutils literal notranslate"><span class="pre">viewport</span></code> has been removed.</li>
+</ul>
+</div>
+<div class="section" id="transforms">
+<h2><a class="reference internal" href="../task_decription/retext.html#doc_test.doctest.DocTestClass.transform" title="doc_test.doctest.DocTestClass.transform"><a class="reference external" href="transform">Transforms</a></a><a class="headerlink" href="#transforms" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">transform</span></code> is now an array of transform objects (the order of the transforms is clearer).</li>
+<li>Formula definitions for <code class="docutils literal notranslate"><span class="pre">calculate</span></code> transforms can use the<code class="docutils literal notranslate"><span class="pre">as</span></code> property to specify output fields name instead of <code class="docutils literal notranslate"><span class="pre">field</span></code>.</li>
+</ul>
+<p>For example,  the following transform in Vega-Lite v1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;calculate&quot;</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="s2">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;license_index&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;expr&quot;</span><span class="p">:</span> <span class="s2">&quot;datum.license === &#39;CC BY&#39; ? 0 : datum.license === &#39;CC BY-ND&#39; ? 1 : datum.license === &#39;CC BY-NC&#39; ? 2 : datum.license === &#39;CC BY-NC-ND&#39; ? 3 : 4&quot;</span>
+    <span class="p">}]</span>
+  <span class="p">},</span>
+</pre></div>
+</div>
+<p>would become</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;transform&quot;</span><span class="p">:</span> <span class="p">[{</span>
+  <span class="s2">&quot;calculate&quot;</span><span class="p">:</span> <span class="s2">&quot;datum.license === &#39;CC BY&#39; ? 0 : datum.license === &#39;CC BY-ND&#39; ? 1 : datum.license === &#39;CC BY-NC&#39; ? 2 : datum.license === &#39;CC BY-NC-ND&#39; ? 3 : 4&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;as&quot;</span><span class="p">:</span> <span class="s2">&quot;license_index&quot;</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, and <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> now can also be expressed as a transform in the <code class="docutils literal notranslate"><span class="pre">transform</span></code> array (in addition to transforms in <a class="reference external" href="field-def">a field definition of an encoding channel</a>).</li>
+<li>For <code class="docutils literal notranslate"><span class="pre">bin</span></code>, the <code class="docutils literal notranslate"><span class="pre">&quot;max&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;min&quot;</span></code> parameters have been removed.  Instead, users can provide <code class="docutils literal notranslate"><span class="pre">&quot;extent&quot;</span></code>, a two-element (<code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code>) array indicating the range of desired bin values.  Also, the <code class="docutils literal notranslate"><span class="pre">&quot;div&quot;</span></code> property has been renamed to <code class="docutils literal notranslate"><span class="pre">&quot;divide&quot;</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="marks">
+<h2><a class="reference external" href="mark">Marks</a><a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The <code class="docutils literal notranslate"><span class="pre">mark</span></code> property now can be either a mark type or (new) a <a class="reference external" href="mark-def">mark definition object</a>, which can define <code class="docutils literal notranslate"><span class="pre">clip</span></code>, <code class="docutils literal notranslate"><span class="pre">filled</span></code>, <code class="docutils literal notranslate"><span class="pre">orient</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">interpolate</span></code>, and <code class="docutils literal notranslate"><span class="pre">tension</span></code> – in addition to the mark <code class="docutils literal notranslate"><span class="pre">type</span></code>.</li>
+<li>A new <a class="reference external" href="rect"><code class="docutils literal notranslate"><span class="pre">rect</span></code> mark</a> can be used to create arbitrary rectangles and table heat maps.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">rule</span></code> mark type now supports arbitrary line segments, and reliably draws a line from point <code class="docutils literal notranslate"><span class="pre">&quot;x&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;y&quot;</span></code> to point <code class="docutils literal notranslate"><span class="pre">&quot;x2&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;y2&quot;</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="encodings">
+<h2><a class="reference external" href="channels">Encodings</a><a class="headerlink" href="#encodings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="facet"><code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code> encodings</a> are now shortcuts for creating a faceted plot using the <a class="reference external" href="facet"><code class="docutils literal notranslate"><span class="pre">facet</span></code></a> operator.</li>
+<li><code class="docutils literal notranslate"><span class="pre">path</span></code> channel has been removed. You can now use the <code class="docutils literal notranslate"><span class="pre">order</span></code> channel for sorting points on a line. Meanwhile, the <code class="docutils literal notranslate"><span class="pre">order</span></code> channel no longer affects the layering order of marks.</li>
+<li><code class="docutils literal notranslate"><span class="pre">title</span></code> property has been removed from field definitions. You can use the <code class="docutils literal notranslate"><span class="pre">title</span></code> property inside <code class="docutils literal notranslate"><span class="pre">axis</span></code> and <code class="docutils literal notranslate"><span class="pre">legend</span></code> instead.</li>
+<li>A new <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> channel has been added.</li>
+<li>We now support <code class="docutils literal notranslate"><span class="pre">&quot;aggregate&quot;:</span> <span class="pre">&quot;count&quot;</span></code> without <code class="docutils literal notranslate"><span class="pre">&quot;field&quot;:</span> <span class="pre">&quot;*&quot;</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> can now be used with both <code class="docutils literal notranslate"><span class="pre">&quot;temporal&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> type.  When used with temporal, the date-time field will be treated as a <a class="reference external" href="continuous">continuous</a> field, When casted as ordinal, the date-time field will be treated as a <a class="reference external" href="discrete">discrete</a> field.</li>
+</ul>
+<div class="section" id="scale">
+<h3><a class="reference external" href="scale">Scale</a><a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Following D3 4.0 and Vega 3 ‘s design, the <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> scale type has now been broken up into three different scale types: <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> (for strict lookup tables), <code class="docutils literal notranslate"><span class="pre">&quot;band&quot;</span></code> (for spatial ordinal scales) and <code class="docutils literal notranslate"><span class="pre">&quot;point&quot;</span></code> (spatial ordinal scales with no padding, similar to <code class="docutils literal notranslate"><span class="pre">{&quot;point&quot;:</span> <span class="pre">true}</span></code> in Vega 2).</li>
+<li>Following Vega 3, Vega-Lite now includes D3 4.0’s <code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code> scale type and corresponding color scales. Use the <a class="reference external" href="scheme"><code class="docutils literal notranslate"><span class="pre">&quot;scheme&quot;</span></code></a> property to set the range to a named color scale (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;plasma&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;magma&quot;</span></code>).</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&quot;category10&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;category20&quot;</span></code> and similar color palettes are no longer available as built-in range names. Instead, they are available using the scale <code class="docutils literal notranslate"><span class="pre">&quot;scheme&quot;</span></code> property, which can be specified instead of a scale range for <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code> scales. However,Vega-lite 2 (and the underlying Vega 3) does support a built-in <code class="docutils literal notranslate"><span class="pre">&quot;category&quot;</span></code> short-hand for ordinal scale ranges, which can be re-defined as part of the theme configuration.</li>
+<li>Following Vega 3, a new <code class="docutils literal notranslate"><span class="pre">&quot;index&quot;</span></code> scale type maps an ordinal domain to a quantitative range (e.g., as supported by <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code> scales). This is particularly useful for creating ordered color ramps for ordinal data.</li>
+<li>Similar to Vega 3, <code class="docutils literal notranslate"><span class="pre">bandSize</span></code> is now renamed to <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code>.  Also, <code class="docutils literal notranslate"><span class="pre">&quot;rangeStep&quot;:</span> <span class="pre">null</span></code> now makes range step fits the width or height. (This <code class="docutils literal notranslate"><span class="pre">&quot;rangeStep&quot;:</span> <span class="pre">null</span></code> replaces the original <code class="docutils literal notranslate"><span class="pre">bandSize:</span> <span class="pre">&quot;fit&quot;</span></code>, which is now removed.)</li>
+<li>Better default scale types of binned fields.</li>
+<li>scale’s <code class="docutils literal notranslate"><span class="pre">zero</span></code> is now <code class="docutils literal notranslate"><span class="pre">true</span></code> by default when using a quantitative field with <code class="docutils literal notranslate"><span class="pre">size</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="sort">
+<h3><a class="reference external" href="sort">Sort</a><a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;sort&quot;:</span> <span class="pre">&quot;none&quot;</span></code> is no longer supported. Instead, please use <code class="docutils literal notranslate"><span class="pre">&quot;sort&quot;:</span> <span class="pre">null</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="stack">
+<h3><a class="reference external" href="stack">Stack</a><a class="headerlink" href="#stack" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>A new <a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a> property has been added to the x and y encoding channels.</li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.stacked</span></code> is now <code class="docutils literal notranslate"><span class="pre">config.stack</span></code>.</li>
+<li>Most mark types (except <code class="docutils literal notranslate"><span class="pre">rect</span></code>) are <a class="reference external" href="stack">stackable</a>. For example, points can be stacked to serve as markers for line and area.</li>
+<li>You can now stack unaggregated plots.</li>
+</ul>
+</div>
+<div class="section" id="axis-and-legend">
+<h3><a class="reference external" href="axis">Axis</a> and <a class="reference external" href="legend">Legend</a><a class="headerlink" href="#axis-and-legend" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Better axis styles (grey lines instead of black).</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&quot;ticks&quot;</span></code> parameter for suggesting the approximate number of axis ticks has been renamed <code class="docutils literal notranslate"><span class="pre">&quot;tickCount&quot;</span></code>.</li>
+<li>The axis line previously stylable as <code class="docutils literal notranslate"><span class="pre">&quot;axis&quot;</span></code> is now referred to as the axis <code class="docutils literal notranslate"><span class="pre">&quot;domain&quot;</span></code>. For example, use <code class="docutils literal notranslate"><span class="pre">&quot;domain&quot;:</span> <span class="pre">false</span></code> to hide the axis line.  All relevant properties have also been renamed accordingly (e.g., <code class="docutils literal notranslate"><span class="pre">axisWidth</span></code> to <code class="docutils literal notranslate"><span class="pre">domainWidth</span></code>).</li>
+<li>Axis properties with the <code class="docutils literal notranslate"><span class="pre">tickLabel</span></code> prefix has been shortened to just have <code class="docutils literal notranslate"><span class="pre">label</span></code> as prefix. For example, <code class="docutils literal notranslate"><span class="pre">tickLabelColor</span></code> is now <code class="docutils literal notranslate"><span class="pre">labelColor</span></code>.</li>
+<li>To hide ticks and labels, you can now use the <code class="docutils literal notranslate"><span class="pre">ticks</span></code> and <code class="docutils literal notranslate"><span class="pre">labels</span></code> properties instead of the old <code class="docutils literal notranslate"><span class="pre">tick</span></code> and <code class="docutils literal notranslate"><span class="pre">label</span></code>.  (We changed them to be plural for consistency.)</li>
+<li>The following axis properties have been removed: <code class="docutils literal notranslate"><span class="pre">characterWidth</span></code>, <code class="docutils literal notranslate"><span class="pre">labelAlign</span></code>, <code class="docutils literal notranslate"><span class="pre">labelBaseline</span></code>, <code class="docutils literal notranslate"><span class="pre">subdivide</span></code>, <code class="docutils literal notranslate"><span class="pre">tickSizeMajor</span></code>, <code class="docutils literal notranslate"><span class="pre">tickSizeMinor</span></code>, <code class="docutils literal notranslate"><span class="pre">tickSizeEnd</span></code>.</li>
+<li>Axis no longer has the <code class="docutils literal notranslate"><span class="pre">layer</span></code> property. Instead, there is a <code class="docutils literal notranslate"><span class="pre">zindex</span></code> property (default <code class="docutils literal notranslate"><span class="pre">0</span></code>). By default, axes should be drawn behind all chart elements. To put them in front, use <code class="docutils literal notranslate"><span class="pre">&quot;zindex&quot;:</span> <span class="pre">1</span></code>.</li>
+<li>Legends now include an optional <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span></code> property.</li>
+</ul>
+<ul class="simple">
+<li>The field title format has been changed to be a more verbal style. For example, given a field “<code class="docutils literal notranslate"><span class="pre">field</span></code>” we change:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">SUM(field)</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">Sum</span> <span class="pre">of</span> <span class="pre">field</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BIN(field)</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">(binned)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">YEARMONTH(field)</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">field</span> <span class="pre">(year-month)</span></code></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="layering">
+<h2>Layering<a class="headerlink" href="#layering" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">layer</span></code> operator is now a verb, not a plural noun (<code class="docutils literal notranslate"><span class="pre">layers</span></code>) – consistent with <code class="docutils literal notranslate"><span class="pre">facet</span></code>, <code class="docutils literal notranslate"><span class="pre">repeat</span></code>, and <code class="docutils literal notranslate"><span class="pre">concat</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="faceting">
+<h2><a class="reference external" href="facet">Faceting</a><a class="headerlink" href="#faceting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Instead of scales, facet now generates <a class="reference external" href="https://vega.github.io/vega/docs/layout/">layouts</a>.</li>
+<li>Facet now generates <code class="docutils literal notranslate"><span class="pre">header</span></code> instead of <code class="docutils literal notranslate"><span class="pre">axis</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="configuration">
+<h2><a class="reference internal" href="config.html"><span class="doc">Configuration</span></a><a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">config</span></code> property in Vega-Lite 2 has been updated to be a superset of <a class="reference external" href="https://vega.github.io/vega/docs/config/">Vega Config</a>.</p>
+<ul class="simple">
+<li>Change config’s <code class="docutils literal notranslate"><span class="pre">filterInvalid:</span> <span class="pre">boolean</span></code> to <code class="docutils literal notranslate"><span class="pre">invalidValues:</span> <span class="pre">&quot;filter&quot;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.cell</span></code> is now <code class="docutils literal notranslate"><span class="pre">config.view</span></code>.</li>
+</ul>
+<div class="section" id="mark-config">
+<h3>Mark Config<a class="headerlink" href="#mark-config" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>We added mark specific config for all marks. Basically, each mark config (e.g., <code class="docutils literal notranslate"><span class="pre">config.bar.*</span></code>) has all properties similar to mark config. This way you can make line’s default color be green while bar’s default is blue.</li>
+<li>In addition, <a class="reference external" href="style-config">mark style config</a> can also be applied to marks with the <code class="docutils literal notranslate"><span class="pre">style</span></code> property.</li>
+<li>We removed old mark specific options from <code class="docutils literal notranslate"><span class="pre">config.mark</span></code><ul>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.barBinSpacing/barThinSize/barSize</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.bar.binSpacing/continuousBandSize/discreteBandSize</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.lineSize</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.line.strokeWidth</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.shape</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.point.shape</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.size</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.point/circle/square.size</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.ruleSize</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.rule.strokeWidth</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.tickSize,tickThickness</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.tick.bandSize/thickness</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.mark.*</span></code> (text properties) =&gt; <code class="docutils literal notranslate"><span class="pre">config.text.*</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">config.bar.continuousBandSize</span></code> now defaults to 5</li>
+<li><code class="docutils literal notranslate"><span class="pre">config.text.applyColorToBackground</span></code>, which adds background to text mark, has been removed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">config.text.format</span></code> has been removed. You can now format via the <a class="reference external" href="format"><code class="docutils literal notranslate"><span class="pre">format</span></code></a> property of the text channel or via the <code class="docutils literal notranslate"><span class="pre">numberFormat</span></code> and <code class="docutils literal notranslate"><span class="pre">timeFormat</span></code> config.</li>
+</ul>
+</div>
+<div class="section" id="scale-config">
+<h3>Scale Config<a class="headerlink" href="#scale-config" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">config.scale.round</span></code> is now only supported for <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> channels (and ignored for other channels).</li>
+<li>Split scale range config from <code class="docutils literal notranslate"><span class="pre">config.scale</span></code> into separate min and max properties. For example:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">config.scale.opacityRange</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.scale.min/maxOpacity</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">config.scale.barSizeRange</span></code> =&gt; <code class="docutils literal notranslate"><span class="pre">config.scale.min/maxBandSize</span></code></li>
+</ul>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">config.scale.shapeRange</span></code> has been replaced with the range config for symbols <code class="docutils literal notranslate"><span class="pre">config.range.symbol</span></code></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vega-lite &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vega-Lite View Specification" href="spec.html" />
+    <link rel="prev" title="rst format tests" href="../task_decription/retext.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vega-lite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-specification">View Specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spec.html">Vega-Lite View Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/size.html">Customizing Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transform">Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transform/transform.html">Transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/aggregate.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/bin.html">Binning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/calculate.html">Calculate Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/filter.html">Filter Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/lookup.html">Lookup Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/timeunit.html">Time Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/window.html">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#projection">Projection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projection.html">Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#marks">Marks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mark/mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#encoding">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view-composition">View Composition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="composition/composition.html">Composing Layered &amp; Multi-view Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/concat.html">Concatenating views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/facet.html">Faceting a Plot into a Trellis Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#selection">Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="selection/selection.html">Interactive Plots with Selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/bind.html">Bind a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/nearest.html">Nearest Value to a Discrete Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/project.html">Project a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/toggle.html">Toggling a Multi Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/translate.html">Translating an Interval Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/zoom.html">Zooming an Interval Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#config">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-types">Parameter Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Parameter Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tooltip">Tooltip</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tooltip.html">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Vega-lite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#view-specification">View Specification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spec.html">Vega-Lite View Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/size.html">Customizing Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data">Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data.html">Data</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transform">Transform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="transform/transform.html">Transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/aggregate.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/bin.html">Binning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/calculate.html">Calculate Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/filter.html">Filter Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/lookup.html">Lookup Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/timeunit.html">Time Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="transform/window.html">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#projection">Projection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="projection.html">Projection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#marks">Marks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mark/mark.html">Mark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mark/trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#encoding">Encoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#view-composition">View Composition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="composition/composition.html">Composing Layered &amp; Multi-view Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/concat.html">Concatenating views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/facet.html">Faceting a Plot into a Trellis Plot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="composition/resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#selection">Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="selection/selection.html">Interactive Plots with Selections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/bind.html">Bind a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/nearest.html">Nearest Value to a Discrete Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/project.html">Project a Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/toggle.html">Toggling a Multi Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/translate.html">Translating an Interval Selection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selection/zoom.html">Zooming an Interval Selection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#config">Config</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#parameter-types">Parameter Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="types.html">Parameter Types</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tooltip">Tooltip</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tooltip.html">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Vega-lite</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/vega-lite-toc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vega-lite">
+<h1>Vega-lite<a class="headerlink" href="#vega-lite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="specification-description">
+<h2>Specification description<a class="headerlink" href="#specification-description" title="Permalink to this headline">¶</a></h2>
+<p>This is not original documentation! It is just a port of <a class="reference external" href="http://vega.github.io/vega-lite">Vega-Lite</a> documentation.
+This version was made only as <strong>Proof of Concept</strong> that it possible compile <a class="reference external" href="https://jekyllrb.com/">Jekyll</a> site with <a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a></p>
+</div>
+<div class="section" id="view-specification">
+<h2>View Specification<a class="headerlink" href="#view-specification" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spec.html">Vega-Lite View Specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#common">Common Properties of Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#top-level-specifications">Top-Level Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#single-view-specifications">Single View Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#layered-and-multi-view-specifications">Layered and Multi-view Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec.html#config">View Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view/size.html">Customizing Size</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="view/size.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view/size.html#width-and-height-of-single-and-layered-plots">Width and Height of Single and Layered Plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view/size.html#width-and-height-of-multi-view-displays">Width and Height of Multi-View Displays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view/title.html">View Title</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="view/title.html#params">Title Parameter Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view/title.html#config">Title Config</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#types-of-data-sources">Types of Data Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#format">Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#datasets">Datasets</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="transform">
+<h2>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="transform/transform.html">Transformation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/transform.html#view-level-transform-property">View-level Transform Property</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/aggregate.html">Aggregation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html#encoding">Aggregate in Encoding Field Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html#transform">Aggregate Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/aggregate.html#ops">Supported Aggregation Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/bin.html">Binning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/bin.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/bin.html#encoding">Binning in Encoding Field Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/bin.html#transform">Bin Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/bin.html#bin-parameters">Bin Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/bin.html#ordinal-bin">Ordinal Bin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/calculate.html">Calculate Transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/calculate.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/filter.html">Filter Transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/filter.html#expression">Filter Expression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/filter.html#field-predicate">Field Predicate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/filter.html#selection-predicate">Selection Predicate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/lookup.html">Lookup Transform</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/lookup.html#lookup-transform">Lookup Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/lookup.html#lookup-data">Lookup Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/lookup.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/timeunit.html">Time Unit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/timeunit.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/timeunit.html#encoding">Time Unit in Encoding Field Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/timeunit.html#transform">Time Unit Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/timeunit.html#utc">UTC time</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transform/window.html">Window</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transform/window.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/window.html#window-field-definition">Window Field Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/window.html#window-transform-definition">Window Transform Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/window.html#ops">Window Only Operation Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transform/window.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="projection">
+<h2>Projection<a class="headerlink" href="#projection" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="projection.html">Projection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="projection.html#properties">Projection Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projection.html#projection-types">Projection Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projection.html#config">Projection Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="marks">
+<h2>Marks<a class="headerlink" href="#marks" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mark/mark.html">Mark</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/mark.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/mark.html#mark-definition-object">Mark Definition Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/mark.html#config">Mark Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/mark.html#style-config">Mark Style Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/area.html">Area</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/area.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/area.html#properties">Area Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/area.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/area.html#config">Area Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/bar.html">Bar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/bar.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/bar.html#properties">Bar Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/bar.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/bar.html#config">Bar Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/circle.html">Circle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/circle.html#properties">Circle Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/circle.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/circle.html#config">Circle Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/geoshape.html">Geoshape</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/geoshape.html#config">Geoshape Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/line.html">Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/line.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/line.html#properties">Line Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/line.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/line.html#config">Line Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/point.html">Point</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/point.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/point.html#properties">Point Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/point.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/point.html#config">Point Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/rect.html">Rect</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/rect.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rect.html#rect-mark-properties">Rect Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rect.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rect.html#config">Rect Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/rule.html">Rule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/rule.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rule.html#properties">Rule Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rule.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/rule.html#config">Rule Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/square.html">Square</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/square.html#properties">Square Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/square.html#example-scatterplot-with-square">Example: Scatterplot with Square</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/square.html#config">Square Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/text.html">Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/text.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/text.html#properties">Text Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/text.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/text.html#config">Text Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/tick.html">Tick</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/tick.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/tick.html#properties">Tick Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/tick.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/tick.html#config">Tick Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark/trail.html">Trail</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark/trail.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/trail.html#properties">Trail Mark Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/trail.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mark/trail.html#config">Trail Config</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="encoding">
+<h2>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="encoding.html">Encoding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#channels">Encoding Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#channel-definition">Channel Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#position">Position Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#geo">Geographic Position Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#mark-prop">Mark Property Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#text">Text and Tooltip Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#href">Hyperlink Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#detail">Level of Detail Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#key">Key Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#order">Order Channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding.html#facet">Facet Channels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/axis.html">Axis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/axis.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/axis.html#axis-properties">Axis Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/axis.html#config">Axis Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/condition.html">Condition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/condition.html#field">Conditional Field Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/condition.html#value">Conditional Value Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/field.html">Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/format.html">Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/format.html#formatting-text-marks-and-tooltips">Formatting text marks and tooltips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/format.html#formatting-axis-and-legend-labels">Formatting axis and legend labels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/header.html">Header</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/header.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/header.html#header-properties">Header Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/header.html#config">Header Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/legend.html">Legend</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/legend.html#legend-types">Legend Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/legend.html#combined-legend">Combined Legend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/legend.html#legend-properties">Legend Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/legend.html#config">Legend Config</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/scale.html">Scale</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#type">Scale Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#domain">Scale Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#range">Scale Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#continuous">Continuous Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#discrete">Discrete Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#discretizing">Discretizing Scales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#disable">Disabling Scale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/scale.html#config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/sort.html">Sorting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/sort.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/sort.html#sorting-continuous-fields">Sorting Continuous Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/sort.html#sorting-discrete-fields">Sorting Discrete Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/stack.html">Stack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#bar">Stack Bar Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#area">Stack Area Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#normalized">Normalized Stacked Bar and Area Charts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#streamgraph">Streamgraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#layered-bar-chart">Layered Bar Chart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#order">Sorting Stack Order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/stack.html#layering-lines-on-top-of-stacked-area-chart">Layering Lines on top of Stacked Area Chart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/type.html">Type</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encoding/type.html#quantitative">Quantitative</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/type.html#temporal">Temporal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/type.html#ordinal">Ordinal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/type.html#nominal">Nominal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encoding/type.html#geojson">GeoJSON</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encoding/value.html">Value</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="view-composition">
+<h2>View Composition<a class="headerlink" href="#view-composition" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="composition/composition.html">Composing Layered &amp; Multi-view Plots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#faceting">Faceting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#layering">Layering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#concatenation">Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#repeating">Repeating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/composition.html#resolution">Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composition/concat.html">Concatenating views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/concat.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/concat.html#horizontal-concatenation">Horizontal Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/concat.html#vertical-concatenation">Vertical Concatenation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/concat.html#resolve">Resolve</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composition/facet.html">Faceting a Plot into a Trellis Plot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/facet.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/facet.html#facet-operator">Facet Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/facet.html#row-column-encoding-channels">Row &amp; Column Encoding Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/facet.html#resolve">Resolve</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composition/layer.html">Layering views</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/layer.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composition/repeat.html">Repeat a View</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/repeat.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/repeat.html#repeat-operator">Repeat Operator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/repeat.html#example-repeated-histogram">Example: Repeated Histogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/repeat.html#example-scatterplot-matrix-splom">Example: Scatterplot Matrix (SPLOM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composition/repeat.html#resolve">Resolve</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="composition/resolve.html">Scale and Guide Resolution</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="composition/resolve.html#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="selection">
+<h2>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="selection/selection.html">Interactive Plots with Selections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#type">Selection Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#selection-properties">Selection Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#selection-transformations">Selection Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#using-selections">Using Selections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#resolve">Resolving Selections in Data-Driven Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/selection.html#config">Selection Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/bind.html">Bind a Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/bind.html#input-element-binding">Input Element Binding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/bind.html#scale-binding">Scale Binding</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/nearest.html">Nearest Value to a Discrete Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/nearest.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/nearest.html#current-limitations">Current Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/project.html">Project a Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/project.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selection/project.html#current-limitations">Current Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/toggle.html">Toggling a Multi Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/toggle.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/translate.html">Translating an Interval Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/translate.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="selection/zoom.html">Zooming an Interval Selection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="selection/zoom.html#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#top-level-config">Top-level Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#axis-config">Axis Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#header-config">Header Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#legend-config">Legend Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#mark-config">Mark and Mark Style Configurations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#scale-config">Scale and Scale Range Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#projection-config">Projection Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#selection-config">Selection Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#title-config">Title Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#view-configuration">View Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="parameter-types">
+<h2>Parameter Types<a class="headerlink" href="#parameter-types" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="types.html">Parameter Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="types.html#reference">Parameter Type Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html#literal-values">Literal Values</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="tooltip">
+<h2>Tooltip<a class="headerlink" href="#tooltip" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Tooltip</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tooltip.html#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tooltip.html#tooltip-channel">Tooltip channel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tooltip.html#vega-tooltip-plugin">Vega Tooltip plugin</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="spec.html" class="btn btn-neutral float-right" title="Vega-Lite View Specification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../task_decription/retext.html" class="btn btn-neutral" title="rst format tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

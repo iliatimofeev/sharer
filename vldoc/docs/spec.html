@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vega-Lite View Specification &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Customizing Size" href="view/size.html" />
+    <link rel="prev" title="Vega-lite" href="vega-lite-toc.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vega-Lite View Specification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common">Common Properties of Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#top-level-specifications">Top-Level Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-view-specifications">Single View Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layered-and-multi-view-specifications">Layered and Multi-view Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">View Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="view/size.html">Customizing Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vega-Lite View Specification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common">Common Properties of Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#top-level-specifications">Top-Level Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-view-specifications">Single View Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#layered-and-multi-view-specifications">Layered and Multi-view Specifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">View Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="view/size.html">Customizing Size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view/title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Vega-Lite View Specification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/spec.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spec">
+<h1>Vega-Lite View Specification<a class="headerlink" href="#spec" title="Permalink to this headline">¶</a></h1>
+<p></p>
+<p>Vega-Lite specifications are JSON objects that describe a diverse range of interactive visualizations.  The simplest form of specification is a specification of a <a class="reference external" href="single">single view</a>, which describes a view that uses a single <a class="reference external" href="mark">mark type</a> to visualize the data.  Besides using a single view specification as a standalone visualization, Vega-Lite also provides operators for composing multiple view specifications into a layered or multi-view specification.
+These operators include <a class="reference internal" href="../task_decription/retext.html#doc_test.doctest.DocTestClass.layer" title="doc_test.doctest.DocTestClass.layer"><a class="reference external" href="layer"><code class="docutils literal notranslate"><span class="pre">layer</span></code></a></a>, <a class="reference external" href="facet"><code class="docutils literal notranslate"><span class="pre">facet</span></code></a>, <a class="reference external" href="concat"><code class="docutils literal notranslate"><span class="pre">concat</span></code></a>, <a class="reference external" href="repeat"><code class="docutils literal notranslate"><span class="pre">repeat</span></code></a>.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="common">
+<h2>Common Properties of Specifications<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h2>
+<p>All view specifications in Vega-Lite can contain the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;name,description,title,data,transform&quot; source=&quot;TopLevelFacetedUnitSpec&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="top-level-specifications">
+<h2>Top-Level Specifications<a class="headerlink" href="#top-level-specifications" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<p>In addition to the <a class="reference external" href="common">common properties</a>, any kind of top-level specifications (including a standalone single view specification as well as layered and multi-view specifications) can contain the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;$schema,background,padding,autosize,config&quot; source=&quot;TopLevelFacetedUnitSpec&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="single-view-specifications">
+<h2>Single View Specifications<a class="headerlink" href="#single-view-specifications" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  // Properties for top-level specification (e.g., standalone single view specifications)
+  &quot;$schema&quot;: &quot;https://vega.github.io/schema/vega-lite/v2.json&quot;,
+  &quot;background&quot;: ...,
+  &quot;padding&quot;: ...,
+  &quot;autosize&quot;: ...,
+  &quot;config&quot;: ...,
+
+  // Properties for any specifications
+  &quot;title&quot;: ...,
+  &quot;name&quot;: ...,
+  &quot;description&quot;: ...,
+  &quot;data&quot;: ...,
+  &quot;transform&quot;: ...,
+
+  // Properties for any single view specifications
+  &quot;width&quot;: ...,
+  &quot;height&quot;: ...,
+  &quot;mark&quot;: ...,
+  &quot;encoding&quot;: {
+    &quot;x&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      ...
+    },
+    &quot;y&quot;: ...,
+    &quot;color&quot;: ...,
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>A single view specification describes a graphical <a class="reference external" href="mark"><code class="docutils literal notranslate"><span class="pre">mark</span></code></a> type (e.g., <code class="docutils literal notranslate"><span class="pre">point</span></code>s or <code class="docutils literal notranslate"><span class="pre">bar</span></code>s) and its <a class="reference internal" href="encoding.html"><span class="doc">encoding</span></a>, or the mapping between data values and properties of the mark. By simply providing the mark type and the encoding mapping, Vega-Lite automatically produces other visualization components including <a class="reference external" href="axis">axes</a>, <a class="reference external" href="legend">legends</a>, and <a class="reference external" href="scale">scales</a>. Unless explicitly specified, Vega-Lite determines properties of these components based on a set of carefully designed rules. This approach allows Vega-Lite specifications to be succinct and expressive, but also enables customization.</p>
+<p>As it is designed for analysis, Vega-Lite also supports data transformation such as <a class="reference external" href="aggregate">aggregation</a>, <a class="reference external" href="bin">binning</a>, <a class="reference external" href="timeunit">time unit conversion</a>, <a class="reference internal" href="../task_decription/retext.html#doc_test.doctest.DocTestClass.transform" title="doc_test.doctest.DocTestClass.transform"><a class="reference external" href="transform">filtering</a></a>, and <a class="reference external" href="sort">sorting</a>.</p>
+<p>To summarize, a single-view specification in Vega-Lite can have the following properties (in addition to <a class="reference external" href="common">common properties of a specification</a>):</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;width,height,selection,projection,mark,encoding&quot; source=&quot;TopLevelFacetedUnitSpec&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="layered-and-multi-view-specifications">
+<h2>Layered and Multi-view Specifications<a class="headerlink" href="#layered-and-multi-view-specifications" title="Permalink to this headline">¶</a></h2>
+<p>To create layered and multi-view graphics, please refer to the following pages:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../task_decription/retext.html#doc_test.doctest.DocTestClass.layer" title="doc_test.doctest.DocTestClass.layer"><a class="reference external" href="layer"><code class="docutils literal notranslate"><span class="pre">layer</span></code></a></a></li>
+<li><a class="reference external" href="facet"><code class="docutils literal notranslate"><span class="pre">facet</span></code></a></li>
+<li><a class="reference external" href="concat"><code class="docutils literal notranslate"><span class="pre">concat</span></code></a></li>
+<li><a class="reference external" href="repeat"><code class="docutils literal notranslate"><span class="pre">repeat</span></code></a></li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="config">
+<h2>View Configuration<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...,
+  &quot;config&quot;: {          // Configuration Object
+    &quot;view&quot;: { ... },   // - View Configuration
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>The style of a single view visualization can be customized by specifying the <code class="docutils literal notranslate"><span class="pre">view</span></code> property of the <code class="docutils literal notranslate"><span class="pre">config</span></code> object.</p>
+<div class="section" id="default-view-size">
+<h3>Default View Size<a class="headerlink" href="#default-view-size" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> properties of the <code class="docutils literal notranslate"><span class="pre">view</span></code> configuration determine the width of a single view with a continuous x-scale and the height of a single view with a continuous y-scale respectively.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;width,height&quot; source=&quot;ViewConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>For more information about view size, please see the <a class="reference external" href="size">size</a> documentation.</strong></p>
+</div>
+<div class="section" id="view-styles">
+<h3>View Styles<a class="headerlink" href="#view-styles" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;clip,fill,fillOpacity,stroke,strokeOpacity,strokeWidth,strokeDash,strokeDashOffset&quot; source=&quot;ViewConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="view/size.html" class="btn btn-neutral float-right" title="Customizing Size" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="vega-lite-toc.html" class="btn btn-neutral" title="Vega-lite" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

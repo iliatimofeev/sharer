@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Encoding &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Axis" href="encoding/axis.html" />
+    <link rel="prev" title="Trail" href="mark/trail.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Encoding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#channels">Encoding Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#channel-definition">Channel Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#position">Position Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geo">Geographic Position Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mark-prop">Mark Property Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text">Text and Tooltip Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#href">Hyperlink Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detail">Level of Detail Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#key">Key Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#order">Order Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#facet">Facet Channels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Encoding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#channels">Encoding Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#channel-definition">Channel Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#position">Position Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geo">Geographic Position Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mark-prop">Mark Property Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text">Text and Tooltip Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#href">Hyperlink Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detail">Level of Detail Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#key">Key Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#order">Order Channel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#facet">Facet Channels</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="encoding/value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Encoding</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/encoding.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="encoding">
+<h1>Encoding<a class="headerlink" href="#encoding" title="Permalink to this headline">¶</a></h1>
+<p>n integral part of the data visualization process is encoding data with visual properties of graphical marks.
+The <code class="docutils literal notranslate"><span class="pre">encoding</span></code> property of a single view specification represents the mapping between <a class="reference external" href="channels">encoding channels</a> (such as <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, or <code class="docutils literal notranslate"><span class="pre">color</span></code>) and <a class="reference external" href="field-def">data fields</a> or <a class="reference external" href="value-def">constant values</a>.</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,
+  &quot;encoding&quot;: {     // Encoding
+    // Position Channels
+    &quot;x&quot;: ...,
+    &quot;y&quot;: ...,
+    &quot;x2&quot;: ...,
+    &quot;y2&quot;: ...,
+
+    // Geographic Position Channels
+    &quot;longtitude&quot;: ...,
+    &quot;latitude&quot;: ...,
+    ...
+
+    // Mark Properties Channels
+    &quot;color&quot;: ...,
+    &quot;opacity&quot;: ...,
+    &quot;size&quot;: ...,
+    &quot;shape&quot;: ...,
+
+    // Text and Tooltip Channels
+    &quot;text&quot;: ...,
+    &quot;tooltip&quot;: ...,
+
+    // Hyperlink Channel
+    &quot;href&quot;: ...,
+
+    // Key Channel
+    &quot;key&quot;: ...,
+
+    // Order Channel
+    &quot;order&quot;: ...,
+
+    // Level of Detail Channel
+    &quot;detail&quot;: ...,
+
+    // Facet Channels
+    &quot;row&quot;: ...,
+    &quot;column&quot;: ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p></p>
+<div class="section" id="channels">
+<h2>Encoding Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h2>
+<p>The keys in the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> object are encoding channels.  Vega-lite supports the following groups of encoding channels</p>
+<ul class="simple">
+<li><a class="reference external" href="position">Position Channels</a>: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">y2</span></code></li>
+<li><a class="reference external" href="geo">Geographic Position Channels</a>: <code class="docutils literal notranslate"><span class="pre">longitude</span></code>, <code class="docutils literal notranslate"><span class="pre">latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude2</span></code>, <code class="docutils literal notranslate"><span class="pre">latitude2</span></code></li>
+<li><a class="reference external" href="mark-prop">Mark Property Channels</a>: <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">opacity</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code></li>
+<li><a class="reference external" href="text">Text and Tooltip Channels</a>: <code class="docutils literal notranslate"><span class="pre">text</span></code>, <code class="docutils literal notranslate"><span class="pre">tooltip</span></code></li>
+<li><a class="reference external" href="href">Hyperlink Channel</a>: <code class="docutils literal notranslate"><span class="pre">href</span></code></li>
+<li><a class="reference external" href="detail">Level of Detail Channel</a>: <code class="docutils literal notranslate"><span class="pre">detail</span></code></li>
+<li><a class="reference external" href="key">Key Channel</a>: <code class="docutils literal notranslate"><span class="pre">key</span></code></li>
+<li><a class="reference external" href="order">Order Channel</a>: <code class="docutils literal notranslate"><span class="pre">order</span></code></li>
+<li><a class="reference external" href="facet">Facet Channels</a>: <code class="docutils literal notranslate"><span class="pre">row</span></code>, <code class="docutils literal notranslate"><span class="pre">column</span></code></li>
+</ul>
+</div>
+<div class="section" id="channel-definition">
+<h2>Channel Definition<a class="headerlink" href="#channel-definition" title="Permalink to this headline">¶</a></h2>
+<p>Each channel definition object is either a <a class="reference external" href="field-def">field definition</a>, which describes
+the data field encoded by the channel, or a <a class="reference external" href="value-def">value definition</a>, which describes
+an encoded constant value.</p>
+<p></p>
+<div class="section" id="field-def">
+<h3>Field Definition<a class="headerlink" href="#field-def" title="Permalink to this headline">¶</a></h3>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;encoding&quot;: {     // Encoding
+    ...: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      ...
+    },
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>To encode a particular field in the data set with an encoding channel, the channel’s field definition must describe the <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a> name and its data <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>.  To facilitate data exploration, Vega-Lite also provides inline field transforms (<a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="sort"><code class="docutils literal notranslate"><span class="pre">sort</span></code></a>, <a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a>, and <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a>) as a part of a field definition in addition to the top-level <a class="reference internal" href="../task_decription/retext.html#doc_test.doctest.DocTestClass.transform" title="doc_test.doctest.DocTestClass.transform"><a class="reference external" href="transform"><code class="docutils literal notranslate"><span class="pre">transform</span></code></a></a>.</p>
+<p>All field definitions support the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;field,type,bin,timeUnit,aggregate,title&quot; source=&quot;FieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p>In addition, field definitions for different encoding channels may support the following properties:</p>
+<ul class="simple">
+<li><a class="reference external" href="scale"><code class="docutils literal notranslate"><span class="pre">scale</span></code></a> - The function that transforms values in the data domain (numbers, dates, strings, etc) to visual values (pixels, colors, sizes) for <a class="reference external" href="position">position</a> and <a class="reference external" href="mark-prop">mark property</a> channels.</li>
+<li><a class="reference external" href="axis"><code class="docutils literal notranslate"><span class="pre">axis</span></code></a> - The guiding visualization to aid interpretation of scales for <a class="reference external" href="position">position channels</a>.</li>
+<li><a class="reference external" href="legend"><code class="docutils literal notranslate"><span class="pre">legend</span></code></a> - The guiding visualization to aid interpretation of <a class="reference external" href="mark-prop">mark property channels</a>.</li>
+<li><a class="reference external" href="format"><code class="docutils literal notranslate"><span class="pre">format</span></code></a> - The formatting pattern for text value for <a class="reference external" href="text">text channels</a>.</li>
+<li><a class="reference external" href="stack"><code class="docutils literal notranslate"><span class="pre">stack</span></code></a> - Type of stacking offset if a <a class="reference external" href="position">position field</a> with continuous domain should be stacked.</li>
+<li><a class="reference external" href="sort"><code class="docutils literal notranslate"><span class="pre">sort</span></code></a> - Sort order for a field for <a class="reference external" href="position">position</a> and <a class="reference external" href="mark-prop">mark property</a> channels.</li>
+<li><a class="reference external" href="condition"><code class="docutils literal notranslate"><span class="pre">condition</span></code></a> - The conditional encoding rule for <a class="reference external" href="mark-prop">mark property</a> and <a class="reference external" href="text">text</a> channels.</li>
+</ul>
+<p>To see a list of additional properties for each type of encoding channels, please see the specific sections
+for <a class="reference external" href="position">position</a>, <a class="reference external" href="mark-prop">mark property</a>, <a class="reference external" href="text">text and tooltip</a>, <a class="reference external" href="detail">detail</a>, <a class="reference external" href="order">order</a>, and <a class="reference external" href="facet">facet</a> channels.</p>
+<p></p>
+</div>
+<div class="section" id="value-def">
+<h3>Value Definition<a class="headerlink" href="#value-def" title="Permalink to this headline">¶</a></h3>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;encoding&quot;: {     // Encoding
+    ...: {
+      &quot;value&quot;: ...
+    },
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>To map a constant value to an encoding channel, the channel’s value definition must describe the <code class="docutils literal notranslate"><span class="pre">value</span></code> property.
+(See the <a class="reference external" href="value"><code class="docutils literal notranslate"><span class="pre">value</span></code></a> page for more examples.)</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;value&quot; source=&quot;ValueDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="position">
+<h2>Position Channels<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> position channels determine the position of the marks, or width/height of horizontal/vertical <code class="docutils literal notranslate"><span class="pre">&quot;area&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>.
+In addition, <code class="docutils literal notranslate"><span class="pre">x2</span></code> and <code class="docutils literal notranslate"><span class="pre">y2</span></code> can specify the span of ranged <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">area</span></code></a>, <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a>, <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a>, and <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">rule</span></code></a>.</p>
+<p>By default, Vega-Lite automatically generates a <a class="reference external" href="scale">scale</a> and an <a class="reference external" href="axis">axis</a> for each field mapped to a position channel. If unspecified, properties of scales and axes are determined based on a set of rules by the compiler. <code class="docutils literal notranslate"><span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">axis</span></code> properties of the field definition can be used to customize their properties.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;x,y,x2,y2&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="position-field-def">
+<h3>Position Field Definition<a class="headerlink" href="#position-field-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a>, <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> and <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>,
+<a class="reference external" href="field-def">field definitions</a> for <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> channels may also include these properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;scale,axis,sort,stack&quot; source=&quot;PositionFieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">x2</span></code> and <code class="docutils literal notranslate"><span class="pre">y2</span></code> do not have their own definitions for <code class="docutils literal notranslate"><span class="pre">scale</span></code>, <code class="docutils literal notranslate"><span class="pre">axis</span></code>, <code class="docutils literal notranslate"><span class="pre">sort</span></code>, and <code class="docutils literal notranslate"><span class="pre">stack</span></code> since they share the same scales and axes with <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> respectively.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="geo">
+<h2>Geographic Position Channels<a class="headerlink" href="#geo" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">longitude</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude</span></code> channels can be used to encode geographic coordinate data via a <a class="reference internal" href="projection.html"><span class="doc">projection</span></a>.
+In addition, <code class="docutils literal notranslate"><span class="pre">longitude2</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude2</span></code> can specify the span of geographically projected ranged <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">area</span></code></a>, <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">bar</span></code></a>, <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">rect</span></code></a>, and <a class="reference external" href="ranged"><code class="docutils literal notranslate"><span class="pre">rule</span></code></a>.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;longitude,latitude,longitude2,latitude2&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p>See <a class="reference external" href="https://vega.github.io/vega-lite/examples/geo_circle.html">an example that uses <code class="docutils literal notranslate"><span class="pre">longitude</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude</span></code> channels in a map</a> or <a class="reference external" href="https://vega.github.io/vega-lite/examples/geo_rule.html">another example that draws line segments (<code class="docutils literal notranslate"><span class="pre">rule</span></code>s) between points in a map</a>.</p>
+<p></p>
+</div>
+<div class="section" id="mark-prop">
+<h2>Mark Property Channels<a class="headerlink" href="#mark-prop" title="Permalink to this headline">¶</a></h2>
+<p>Mark properties channels map data fields to visual properties of the marks.
+By default, Vega-Lite automatically generates a scale and a legend for each field mapped to a mark property channel. If unspecified, properties of scales and legends are determined based on a set of rules by the compiler. <code class="docutils literal notranslate"><span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">legend</span></code> properties of the field definition can be used to customize their properties.
+In addition, definitions of mark property channels can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p>Here are the list of mark property channels:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;color,fill,stroke,opacity,shape,size&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="mark-prop-field-def">
+<h3>Mark Property Field Definition<a class="headerlink" href="#mark-prop-field-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a>, <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> and <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>,
+<a class="reference external" href="field-def">field definitions</a> for mark property channels may also include these properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;scale,legend,condition&quot; source=&quot;MarkPropFieldDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="mark-prop-value-def">
+<h3>Mark Property Value Definition<a class="headerlink" href="#mark-prop-value-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the constant <code class="docutils literal notranslate"><span class="pre">value</span></code>, <a class="reference external" href="value-def">value definitions</a> of mark properties channels can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;condition&quot; source=&quot;MarkPropValueDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+<p>See <a class="reference external" href="condition">the <code class="docutils literal notranslate"><span class="pre">condition</span></code></a> page for examples how to specify condition logic.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="text">
+<h2>Text and Tooltip Channels<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<p>Text and tooltip channels directly encode text values of the data fields.
+By default, Vega-Lite automatically determines appropriate format for quantitative and temporal values.  Users can set <code class="docutils literal notranslate"><span class="pre">format</span></code> property to customize text and time format.
+Similar to mark property channels, definitions of text and tooltip channels can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;text,tooltip&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="text-field-def">
+<h3>Text and Tooltip Field Definition<a class="headerlink" href="#text-field-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a>, <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> and <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>,
+<a class="reference external" href="field-def">field definitions</a> for <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> channels may also include these properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;format,condition&quot; source=&quot;TextFieldDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="text-value-def">
+<h3>Text and Tooltip Value Definition<a class="headerlink" href="#text-value-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the constant <code class="docutils literal notranslate"><span class="pre">value</span></code>, <a class="reference external" href="value-def">value definitions</a> of <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">tooltip</span></code> channels can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;condition&quot; source=&quot;TextValueDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="multiple-field-definitions-for-tooltips">
+<h3>Multiple Field Definitions for Tooltips<a class="headerlink" href="#multiple-field-definitions-for-tooltips" title="Permalink to this headline">¶</a></h3>
+<p>Similar to <a class="reference external" href="detail"><code class="docutils literal notranslate"><span class="pre">detail</span></code></a>, you can use an array of field definitions. Vega-Lite will display a tooltip with multiple fields. <a class="reference external" href="https://github.com/vega/vega-tooltip/">Vega tooltip</a> will display a table that shows the name of the field and its value. See the <a class="reference internal" href="tooltip.html"><span class="doc">tooltip</span></a> page for details.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="href">
+<h2>Hyperlink Channel<a class="headerlink" href="#href" title="Permalink to this headline">¶</a></h2>
+<p>By setting the <code class="docutils literal notranslate"><span class="pre">href</span></code> channel, a mark becomes a hyperlink. The specified URL is loaded upon a mouse click. When the <code class="docutils literal notranslate"><span class="pre">href</span></code> channel is specified, the <a class="reference external" href="hyperlink"><code class="docutils literal notranslate"><span class="pre">cursor</span></code> mark property</a> is set to <code class="docutils literal notranslate"><span class="pre">&quot;pointer&quot;</span></code> by default to serve as affordance for hyperlinks.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;href&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="href-field-def">
+<h3>Hyperlink Field Definition<a class="headerlink" href="#href-field-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a>, <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> and <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>,
+<a class="reference external" href="field-def">field definitions</a> for the <code class="docutils literal notranslate"><span class="pre">href</span></code> channel can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;condition&quot; source=&quot;FieldDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+<p>The example below show how the href channel can be used to provide links to external resources with more details.</p>
+<p><span class="vl-example" data-name="point_href"></span></p>
+<p></p>
+</div>
+<div class="section" id="href-value-def">
+<h3>Hyperlink Value Definition<a class="headerlink" href="#href-value-def" title="Permalink to this headline">¶</a></h3>
+<p>In addition to the constant <code class="docutils literal notranslate"><span class="pre">value</span></code>, <a class="reference external" href="value-def">value definitions</a> of the <code class="docutils literal notranslate"><span class="pre">href</span></code> channel can include the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property to specify conditional logic.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;condition&quot; source=&quot;ValueDefWithCondition&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="detail">
+<h2>Level of Detail Channel<a class="headerlink" href="#detail" title="Permalink to this headline">¶</a></h2>
+<p>Grouping data is another important operation in data visualization.
+For line and area marks, mapping a unaggregate data field (field without <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> function) to any non-<a class="reference external" href="position">position</a> channel will group the lines and stacked areas by the field.
+For <a class="reference external" href="aggregate">aggregated plots</a>, all unaggregated fields encoded are used as grouping fields in the aggregation (similar to fields in <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> in SQL).</p>
+<p><code class="docutils literal notranslate"><span class="pre">detail</span></code> channel specify an additional grouping field (or fields) for grouping data without mapping the field(s) to any visual properties.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;detail&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Here is a scatterplot showing average horsepower and displacement for cars from different origins. We map <code class="docutils literal notranslate"><span class="pre">Origin</span></code> to <code class="docutils literal notranslate"><span class="pre">detail</span></code> channel to use the field as a group-by field without mapping it to visual properties of the marks.</p>
+<p>Here is a line chart showing stock prices of 5 tech companies over time.
+We map <code class="docutils literal notranslate"><span class="pre">symbol</span></code> variable (stock market ticker symbol) to <code class="docutils literal notranslate"><span class="pre">detail</span></code> to use them to group lines.</p>
+<p>Here is a ranged dot plot showing life expectancy change in the five largest countries
+between 1955 and 2000. We use <code class="docutils literal notranslate"><span class="pre">detail</span></code> here to group the lines such that they range only
+from one year to another within a country (as opposed to jumping between countries as well).</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="key">
+<h2>Key Channel<a class="headerlink" href="#key" title="Permalink to this headline">¶</a></h2>
+<p>The key channel can enable object constancy for transitions over dynamic data. When a visualization’s data is updated (via <a class="reference external" href="https://vega.github.io/vega/docs/api/view/#data">Vega’s View API</a>), the key value will be used to match data elements to existing mark instances.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;key&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="order">
+<h2>Order Channel<a class="headerlink" href="#order" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">order</span></code> channel can define a data field (or a ordered list of data fields) that are used to
+sorts stacking order for stacked charts (see <a class="reference external" href="order">an example in the <code class="docutils literal notranslate"><span class="pre">stack</span></code> page</a>) and the order of data points in line marks for connected scatterplots (see <a class="reference external" href="connected-scatter-plot">an example in the <code class="docutils literal notranslate"><span class="pre">line</span></code> page</a>).</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;order&quot; source=&quot;Encoding&quot; %}
+</pre></div>
+</div>
+</p>
+<div class="section" id="order-field-definition">
+<h3>Order Field Definition<a class="headerlink" href="#order-field-definition" title="Permalink to this headline">¶</a></h3>
+<p>In addition to <a class="reference external" href="field"><code class="docutils literal notranslate"><span class="pre">field</span></code></a>, <a class="reference external" href="type"><code class="docutils literal notranslate"><span class="pre">type</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a> and <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>,
+<a class="reference external" href="field-def">field definitions</a> for the <code class="docutils literal notranslate"><span class="pre">order</span></code> channel can include <code class="docutils literal notranslate"><span class="pre">sort</span></code>.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;sort&quot; source=&quot;OrderFieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="facet">
+<h2>Facet Channels<a class="headerlink" href="#facet" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code> are special encoding channels that facets single plots into <a class="reference external" href="https://en.wikipedia.org/wiki/Small_multiple">trellis plots (or small multiples)</a>.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;row,column&quot; source=&quot;EncodingWithFacet&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For more information, read the <a class="reference external" href="facet">facet documentation</a>.</p>
+<p></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="encoding/axis.html" class="btn btn-neutral float-right" title="Axis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mark/trail.html" class="btn btn-neutral" title="Trail" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

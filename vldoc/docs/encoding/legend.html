@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Legend &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Scale" href="scale.html" />
+    <link rel="prev" title="Header" href="header.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Legend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#legend-types">Legend Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-legend">Combined Legend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legend-properties">Legend Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Legend Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Legend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#legend-types">Legend Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-legend">Combined Legend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legend-properties">Legend Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Legend Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Legend</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/legend.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="legend">
+<h1>Legend<a class="headerlink" href="#legend" title="Permalink to this headline">¶</a></h1>
+<p>Similar to <a class="reference internal" href="axis.html"><span class="doc">axes</span></a>, legends visualize scales. However, whereas axes aid interpretation of scales with positional ranges, legends aid interpretation of scales with ranges such as colors, shapes and sizes.</p>
+<p>By default, Vega-Lite automatically creates legends with default properties for <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">opacity</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, and <code class="docutils literal notranslate"><span class="pre">shape</span></code> channels when they encode data fields.
+User can set the <code class="docutils literal notranslate"><span class="pre">legend</span></code> property of a <a class="reference external" href="mark-prop">mark property channel’s field definition</a> to an object to customize <a class="reference external" href="legend-properties">legend properties</a> or set <code class="docutils literal notranslate"><span class="pre">legend</span></code> to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove the legend.</p>
+<p>Besides <code class="docutils literal notranslate"><span class="pre">legend</span></code> property of a field definition, the configuration object (<a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a>) also provides <a class="reference external" href="config">legend config</a> (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{legend:</span> <span class="pre">{...}}</span></code>) for setting default legend properties for all legends.</p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<div class="section" id="legend-types">
+<h2>Legend Types<a class="headerlink" href="#legend-types" title="Permalink to this headline">¶</a></h2>
+<p>By default, Vega-Lite automatically generates gradient legends for color channels with
+non-binned quantitative fields and temporal fields.</p>
+<p>Otherwise, symbol legends are generated.</p>
+</div>
+<div class="section" id="combined-legend">
+<h2>Combined Legend<a class="headerlink" href="#combined-legend" title="Permalink to this headline">¶</a></h2>
+<p>If multiple channels encode the same fields, Vega-lite automatically combines their legends. For example, the following plot uses both <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">shape</span></code> to encode <code class="docutils literal notranslate"><span class="pre">Origin</span></code>; as a result, its legend shows the encoded colors and shapes.</p>
+</div>
+<div class="section" id="legend-properties">
+<h2>Legend Properties<a class="headerlink" href="#legend-properties" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,
+  &quot;encoding&quot;: {
+    &quot;x&quot;: ...,
+    &quot;y&quot;: ...,
+    &quot;color&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      &quot;legend&quot;: {                // legend
+        ...
+      },
+      ...
+    },
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>To customize legends, a <code class="docutils literal notranslate"><span class="pre">legend</span></code> object in <a class="reference external" href="encoding">an encoding channel’s definition</a> can contain the following properties:</p>
+<p></p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,entryPadding,format,offset,orient,padding,tickCount,title,values,zindex&quot; source=&quot;Legend&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="config">
+<h2>Legend Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;legend&quot;: {
+      ...
+    }
+  }
+}
+</pre></div>
+</div>
+<p>To provide themes for all legends, the legends config (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{legend:</span> <span class="pre">{...}}</span></code>) can contain the following properties:</p>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;cornerRadius,fillColor,orient,offset,strokeColor,strokeDash,strokeWidth,padding&quot; source=&quot;LegendConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="gradient">
+<h3>Gradient<a class="headerlink" href="#gradient" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;gradientLabelBaseline,gradientLabelLimit,gradientLabelOffset,gradientStrokeColor,gradientStrokeWidth,gradientHeight,gradientWidth&quot; source=&quot;LegendConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="labels">
+<h3>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;labelAlign,labelBaseline,labelColor,labelFont,labelFontSize,labelLimit,labelOffset,shortTimeLabels&quot; source=&quot;LegendConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="symbols">
+<h3>Symbols<a class="headerlink" href="#symbols" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;entryPadding,symbolColor,symbolType,symbolSize,symbolStrokeWidth&quot; source=&quot;LegendConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;titleAlign,titleBaseline,titleColor,titleFont,titleFontSize,titleFontWeight,titleLimit,titlePadding&quot; source=&quot;LegendConfig&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="scale.html" class="btn btn-neutral float-right" title="Scale" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="header.html" class="btn btn-neutral" title="Header" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

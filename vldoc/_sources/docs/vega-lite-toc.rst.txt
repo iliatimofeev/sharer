@@ -1,0 +1,125 @@
+Vega-lite
+====================================
+
+Specification description
+-------------------------
+
+This is not original documentation! It is just a port of Vega-Lite_ documentation.
+This version was made only as **Proof of Concept** that it possible compile Jekyll_ site with Sphinx_ 
+
+View Specification
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    spec.md
+    view/*
+
+Data
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    data.md
+    data/*
+
+Transform
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    transform/transform.md
+    transform/*
+
+
+Projection
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    projection.md
+    projection/*
+
+Marks
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    mark/mark.md
+    mark/*
+
+Encoding
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    encoding.md
+    encoding/*
+   
+View Composition
+-------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    composition/composition.md
+    composition/*
+
+Selection
+-------------------------    
+   
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    selection/selection.md
+    selection/*
+
+Config
+-------------------------    
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    config.md
+    config/*
+
+
+Parameter Types
+-------------------------    
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    types.md
+    types/*
+
+Tooltip
+-------------------------    
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    tooltip.md
+    tooltip/*
+   
+.. _Vega-Lite: http://vega.github.io/vega-lite
+.. _Jekyll: https://jekyllrb.com/
+.. _Sphinx: http://www.sphinx-doc.org/
+

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Faceting a Plot into a Trellis Plot &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Layering views" href="layer.html" />
+    <link rel="prev" title="Concatenating views" href="concat.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="composition.html">Composing Layered &amp; Multi-view Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concat.html">Concatenating views</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Faceting a Plot into a Trellis Plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#facet-operator">Facet Operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#row-column-encoding-channels">Row &amp; Column Encoding Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolve">Resolve</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="composition.html">Composing Layered &amp; Multi-view Plots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="concat.html">Concatenating views</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Faceting a Plot into a Trellis Plot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#facet-operator">Facet Operator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#row-column-encoding-channels">Row &amp; Column Encoding Channels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolve">Resolve</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html">Layering views</a></li>
+<li class="toctree-l3"><a class="reference internal" href="repeat.html">Repeat a View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resolve.html">Scale and Guide Resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Faceting a Plot into a Trellis Plot</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/composition/facet.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="facet">
+<h1>Faceting a Plot into a Trellis Plot<a class="headerlink" href="#facet" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Small_multiple">A Trellis plot (or small multiple)</a> is a series of similar plots that displays different subsets of the same data, facilitating comparison across subsets.</p>
+<p>There are <strong>two ways</strong> to facet views in Vega-Lite:</p>
+<p>First, the <a class="reference external" href="facet-operator"><code class="docutils literal notranslate"><span class="pre">facet</span></code> operator</a> is one of Vega-Lite’s <a class="reference internal" href="composition.html"><span class="doc">view composition operators</span></a>. This is the most flexible way to create faceted plots and allows composition with other operators.</p>
+<p>Second, as a shortcut you can use the <a class="reference external" href="facet-channels"><code class="docutils literal notranslate"><span class="pre">column</span></code> or <code class="docutils literal notranslate"><span class="pre">row</span></code> encoding channels</a>.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="facet-operator">
+<h2>Facet Operator<a class="headerlink" href="#facet-operator" title="Permalink to this headline">¶</a></h2>
+<p>To create a faceted view, define how the data should be faceted in <code class="docutils literal notranslate"><span class="pre">facet</span></code> and how each facet should be displayed in the <code class="docutils literal notranslate"><span class="pre">spec</span></code>.</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;facet&quot;: {
+    ... // Facet definition
+  },
+  &quot;spec&quot;: ...  // Specification
+}
+</pre></div>
+</div>
+<p>In addition to <a class="reference external" href="common">common properties of a view specification</a>,
+a facet specification has the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;facet,spec,align,bounds,center,spacing,resolve&quot; source=&quot;FacetSpec&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="mapping">
+<h3>Facet Mapping<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">facet</span></code> property of a faceted view specification describes mappings between <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code> and their field definitions:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;column,row&quot; source=&quot;FacetMapping&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="field-def">
+<h3>Facet Field Definition<a class="headerlink" href="#field-def" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">FacetFieldDef</span></code> is a <a class="reference external" href="field-def">field definition</a> that has <code class="docutils literal notranslate"><span class="pre">header</span></code> (instead of <code class="docutils literal notranslate"><span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">axis</span></code>).</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;aggregate,bin,field,timeUnit,type,header&quot; source=&quot;FacetFieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>Note</strong> Since <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code> represent actual data fields that are used to partition the data, they cannot encode a constant <code class="docutils literal notranslate"><span class="pre">value</span></code>. In addition, you should not facet by quantitative fields unless they are <a class="reference external" href="bin">binned</a>, or temporal fields unless you use <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a>.</p>
+</div>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Below are three histograms for the horsepower of cars. Each chart shows the histogram for one origin (Europe, Japan, and USA).</p>
+<p><span class="vl-example" data-dir="normalized" data-name="trellis_bar_histogram_normalized"></span></p>
+<p>This is the same example as below but the facet operator is more flexible as it allows composition and more customization such as overriding scale, axis, and legend
+resolution.</p>
+<p>You can find more examples in the <a class="reference external" href="trellis">example gallery</a>.</p>
+<p></p>
+</div>
+<div class="section" id="header">
+<h3>Facet Headers<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h3>
+<p>Similar to axes of position channels, a <a class="reference external" href="header">header</a> of a facet channel provides guides to convey the data value that each row and column represent.</p>
+<p>You can find more about facet headers in the <a class="reference external" href="header">header documentation</a>.</p>
+</div>
+</div>
+<div class="section" id="row-column-encoding-channels">
+<h2>Row &amp; Column Encoding Channels<a class="headerlink" href="#row-column-encoding-channels" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code> encoding channels.</p>
+<p>The <a class="reference internal" href="#"><span class="doc">facet channels</span></a> are encoding channels, which produce a trellis plot that facets a plot into columns or rows respectively. Vega-Lite automatically translates this shortcut to use the facet operator.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;row,column&quot; source=&quot;EncodingWithFacet&quot; %}
+</pre></div>
+</div>
+</p>
+<div class="section" id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><span class="vl-example" data-name="trellis_bar_histogram"></span></p>
+<p>Vega-Lite translates this spec to the more flexible <a class="reference external" href="example">spec with the facet operator above</a>.</p>
+<p>You can find more examples in the <a class="reference external" href="trellis">example gallery</a>.</p>
+</div>
+</div>
+<div class="section" id="resolve">
+<h2>Resolve<a class="headerlink" href="#resolve" title="Permalink to this headline">¶</a></h2>
+<p>The default <a class="reference internal" href="resolve.html"><span class="doc">resolutions</span></a> for facet are shared scales, axes, and legends.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="layer.html" class="btn btn-neutral float-right" title="Layering views" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="concat.html" class="btn btn-neutral" title="Concatenating views" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Filter Transform &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lookup Transform" href="lookup.html" />
+    <link rel="prev" title="Calculate Transform" href="calculate.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="transform.html">Transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bin.html">Binning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculate.html">Calculate Transform</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Filter Transform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#expression">Filter Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#field-predicate">Field Predicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-predicate">Selection Predicate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lookup.html">Lookup Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timeunit.html">Time Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="window.html">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="transform.html">Transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aggregate.html">Aggregation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bin.html">Binning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculate.html">Calculate Transform</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Filter Transform</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#expression">Filter Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#field-predicate">Field Predicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selection-predicate">Selection Predicate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="lookup.html">Lookup Transform</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timeunit.html">Time Unit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="window.html">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Filter Transform</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/transform/filter.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="filter">
+<h1>Filter Transform<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h1>
+<p>The filter transform removes objects from a data stream based on a provided filter expression or filter object.</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  ...
+  &quot;transform&quot;: [
+    {&quot;filter&quot;: ...} // Filter Transform
+     ...
+  ],
+  ...
+}
+</pre></div>
+</div>
+<p>Vega-Lite filter transforms must have the <code class="docutils literal notranslate"><span class="pre">filter</span></code> property describing the predicate for the filtering condition.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;filter&quot; source=&quot;FilterTransform&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="expression">
+<h2>Filter Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h2>
+<p>For an <a class="reference external" href="expression">expression</a> string, each datum object can be referred using bound variable <code class="docutils literal notranslate"><span class="pre">datum</span></code>. For example, setting <code class="docutils literal notranslate"><span class="pre">filter</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;datum.b2</span> <span class="pre">&gt;</span> <span class="pre">60&quot;</span></code> would make the output data includes only items that have values in the field <code class="docutils literal notranslate"><span class="pre">b2</span></code> over 60.</p>
+</div>
+<div class="section" id="field-predicate">
+<h2>Field Predicate<a class="headerlink" href="#field-predicate" title="Permalink to this headline">¶</a></h2>
+<p>For a field predicate, a <code class="docutils literal notranslate"><span class="pre">field</span></code> must be provided along with one of the predicate properties: <a class="reference external" href="equal-predicate"><code class="docutils literal notranslate"><span class="pre">equal</span></code></a>, <a class="reference external" href="lt-predicate"><code class="docutils literal notranslate"><span class="pre">lt</span></code></a> (less than), <a class="reference external" href="lte-predicate"><code class="docutils literal notranslate"><span class="pre">lte</span></code></a> (less than or equal), <a class="reference external" href="gt-predicate"><code class="docutils literal notranslate"><span class="pre">gt</span></code></a> (greater than), <a class="reference external" href="gte-predicate"><code class="docutils literal notranslate"><span class="pre">gte</span></code></a>(greater than or equal), <a class="reference external" href="range-predicate"><code class="docutils literal notranslate"><span class="pre">range</span></code></a>, or <a class="reference external" href="one-of-predicate"><code class="docutils literal notranslate"><span class="pre">oneOf</span></code></a>. Values of these operators can be primitive types (string, number, boolean) or a <a class="reference external" href="datetime">DateTime definition object</a> to describe time. In addition, <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> can be provided to further transform a temporal <code class="docutils literal notranslate"><span class="pre">field</span></code>.</p>
+<p></p>
+<div class="section" id="equal-predicate">
+<h3>Field Equal Predicate<a class="headerlink" href="#equal-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;equal&quot; source=&quot;FieldEqualPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to check if the <code class="docutils literal notranslate"><span class="pre">car_color</span></code> field’s value is equal to <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code>, we can use the following filter:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;car_color&quot;</span><span class="p">,</span> <span class="nt">&quot;equal&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="lt-predicate">
+<h3>Field Less Than Predicate<a class="headerlink" href="#lt-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;lt&quot; source=&quot;FieldLTPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to check if the <code class="docutils literal notranslate"><span class="pre">height</span></code> field’s value is less than <code class="docutils literal notranslate"><span class="pre">180</span></code>, we can use the following filter:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nt">&quot;lt&quot;</span><span class="p">:</span> <span class="mi">180</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="lte-predicate">
+<h3>Field Less Than or Equals Predicate<a class="headerlink" href="#lte-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;lte&quot; source=&quot;FieldLTEPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to check if the <code class="docutils literal notranslate"><span class="pre">Year</span></code> field’s value is less than or equals to <code class="docutils literal notranslate"><span class="pre">&quot;2000&quot;</span></code>, we can use the following filter:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;timeUnit&quot;</span><span class="p">:</span> <span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="nt">&quot;lte&quot;</span><span class="p">:</span> <span class="s2">&quot;2000&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="gt-predicate">
+<h3>Field Greater Than Predicate<a class="headerlink" href="#gt-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;gt&quot; source=&quot;FieldGTPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>To check if the <code class="docutils literal notranslate"><span class="pre">state</span></code> field’s value is greater than <code class="docutils literal notranslate"><span class="pre">&quot;Arizona&quot;</span></code> by string comparison, we can use the following filter:
+(Note: Standard Javascript string comparison is done, ie., “A” &lt; “B”, but “B” &lt; “a”)</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="nt">&quot;gt&quot;</span><span class="p">:</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="gte-predicate">
+<h3>Field Greater Than or Equals Predicate<a class="headerlink" href="#gte-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;gte&quot; source=&quot;FieldGTEPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to check if the <code class="docutils literal notranslate"><span class="pre">height</span></code> field’s value is greater than or equals to <code class="docutils literal notranslate"><span class="pre">0</span></code>, we can use the following filter:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;filter&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="nt">&quot;gte&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="range-predicate">
+<h3>Field Range Predicate<a class="headerlink" href="#range-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;range&quot; source=&quot;FieldRangePredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>Examples</strong></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;field&quot;:</span> <span class="pre">&quot;x&quot;,</span> <span class="pre">&quot;range&quot;:</span> <span class="pre">[0,</span> <span class="pre">5]}}</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">x</span></code> field’s value is in range [0,5] (0 ≤ x ≤ 5).</li>
+<li><code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;timeUnit&quot;:</span> <span class="pre">&quot;year&quot;,</span> <span class="pre">&quot;field&quot;:</span> <span class="pre">&quot;date&quot;,</span> <span class="pre">&quot;range&quot;:</span> <span class="pre">[2006,</span> <span class="pre">2008]</span> <span class="pre">}}</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">date</span></code>’s value is between year 2006 and 2008.</li>
+<li><code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;field&quot;:</span> <span class="pre">&quot;date&quot;,</span> <span class="pre">&quot;range&quot;:</span> <span class="pre">[{&quot;year&quot;:</span> <span class="pre">2006,</span> <span class="pre">&quot;month&quot;:</span> <span class="pre">&quot;jan&quot;,</span> <span class="pre">&quot;date&quot;:</span> <span class="pre">1},</span> <span class="pre">{&quot;year&quot;:</span> <span class="pre">2008,</span> <span class="pre">&quot;month&quot;:</span> <span class="pre">&quot;feb&quot;,</span> <span class="pre">&quot;date&quot;:</span> <span class="pre">20}]</span> <span class="pre">}}</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">date</span></code>’s value is between Jan 1, 2006  and Feb 20, 2008.</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="one-of-predicate">
+<h3>Field One-Of Predicate<a class="headerlink" href="#one-of-predicate" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;oneOf&quot; source=&quot;FieldOneOfPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;field&quot;:</span> <span class="pre">&quot;car_color&quot;,</span> <span class="pre">&quot;oneOf&quot;:[&quot;red&quot;,</span> <span class="pre">&quot;yellow&quot;]}}</span></code> checks if the <code class="docutils literal notranslate"><span class="pre">car_color</span></code> field’s value is <code class="docutils literal notranslate"><span class="pre">&quot;red&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;yellow&quot;</span></code>.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="selection-predicate">
+<h2>Selection Predicate<a class="headerlink" href="#selection-predicate" title="Permalink to this headline">¶</a></h2>
+<p>For a selection predicate, a <code class="docutils literal notranslate"><span class="pre">selection</span></code> name  must be provided.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;selection&quot; source=&quot;SelectionPredicate&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, with <code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;selection&quot;:</span> <span class="pre">&quot;brush&quot;}}</span></code>, only data values that fall within the selection named <code class="docutils literal notranslate"><span class="pre">brush</span></code> will remain in the dataset as shown below.</p>
+<p>All <a class="reference external" href="compose">selection composition</a> can be used here as well. For instance, <code class="docutils literal notranslate"><span class="pre">{&quot;filter&quot;:</span> <span class="pre">{&quot;selection&quot;:</span> <span class="pre">{&quot;and&quot;:</span> <span class="pre">[&quot;alex&quot;,</span> <span class="pre">&quot;morgan&quot;]}}}</span></code> filters for data values that are within both the <code class="docutils literal notranslate"><span class="pre">alex</span></code> and <code class="docutils literal notranslate"><span class="pre">morgan</span></code> selections.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="lookup.html" class="btn btn-neutral float-right" title="Lookup Transform" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="calculate.html" class="btn btn-neutral" title="Calculate Transform" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

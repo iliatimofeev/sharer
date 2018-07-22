@@ -1,0 +1,77 @@
+# The problem
+
+Connecting worlds
+
+## Reqiermens
+
+### numpydoc as standart de facto
+
+NumPy, SciPy, and the scikits follow a common convention for docstrings that provides for consistency, while also allowing our toolchain to produce well-formatted reference guides. This document describes the current community consensus for such a standard. If you have suggestions for improvements, post them on the numpy-discussion list.
+
+Our docstring standard uses re-structured text (reST) syntax and is rendered using Sphinx (a pre-processor that understands the particular documentation style we are using). While a rich set of markup is available, we limit ourselves to a very basic subset, in order to provide docstrings that are easy to read on text-only terminals.
+
+A guiding principle is that human readers of the text are given precedence over contorting docstrings so our tools produce nice output. Rather than sacrificing the readability of the docstrings, we have written pre-processors to assist Sphinx in its task.
+
+The length of docstring lines should be kept to 75 characters to facilitate reading the docstrings in text terminals.
+
+[numpydoc](http://www.numpy.org/devdocs/docs/howto_document.html)
+
+### Vega stack has reach formated documnation
+
+### Saerch in key feacher of Altair documtaion
+
+## Input: Vega-lite Documentation Guide
+
+The website is under `site/` and the documentation is under `site/docs/`.
+We use Github Pages to publish our documentation when we release a new version.
+To contribute changes to the documentation or website, simply submit a pull request that changes the corresponding markdown files in `site/`.
+
+Since we only publish the Github Pages when we release a new version,
+it might be slightly outdated compared to `master`.
+For development, once you have [setup the repository](#repository-setup),
+you can run `yarn site` to serve the github page locally at [http://localhost:4000/vega-lite/](http://localhost:4000/vega-lite/).
+
+Note that when you checkout different branches, the compiled JavaScript for the website might be reset. You will have to run `yarn build:site` to recompile the JavaScript so that interactive examples work.
+
+### Documentation Guide
+
+General Guides for Markdown Files:
+
+- Wrap properties (`key`) with back ticks.
+- Wrap values with back ticks for numbers and booleans (e.g., `5`, `true`) and wrap string values with both back ticks and double quotes (`"red"`).
+
+#### Property Table
+
+To generate a property tables from the JSON schema (which is in turn generated from the Typescript interfaces, you can include the `table.html` template. For example, to generate a table that includes `rangeStep`, `scheme`, and `padding` from `Scale`, you can use
+
+```html
+{% include table.html props="rangeStep,scheme,padding" source="Scale" %}
+```
+
+To define a link for types in the table, you can edit `_data/link.yml`.
+
+For JSDocs comment in the interfaces, please add `__Default value:__` line at the end to describe the property's value.
+
+#### Examples
+
+To include an example specification in the documentation, the specification's `.vl.json` file must be in `examples/specs`.
+Then you can use the following span tag to include the specification (e.g., for `point_1d.vl.json`):
+
+```html
+<span class="vl-example" data-name="point_1d"></span>
+```
+
+Before adding a new example, you might want to search inside `examples/` folder to see if there are other redundant examples that you can reuse.
+
+To name the example file:
+
+- Please begin with mark type and follow by some description for a static single view example.  For stacked marks, add `stacked_` prefix.
+- For composite views, please begin the file with the operator name (e.g., `layer`).
+- For interactive example, begin with either `interactive_` or `selection_`.
+- For examples that are only for regression test, begin with `test_`.
+
+After building an updated code or add a new example, make sure to run `yarn build:example <examplename>` (e.g., `yarn build:example bar_1d`) or `yarn build:examples` to recompile all examples so that your pull request includes a new compiled Vega specs and SVG files in `examples/compiled`.
+
+__Notes:__
+1) Our example building scripts only re-compile SVGs if the output Vega file changes (so it runs way faster). However, if you have a bug and accidentally change Vega outputs, please do not commit SVGs after you fix the bugs (as the SVGs are **not** recompiled if Vega output do not change from prior commits).  Instead, please reset your SVG changes.
+2) To run `yarn build:examples`, you need to install [gnu parallel](https://www.gnu.org/software/parallel/). (For Mac, you can simply do `brew install parallel`.)

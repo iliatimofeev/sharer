@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Condition &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Field" href="field.html" />
+    <link rel="prev" title="Axis" href="axis.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Condition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#field">Conditional Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#value">Conditional Value Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Condition</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#field">Conditional Field Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#value">Conditional Value Definition</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Condition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/condition.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="condition">
+<h1>Condition<a class="headerlink" href="#condition" title="Permalink to this headline">¶</a></h1>
+<p>For <a class="reference external" href="mark-prop">mark property channels</a> as well as <a class="reference external" href="text">text and tooltip channels</a>, the <code class="docutils literal notranslate"><span class="pre">condition</span></code> property of their channel definitions can be used to determine encoding rules based on whether data values fall within a <a class="reference external" href="selection">selection</a> or satisfy a <code class="docutils literal notranslate"><span class="pre">test</span></code> predicate.</p>
+<p></p>
+<p>There are two ways to specify the condition:</p>
+<ol class="simple">
+<li>Specifying <code class="docutils literal notranslate"><span class="pre">selection</span></code> name:</li>
+</ol>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;selection&quot; source=&quot;ConditionalSelection&lt;MarkPropFieldDef&gt;&quot; %}
+</pre></div>
+</div>
+</p>
+<ol class="simple">
+<li>Specifying a <code class="docutils literal notranslate"><span class="pre">test</span></code> predicate:</li>
+</ol>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;test&quot; source=&quot;ConditionalPredicate&lt;MarkPropFieldDef&gt;&quot; %}
+</pre></div>
+</div>
+</p>
+<p>In addition, there are two ways to encode the data that satisfy the specified condition:</p>
+<ol class="simple">
+<li>Combining one <a class="reference internal" href="field.html"><span class="doc">conditional field definition</span></a> with one base value definition.</li>
+<li>Combining one or more <a class="reference internal" href="value.html"><span class="doc">conditional value</span></a> with a field definition or a value definition.</li>
+</ol>
+<p></p>
+<div class="section" id="field">
+<h2>Conditional Field Definition<a class="headerlink" href="#field" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;encoding&quot;: {           // Encoding
+    ...: {
+      &quot;condition&quot;: {      // Conditional rule for data inside the selection
+        // Selection name or a test predicate
+        &quot;selection/test&quot;: ...,
+        // Field definition if the data is included in the selection (if)
+        &quot;field&quot;: ..., &quot;type&quot;: &quot;quantitative&quot;
+      },
+      &quot;value&quot;: ...        // The (optional) encoding value set for data outside the selection (else)
+    },
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>A conditional field definition uses a data-driven encoding rule when marks fall within a selection or satisfy a logical predicate. A value definition can be specified as the “else” case when the condition is not satisfied otherwise.</p>
+<p>A condition field definition must contain either <a class="reference internal" href="#"><span class="doc">a selection name or a test predicate</span></a> in addition to the encoded <code class="docutils literal notranslate"><span class="pre">field</span></code> name and its data <code class="docutils literal notranslate"><span class="pre">type</span></code> like a typical <a class="reference external" href="field-def">field definition</a>. In addition, a condition field definition may contain other encoding properties including transformation functions (<a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>, <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a>) as well as <a class="reference internal" href="scale.html"><span class="doc">scale</span></a> and <a class="reference internal" href="legend.html"><span class="doc">legend</span></a> (for <a class="reference external" href="mark-prop">mark property channels</a>) or <a class="reference internal" href="format.html"><span class="doc">format</span></a> (for <a class="reference external" href="text">text and tooltip channels</a>).</p>
+<p>For example, in the following plot, the color of <code class="docutils literal notranslate"><span class="pre">rect</span></code> marks is driven by a conditional field definition. Drag an interval selection and observe that marks are colored based on their aggregated count if they lie within the interval, and are grey otherwise.</p>
+<p><strong>Note:</strong> When using a conditional field definition, only a <code class="docutils literal notranslate"><span class="pre">value</span></code> may be specified as the else (outer) branch.</p>
+<p></p>
+</div>
+<div class="section" id="value">
+<h2>Conditional Value Definition<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Specification of a Single View
+{
+  ...,
+  &quot;encoding&quot;: {           // Encoding
+    ...: {
+      &quot;condition&quot;: {      // Conditional rule for data inside the selection
+        // Selection name or a test predicate
+        &quot;selection/test&quot;: ...,
+        // Value if the data is included in the selection (if)
+        &quot;value&quot;: ...
+      },
+      ... // A field definition or a value definition for data outside the selection (else)
+    },
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>A condition value definition uses a constant value encoding when data fall within a selection or satisfy a logical predicate.  A field or value definition can be specified as the “else” case when the condition is not satisfied.</p>
+<p>A condition value definition must contain either <a class="reference internal" href="#"><span class="doc">a selection name or a test predicate</span></a> in addition to the encoded constant <a class="reference external" href="value-def"><code class="docutils literal notranslate"><span class="pre">value</span></code></a>.</p>
+<p>For example, in the visualization below, a conditional value definition causes marks that fall within a dragged interval to be larger than those that lie outside it.</p>
+<p>A field mapping can also be specified as the else (outer) branch. For example, below, we invert our original example: a conditional value definition sets the <code class="docutils literal notranslate"><span class="pre">rect</span></code> marks to grey when they do <em>not</em> lie within the selection, and a regular field mapping is used otherwise. Notice, all marks are initially colored grey. This is because empty selections are treated as containing all data values.</p>
+<p>Besides specifying <code class="docutils literal notranslate"><span class="pre">selection</span></code> name, we can also specify a <code class="docutils literal notranslate"><span class="pre">test</span></code> condition.</p>
+<p>This plot uses a conditional value definition value to use a black label for a light background.</p>
+<p>The next plot uses a conditional value definition to color data points with null values in grey. Note that if the “else” case value is not specified, default mark color will be applied.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="field.html" class="btn btn-neutral float-right" title="Field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="axis.html" class="btn btn-neutral" title="Axis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

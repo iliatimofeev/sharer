@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Scale &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sorting" href="sort.html" />
+    <link rel="prev" title="Legend" href="legend.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scale</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">Scale Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#domain">Scale Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#range">Scale Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continuous">Continuous Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#discrete">Discrete Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#discretizing">Discretizing Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disable">Disabling Scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Scale</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">Scale Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#domain">Scale Domains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#range">Scale Ranges</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continuous">Continuous Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#discrete">Discrete Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#discretizing">Discretizing Scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disable">Disabling Scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Scale</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/scale.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="scale">
+<h1>Scale<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h1>
+<p>Scales are functions that transform a domain of data values (numbers, dates, strings, etc.) to a range of visual values (pixels, colors, sizes).
+Internally, Vega-Lite uses <a class="reference external" href="https://vega.github.io/vega/docs/scales/">Vega scales</a>, which are derived from the <a class="reference external" href="https://github.com/d3/d3-scale">d3-scale</a> library. For more background about scales, please see <a class="reference external" href="https://medium.com/&#64;mbostock/introducing-d3-scale-61980c51545f">“Introducing d3-scale”</a> by Mike Bostock.</p>
+<p>Vega-Lite automatically creates scales for fields that are mapped to <a class="reference external" href="position">position</a> and <a class="reference external" href="mark-prop">mark property</a> channels.
+To customize the scale of a field, users can provide a <code class="docutils literal notranslate"><span class="pre">scale</span></code> object as a part of the <a class="reference internal" href="field.html"><span class="doc">field definition</span></a> to customize scale properties (e.g., <a class="reference internal" href="type.html"><span class="doc">type</span></a>, <a class="reference external" href="domain">domain</a>, and <a class="reference external" href="range">range</a>).</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,
+  &quot;encoding&quot;: {
+    &quot;x&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      &quot;scale&quot;: {                // scale
+        &quot;type&quot;: ...,
+        ...
+      },
+      ...
+    },
+    &quot;y&quot;: ...,
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>Besides the <code class="docutils literal notranslate"><span class="pre">scale</span></code> property of each encoding channel, the top-level configuration object (<a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a>) also provides <a class="reference external" href="config">scale config</a> (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{scale:</span> <span class="pre">{...}}</span></code>) for setting default scale properties for all scales.</p>
+<p>For more information about guides that visualize the scales, please see the <a class="reference internal" href="axis.html"><span class="doc">axes</span></a> and <a class="reference internal" href="legend.html"><span class="doc">legends</span></a> pages.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="type">
+<h2>Scale Types<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">type</span></code> property can be specified to customize the scale type.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p>By default, Vega-Lite use the following scale types for the following <a class="reference internal" href="type.html"><span class="doc">data types</span></a> and <a class="reference external" href="channel">encoding channels</a>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>table_block stub
+|                      | Nominal / Ordinal               | Quantitative              | Bin-Quantitative&lt;sup&gt;1&lt;/sup&gt;    | Temporal                  |
+|---------------------:|:------------------------------:|:-------------------------:|:------------------------:|:-------------------------:|
+| __X, Y__ | [Band](#band) / [Point](#point)&lt;sup&gt;2&lt;/sup&gt;| [Linear](#linear)         | [Linear](#linear) &lt;sup&gt;3&lt;/sup&gt;       | [Time](#time)             |
+| __Size, Opacity__    | [Point](#point)                | [Linear](#linear)         | [Bin-Linear](#bin-linear)| [Time](#time)             |
+| __Color__            | [Ordinal](#ordinal)            | [Sequential](#sequential) | [Bin-Ordinal](#ordinal)  | [Sequential](#sequential) |
+| __Shape__            | [Ordinal](#ordinal)            | N/A                       | N/A                      | N/A                       |
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="domain">
+<h2>Scale Domains<a class="headerlink" href="#domain" title="Permalink to this headline">¶</a></h2>
+<p>By default, a scale in Vega-Lite draws domain values directly from a channel’s encoded field. Users can specify the <code class="docutils literal notranslate"><span class="pre">domain</span></code> property of a scale to customize its domain values. To sort the order of the domain of the encoded, the <a class="reference internal" href="sort.html"><span class="doc">sort</span></a> property of a <a class="reference external" href="field-def">field definition</a> can be specified.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;domain&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p>A common use case for the <code class="docutils literal notranslate"><span class="pre">domain</span></code> property is to limit, for example, the <code class="docutils literal notranslate"><span class="pre">x</span></code> range of values to include in a plot. However, setting the domain property alone is insufficient to achieve the desired effect. For example, consider the line plot specification below in which the <code class="docutils literal notranslate"><span class="pre">x</span></code> domain is restricted to the range <code class="docutils literal notranslate"><span class="pre">[300,</span> <span class="pre">450]</span></code>.</p>
+<p>There are two approaches to keep the mark from being plotted outside the desired <code class="docutils literal notranslate"><span class="pre">x</span></code> range of values.</p>
+<ul class="simple">
+<li>The first one is to set <code class="docutils literal notranslate"><span class="pre">clip:</span> <span class="pre">true</span></code> in mark definition.</li>
+</ul>
+<ul class="simple">
+<li>The second approach is to use <code class="docutils literal notranslate"><span class="pre">transform</span></code>. Note that these two approaches have slightly different behaviors. Using <code class="docutils literal notranslate"><span class="pre">transform</span></code> removes unwanted data points, yet setting <code class="docutils literal notranslate"><span class="pre">clip</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> clips the mark to be the enclosing group’s width and height.</li>
+</ul>
+<p></p>
+</div>
+<div class="section" id="range">
+<h2>Scale Ranges<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h2>
+<p>The range of the scale represents the set of output visual values. Vega-Lite automatically determines the default range for each <a class="reference external" href="channel">encoding channel</a> using the following rules:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>table_block stub
+| Channels    | Default Range  |
+| :---------- | :-----------------  |
+| `x`         | The range is _always_ `[0, width]`.  Any directly specified `range` will be ignored. Range can be customized via the view&#39;s [`width`](size.html) property or via [range steps and paddings properties](#range-step) for [band](#band) and [point](#point) scales.  |
+| `y`         | The range is _always_ `[0, height]`. Any directly specified `range` will be ignored. Range can be customized via the view&#39;s [`height`](size.html) property or via [range steps and paddings properties](#range-step) for [band](#band) and [point](#point) scales. |
+| `opacity`   | Derived from the [scale config](#config)&#39;s `min/maxOpacity`. |
+| `color`     | Derived from the following [named ranges](scale.html#range-config) based on the field&#39;s [`type`](type.html): &lt;br/&gt; • `&quot;category&quot;` for _nominal_ fields. &lt;br/&gt; • `&quot;ordinal&quot;` for _ordinal_ fields. &lt;br/&gt; • `&quot;heatmap&quot;` for _quantitative_ and _temporal_ fields with `&quot;rect&quot;` marks and `&quot;ramp&#39;` for other marks. &lt;br/&gt;&lt;br/&gt; See the [color scheme](#scheme) section for examples. |
+| `size`      | Derived from the following [named ranges](#config) based on the `mark` type: &lt;br/&gt; • `min/maxBandSize` for bar and tick. &lt;br/&gt; • `min/maxStrokeWidth` for line and rule. &lt;br/&gt; • `min/maxSize` for point, square, and circle &lt;br/&gt; • `min/maxFontSize` for text |
+| `shape`   | Derived from the [pre-defined named range](#range-config) `&quot;symbol&quot;`. |
+</pre></div>
+</div>
+<p>To customize range values, users can directly specify <code class="docutils literal notranslate"><span class="pre">range</span></code>, or the special range properties: <a class="reference external" href="range-step"><code class="docutils literal notranslate"><span class="pre">rangeStep</span></code></a> and <a class="reference external" href="padding"><code class="docutils literal notranslate"><span class="pre">padding</span></code></a> for <a class="reference external" href="band">band</a> and <a class="reference external" href="point">point</a> scales and <a class="reference external" href="scheme"><code class="docutils literal notranslate"><span class="pre">scheme</span></code></a> for <a class="reference external" href="ordinal">ordinal</a> and <a class="reference external" href="sequential">sequential</a> color scales.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;range&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="scheme">
+<h3>Color Schemes<a class="headerlink" href="#scheme" title="Permalink to this headline">¶</a></h3>
+<p>Color schemes provide a set of named color palettes as a scale range for the <code class="docutils literal notranslate"><span class="pre">color</span></code> channel. Vega-Lite (via Vega) provides a collection of perceptually-motivated color schemes, many of which are drawn from the <a class="reference external" href="https://github.com/d3/d3-scale">d3-scale</a>, <a class="reference external" href="https://github.com/d3/d3-scale-chromatic">d3-scale-chromatic</a>, and <a class="reference external" href="http://colorbrewer2.org/">ColorBrewer</a> projects.</p>
+<p>By default, Vega-Lite assigns different <a class="reference external" href="range-config">default color schemes</a> based on the types of the encoded fields:</p>
+<ul class="simple">
+<li><em>Nominal</em> fields use the <code class="docutils literal notranslate"><span class="pre">&quot;categorical&quot;</span></code> <a class="reference external" href="range-config">pre-defined named range</a> (the <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#tableau10"><code class="docutils literal notranslate"><span class="pre">&quot;tableau10&quot;</span></code></a> scheme by default).</li>
+</ul>
+<ul class="simple">
+<li><em>Ordinal</em> fields use the <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> <a class="reference external" href="range-config">pre-defined named color range</a> (the <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#blues"><code class="docutils literal notranslate"><span class="pre">&quot;blues&quot;</span></code></a> color scheme by default).</li>
+</ul>
+<ul class="simple">
+<li><em>Quantitative</em> and <em>temporal</em> fields use the <a class="reference external" href="range-config">pre-defined named color range</a> <code class="docutils literal notranslate"><span class="pre">&quot;heatmap&quot;</span></code> (the <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#viridis"><code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code></a> scheme by default) for rect marks and <code class="docutils literal notranslate"><span class="pre">&quot;ramp&quot;</span></code> (the <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#blues"><code class="docutils literal notranslate"><span class="pre">&quot;blues&quot;</span></code></a> scheme by default) for other marks.</li>
+</ul>
+<p>There are multiple ways to customize the scale range for the color encoding channel:</p>
+<ol class="simple">
+<li>Set a custom <code class="docutils literal notranslate"><span class="pre">scheme</span></code>.</li>
+</ol>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;scheme&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the following plot use the <code class="docutils literal notranslate"><span class="pre">&quot;category20b&quot;</span></code> scheme.</p>
+<p></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">scheme</span></code> property can also be a <strong>scheme parameter object</strong>, which contain the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;name,extent&quot; source=&quot;SchemeParams&quot; %}
+</pre></div>
+</div>
+</p>
+<ol class="simple">
+<li>Setting the <code class="docutils literal notranslate"><span class="pre">range</span></code> property to an array of valid CSS color strings.</li>
+</ol>
+<ol class="simple">
+<li>Change the default color schemes using the <a class="reference external" href="range-config">range config</a>.</li>
+</ol>
+<p></p>
+</div>
+</div>
+<div class="section" id="continuous">
+<h2>Continuous Scales<a class="headerlink" href="#continuous" title="Permalink to this headline">¶</a></h2>
+<p>Continuous scales map a continuous domain (numbers or dates) to a continuous output range (pixel locations, sizes, colors).  Supported continuous scale types for <em>quantitative</em> fields are <a class="reference external" href="linear"><code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code></a>, <a class="reference external" href="log"><code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code></a>, <a class="reference external" href="pow"><code class="docutils literal notranslate"><span class="pre">&quot;pow&quot;</span></code></a>, <a class="reference external" href="sqrt"><code class="docutils literal notranslate"><span class="pre">&quot;sqrt&quot;</span></code></a>, and <a class="reference external" href="sequential"><code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code></a>.  Meanwhile, supported continuous scale types for <em>temporal</em> fields are <a class="reference external" href="time"><code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code></a>, <a class="reference external" href="utc"><code class="docutils literal notranslate"><span class="pre">&quot;utc&quot;</span></code></a>, and <a class="reference external" href="sequential"><code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code></a>.</p>
+<p>By default, Vega-Lite uses <code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code> scales for quantitative fields and uses <code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code> scales for temporal fields for all <a class="reference external" href="channel">encoding channels</a> except for <code class="docutils literal notranslate"><span class="pre">color</span></code>, which uses <code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code> scales for both quantitative and temporal fields.</p>
+<p>In addition to <a class="reference internal" href="type.html"><span class="doc">type</span></a>, <a class="reference external" href="domain"><code class="docutils literal notranslate"><span class="pre">domain</span></code></a>, and <a class="reference external" href="range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a>, continuous scales support the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;clamp,interpolate,nice,padding,round,zero&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+<div class="section" id="linear">
+<h3>Linear Scales<a class="headerlink" href="#linear" title="Permalink to this headline">¶</a></h3>
+<p>Linear scales (<code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code>) are quantitative scales scales that preserve proportional differences. Each range value y can be expressed as a linear function of the domain value <em>x</em>: <em>y = mx + b</em>.</p>
+<p></p>
+</div>
+<div class="section" id="pow">
+<h3>Power Scales<a class="headerlink" href="#pow" title="Permalink to this headline">¶</a></h3>
+<p>Power scales (<code class="docutils literal notranslate"><span class="pre">&quot;pow&quot;</span></code>) are quantitative scales scales that apply an exponential transform to the input domain value before the output range value is computed. Each range value y can be expressed as a polynomial function of the domain value  <em>x</em>: <em>y = mx^k + b</em>, where <em>k</em> is the <code class="docutils literal notranslate"><span class="pre">exponent</span></code> value. Power scales also support negative domain values, in which case the input value and the resulting output value are multiplied by -1.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;exponent&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="sqrt">
+<h3>Square Root Scales<a class="headerlink" href="#sqrt" title="Permalink to this headline">¶</a></h3>
+<p>Square root (<code class="docutils literal notranslate"><span class="pre">&quot;sqrt&quot;</span></code>) scales are a convenient shorthand for power scales with an <code class="docutils literal notranslate"><span class="pre">exponent</span></code> of <code class="docutils literal notranslate"><span class="pre">0.5</span></code>, indicating a square root transform.</p>
+<p></p>
+</div>
+<div class="section" id="log">
+<h3>Logarithmic Scales<a class="headerlink" href="#log" title="Permalink to this headline">¶</a></h3>
+<p>Log scales (<code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code>) are quantitative scales in which a logarithmic transform is applied to the input domain value before the output range value is computed. Log scales are particularly useful for plotting data that varies over multiple orders of magnitude. The mapping to the range value y can be expressed as a logarithmic function of the domain value <em>x</em>: <em>y = m log<sub>a</sub>(x) + b</em>, where <em>a</em> is the logarithmic <code class="docutils literal notranslate"><span class="pre">base</span></code>.</p>
+<p>As <em>log(0) = -∞</em>, a log scale domain must be strictly-positive or strictly-negative; the domain must not include or cross zero.
+A log scale with a positive domain has a well-defined behavior for positive values, and a log scale with a negative domain has a well-defined behavior for negative values. (For a negative domain, input and output values are implicitly multiplied by -1.) The behavior of the scale is undefined if you run a negative value through a log scale with a positive domain or vice versa.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;base&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>Example:</strong> The following plot has a logarithmic y-scale.</p>
+<p></p>
+</div>
+<div class="section" id="time">
+<h3>Time and UTC Scales<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<p>Time and UTC scales (<code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;utc&quot;</span></code>) are <a class="reference external" href="quantitative">continuous scales</a> with a temporal domain: values in the input domain are assumed to be <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a> objects or timestamps. Time scales use the current local timezone setting. UTC scales instead use <a class="reference external" href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time</a>.</p>
+<p></p>
+</div>
+<div class="section" id="sequential">
+<h3>Sequential Scales<a class="headerlink" href="#sequential" title="Permalink to this headline">¶</a></h3>
+<p>Sequential scales (<code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code>) are similar to linear scales, but use a fixed interpolator to determine the output range. By default, Vega-lite uses sequential scales to encode continuous (quantitative and temporal) fields with <code class="docutils literal notranslate"><span class="pre">color</span></code>s.</p>
+<p>To customize the range of a sequential scale, either a <a class="reference external" href="range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a> array listing colors or a color <a class="reference external" href="scheme"><code class="docutils literal notranslate"><span class="pre">scheme</span></code></a> can be specified.</p>
+<p></p>
+</div>
+<div class="section" id="piecewise">
+<h3>Piecewise Scales<a class="headerlink" href="#piecewise" title="Permalink to this headline">¶</a></h3>
+<p>We can use any types of continuous scales (<a class="reference external" href="linear"><code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code></a>, <a class="reference external" href="pow"><code class="docutils literal notranslate"><span class="pre">&quot;pow&quot;</span></code></a>, <a class="reference external" href="sqrt"><code class="docutils literal notranslate"><span class="pre">&quot;sqrt&quot;</span></code></a>, <a class="reference external" href="log"><code class="docutils literal notranslate"><span class="pre">&quot;log&quot;</span></code></a>, <a class="reference external" href="time"><code class="docutils literal notranslate"><span class="pre">&quot;time&quot;</span></code></a>, <a class="reference external" href="utc"><code class="docutils literal notranslate"><span class="pre">&quot;utc&quot;</span></code></a>, <a class="reference external" href="sequential"><code class="docutils literal notranslate"><span class="pre">&quot;sequential&quot;</span></code></a>) to create a diverging color graph by specifying a custom <code class="docutils literal notranslate"><span class="pre">domain</span></code> with multiple elements.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">range</span></code> is specified, the number of elements in <code class="docutils literal notranslate"><span class="pre">range</span></code> should match with the number of elements in <code class="docutils literal notranslate"><span class="pre">domain</span></code>. <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#diverging">Diverging color <code class="docutils literal notranslate"><span class="pre">scheme</span></code>s</a> are also useful as a range for a piecewise scale.</p>
+<p><strong>Example</strong></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="discrete">
+<h2>Discrete Scales<a class="headerlink" href="#discrete" title="Permalink to this headline">¶</a></h2>
+<p>Discrete scales map values from a discrete domain to a discrete or continuous range.</p>
+<p></p>
+<div class="section" id="ordinal">
+<h3>Ordinal Scales<a class="headerlink" href="#ordinal" title="Permalink to this headline">¶</a></h3>
+<p>Ordinal scales (<code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code>) have a discrete domain and range. These scales function as a “lookup table” from a domain value to a range value.</p>
+<p>By default, Vega-Lite automatically creates ordinal scales for <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">shape</span></code> channels.  For example, the following plot implicitly has two ordinal scales, which map the values of the field <code class="docutils literal notranslate"><span class="pre">&quot;Origin&quot;</span></code> to a set of <code class="docutils literal notranslate"><span class="pre">color</span></code>s and a set of <code class="docutils literal notranslate"><span class="pre">shape</span></code>s.</p>
+<p>The <a class="reference external" href="range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a> of an ordinal scale can be an array of desired output values, which are directly mapped to elements in the <a class="reference external" href="domain"><code class="docutils literal notranslate"><span class="pre">domain</span></code></a>.  Both <code class="docutils literal notranslate"><span class="pre">domain</span></code> and <code class="docutils literal notranslate"><span class="pre">range</span></code> array can be re-ordered to specify the order and mapping between the domain and the output range. For ordinal color scales, a custom <a class="reference external" href="scheme"><code class="docutils literal notranslate"><span class="pre">scheme</span></code></a> can be set as well.</p>
+<p><a name="point"></a><!-- point and band are in the same section --></p>
+<p></p>
+</div>
+<div class="section" id="band">
+<h3>Band and Point Scales<a class="headerlink" href="#band" title="Permalink to this headline">¶</a></h3>
+<p>Band and point scales accept a discrete domain similar to <a class="reference external" href="ordinal">ordinal scales</a>, but map this domain to a continuous, numeric output range such as pixels.</p>
+<p><strong>Band scales</strong> (<code class="docutils literal notranslate"><span class="pre">&quot;band&quot;</span></code>) compute the discrete output values by dividing the continuous range into uniform <em>bands</em>. Band scales are typically used for bar charts with an ordinal or categorical dimension.</p>
+<p>In addition to a standard numerical <em>range</em> value (such as <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">500]</span></code>), band scales can be given a fixed <em>step</em> size for each band. The actual range is then determined by both the step size and the cardinality (element count) of the input domain.</p>
+<p>This image from the <a class="reference external" href="https://github.com/d3/d3-scale#band-scales">d3-scale documentation</a> illustrates how a band scale works:</p>
+<p><strong>Point scales</strong> (<code class="docutils literal notranslate"><span class="pre">&quot;point&quot;</span></code>) are a variant of <a class="reference external" href="band">band scales</a> where the internal band width is fixed to zero. Point scales are typically used for scatterplots with an ordinal or categorical dimension. Similar to band scales, point scale <em>range</em> values may be specified using either a numerical extent (<code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">500]</span></code>) or a step size (<code class="docutils literal notranslate"><span class="pre">{&quot;step&quot;:</span> <span class="pre">20}</span></code>).</p>
+<p>This image from the <a class="reference external" href="https://github.com/d3/d3-scale#band-scales">d3-scale documentation</a> illustrates how a point scale works:</p>
+<p>By default, Vega-Lite uses band scales for nominal and ordinal fields on <a class="reference external" href="position">position channels</a> (<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>) of <a class="reference external" href="bar">bar</a> or <a class="reference external" href="rect">rect</a> marks.
+For <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> of other marks and <code class="docutils literal notranslate"><span class="pre">size</span></code> and <code class="docutils literal notranslate"><span class="pre">opacity</span></code>, Vega-Lite uses point scales by default.</p>
+<p>For example, the following bar chart has uses a band scale for its x-position.</p>
+<p>To customize the range of band and point scales, users can provide the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;padding,paddingInner,paddingOuter,rangeStep,round&quot; source=&quot;Scale&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, we can set the <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> property to make the bands of the bars smaller.</p>
+<p><span class="vl-example" data-name="bar_size_rangestep_small"></span></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="discretizing">
+<h2>Discretizing Scales<a class="headerlink" href="#discretizing" title="Permalink to this headline">¶</a></h2>
+<p>Discretizing scales break up a continuous domain into discrete segments, and then map values in each segment to a range value.</p>
+<p></p>
+<div class="section" id="bin-linear">
+<h3>Bin-Linear Scales<a class="headerlink" href="#bin-linear" title="Permalink to this headline">¶</a></h3>
+<p>Binned linear scales (<code class="docutils literal notranslate"><span class="pre">&quot;bin-linear&quot;</span></code>) are a special type of linear scale for use with <a class="reference external" href="bin">binned</a> fields to correctly create legend labels.
+Vega-Lite <em>always</em> uses binned linear scales with binned quantitative fields on size and opacity channels.</p>
+<p>For example, the following plot has a binned field on the <code class="docutils literal notranslate"><span class="pre">size</span></code> channel.</p>
+<p><span class="vl-example" data-name="point_binned_size"></span></p>
+<p></p>
+</div>
+<div class="section" id="bin-ordinal">
+<h3>Bin-Ordinal Scales<a class="headerlink" href="#bin-ordinal" title="Permalink to this headline">¶</a></h3>
+<p>Binned ordinal scales (<code class="docutils literal notranslate"><span class="pre">&quot;bin-ordinal&quot;</span></code>) are a special type of ordinal scale for use with <a class="reference external" href="bin">binned</a> fields to correctly create legend labels.
+Vega-Lite <em>always</em> uses binned ordinal scales with binned quantitative fields on the color channel.</p>
+<p>For example, the following plot has a binned field on the <code class="docutils literal notranslate"><span class="pre">color</span></code> channel.</p>
+<p><span class="vl-example" data-name="point_binned_color"></span></p>
+<p>Similar to <a class="reference external" href="ordinal">ordinal</a> color scales, a custom <a class="reference external" href="range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a> or <a class="reference external" href="scheme"><code class="docutils literal notranslate"><span class="pre">scheme</span></code></a> can be specified for binned ordinal scales.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="disable">
+<h2>Disabling Scale<a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h2>
+<p>To directly encode the data value, the <code class="docutils literal notranslate"><span class="pre">scale</span></code> property can be set to <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p>For example, the follow bar chart directly encodes color names in the data.</p>
+<p><span class="vl-example" data-name="bar_color_disabled_scale"></span></p>
+<p></p>
+</div>
+<div class="section" id="config">
+<h2>Configuration<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;scale&quot;: {
+      ...                       // Scale Config
+    },
+    &quot;range&quot;: {
+      ...                       // Scale Range Config
+    },
+    ...
+  }
+  ...
+}
+</pre></div>
+</div>
+<div class="section" id="scale-config">
+<h3>Scale Config<a class="headerlink" href="#scale-config" title="Permalink to this headline">¶</a></h3>
+<p>To provide themes for all scales, the scale config (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{scale:</span> <span class="pre">{...}}</span></code>) can contain the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;bandPaddingInner,bandPaddingOuter,clamp,maxBandSize,minBandSize,maxFontSize,minFontSize,maxOpacity,minOpacity,maxSize,minSize,maxStrokeWidth,minStrokeWidth,pointPadding,rangeStep,round,textXRangeStep,useUnaggregatedDomain&quot; source=&quot;ScaleConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="range-config">
+<h3>Range Config<a class="headerlink" href="#range-config" title="Permalink to this headline">¶</a></h3>
+<p>The scale range configuration (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{range:</span> <span class="pre">{...}}</span></code>) defines key-value mapping for named scale ranges: the keys represent the range names, while the values define valid <a class="reference external" href="range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a> or, for named color ranges, <a class="reference external" href="https://vega.github.io/vega/docs/schemes/#scheme-properties">Vega scheme definitions</a>.</p>
+<p>By default, Vega-Lite (via Vega) includes the following pre-defined named ranges:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;category,diverging,heatmap,ordinal,ramp,symbol&quot; source=&quot;RangeConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p>See <a class="reference external" href="https://github.com/vega/vega-parser/blob/master/src/config.js#L188">this file</a> for the default values of named ranges.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sort.html" class="btn btn-neutral float-right" title="Sorting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="legend.html" class="btn btn-neutral" title="Legend" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

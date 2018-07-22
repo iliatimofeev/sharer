@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customizing Size &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="View Title" href="title.html" />
+    <link rel="prev" title="Vega-Lite View Specification" href="../spec.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../spec.html">Vega-Lite View Specification</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Customizing Size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#width-and-height-of-single-and-layered-plots">Width and Height of Single and Layered Plots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#width-and-height-of-multi-view-displays">Width and Height of Multi-View Displays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../spec.html">Vega-Lite View Specification</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Customizing Size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#width-and-height-of-single-and-layered-plots">Width and Height of Single and Layered Plots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#width-and-height-of-multi-view-displays">Width and Height of Multi-View Displays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="title.html">View Title</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Customizing Size</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/view/size.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="size">
+<h1>Customizing Size<a class="headerlink" href="#size" title="Permalink to this headline">¶</a></h1>
+<p>This page describe how to adjust width and height of visualizations in Vega-lite.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="width-and-height-of-single-and-layered-plots">
+<h2>Width and Height of Single and Layered Plots<a class="headerlink" href="#width-and-height-of-single-and-layered-plots" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="single">Single view</a> and <a class="reference internal" href="../../task_decription/retext.html#doc_test.doctest.DocTestClass.layer" title="doc_test.doctest.DocTestClass.layer"><a class="reference external" href="layer">layer</a></a> specifications can contain <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> properties for customizing the view size.
+By default, <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> set the size of the data rectangle (plotting) dimensions.
+To set the overall size of the visualization, the <a class="reference external" href="autosize"><code class="docutils literal notranslate"><span class="pre">autosize</span></code></a> property can be specified.</p>
+<div class="section" id="explicitly-specified-width-and-height">
+<h3>Explicitly Specified Width and Height<a class="headerlink" href="#explicitly-specified-width-and-height" title="Permalink to this headline">¶</a></h3>
+<p>When the top-level <code class="docutils literal notranslate"><span class="pre">width</span></code> property is specified, the width of the single plot is the specified value for all scale types of the x-axis.  Similarly, when the top-level <code class="docutils literal notranslate"><span class="pre">height</span></code> property is specified, the height of the single plot is the specified value for all scale types of the y-axis.</p>
+<p><span class="vl-example" data-name="bar_size_explicit"></span></p>
+<p><strong>Note</strong>: If numeric <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> for a discrete x/y-scale is specified when <code class="docutils literal notranslate"><span class="pre">width</span></code> / <code class="docutils literal notranslate"><span class="pre">height</span></code> is specified, the <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> will be ignored (overridden with <code class="docutils literal notranslate"><span class="pre">null</span></code>).</p>
+<p><strong>Warning</strong>: If the cardinality of the x/y-field’s domain is too high, the <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> might become less than one pixel and the mark might not appear correctly.</p>
+<p><span class="vl-example" data-name="bar_size_explicit_bad"></span></p>
+</div>
+<div class="section" id="default-width-and-height">
+<h3>Default Width and Height<a class="headerlink" href="#default-width-and-height" title="Permalink to this headline">¶</a></h3>
+<p>If the top-level <code class="docutils literal notranslate"><span class="pre">width</span></code> / <code class="docutils literal notranslate"><span class="pre">height</span></code> property is not specified, the width / height of a single view is determined by the properties of the <code class="docutils literal notranslate"><span class="pre">x</span></code> / <code class="docutils literal notranslate"><span class="pre">y</span></code> channel:</p>
+<ul class="simple">
+<li>If (1) the view’s <a class="reference external" href="autosize"><code class="docutils literal notranslate"><span class="pre">autosize</span></code></a> type is <code class="docutils literal notranslate"><span class="pre">&quot;fit&quot;</span></code> or (2) the <code class="docutils literal notranslate"><span class="pre">x</span></code> / <code class="docutils literal notranslate"><span class="pre">y</span></code> axis has a continuous scale (either quantitative or time) or a discrete scale with <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> = <code class="docutils literal notranslate"><span class="pre">null</span></code>, the width/height is drawn directly from the <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config.view.width</span></code></a> / <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config.view.height</span></code></a> property.</li>
+<li>If the <a class="reference external" href="autosize"><code class="docutils literal notranslate"><span class="pre">autosize</span></code></a> type is not <code class="docutils literal notranslate"><span class="pre">&quot;fit&quot;</span></code> and the <code class="docutils literal notranslate"><span class="pre">x</span></code> / <code class="docutils literal notranslate"><span class="pre">y</span></code> channel has a <a class="reference external" href="band">band or point scale</a> in which <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> is a number or unspecified, the width / height is <a class="reference external" href="band">determined based on the scale’s range step, paddings, and the cardinality of the encoded field (the number of possible distinct values of the field)</a>.</li>
+</ul>
+<p>This example shows a plot with a continuous y-scale and a discrete x-scale:</p>
+<p><span class="vl-example" data-name="bar_size_default"></span></p>
+<ul class="simple">
+<li>If the <code class="docutils literal notranslate"><span class="pre">x</span></code> / <code class="docutils literal notranslate"><span class="pre">y</span></code> channel has a discrete scale with <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> = <code class="docutils literal notranslate"><span class="pre">null</span></code>, the width / height is drawn directly from the <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config.view.width</span></code></a> / <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config.view.height</span></code></a> property and the band of the scale will be adjusted to fit to the width.</li>
+</ul>
+<p><span class="vl-example" data-name="bar_size_fit"></span></p>
+<ul class="simple">
+<li>If <code class="docutils literal notranslate"><span class="pre">x</span></code> / <code class="docutils literal notranslate"><span class="pre">y</span></code> is not mapped to a field, the width / height is derived from <a class="reference external" href="scale-config">config.scale.rangeStep</a> except for the width when the mark is <code class="docutils literal notranslate"><span class="pre">text</span></code>.  In that case, the width will be drawn from <a class="reference external" href="scale-config">config.scale.textXRangeStep</a>.</li>
+</ul>
+<p>For example, the following plot use <code class="docutils literal notranslate"><span class="pre">21</span></code> as a default height.</p>
+<p><span class="vl-example" data-name="bar_1d_rangestep_config"></span></p>
+</div>
+<div class="section" id="autosize">
+<h3>Autosize<a class="headerlink" href="#autosize" title="Permalink to this headline">¶</a></h3>
+<p>The specified dimensions of a chart as explained above set the size of the data rectangle (plotting) dimensions. You can override this behavior by setting the autosize property in <a class="reference external" href="top-level-specifications">the top level specification</a>. Please note the <a class="reference external" href="limitations">limitations below</a>.</p>
+<p>The autosize property can be a string or an object with the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,resize,contains&quot; source=&quot;AutoSizeParams&quot; %}
+</pre></div>
+</div>
+</p>
+<p>The total size of a Vega-Lite visualization may be determined by multiple factors: specified <em>width</em>, <em>height</em>, and <em>padding</em> values, as well as content such as axes, legends, and titles. To support different use cases, there are three different <em>autosize</em> types for determining the final size of a visualization view:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">none</span></code>: No automatic sizing is performed. The total visualization size is determined solely by the provided width, height and padding values. For example, by default the total width is calculated as <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">+</span> <span class="pre">padding.left</span> <span class="pre">+</span> <span class="pre">padding.right</span></code>. Any content lying outside this region will be clipped. If <em>autosize.contains</em> is set to <code class="docutils literal notranslate"><span class="pre">&quot;padding&quot;</span></code>, the total width is instead simply <em>width</em>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">pad</span></code>: Automatically increase the size of the view such that all visualization content is visible. This is the default <em>autosize</em> setting, and ensures that axes, legends and other items outside the normal width and height are included. The total size will often exceed the specified width, height, and padding.</li>
+<li><code class="docutils literal notranslate"><span class="pre">fit</span></code>: Automatically adjust the layout in an attempt to force the total visualization size to fit within the given width, height and padding values. This setting causes the plotting region to be made smaller in order to accommodate axes, legends and titles. As a result, the value of the <em>width</em> and <em>height</em> signals may be changed to modify the layout. Though effective for many plots, the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method can not always ensure that all content remains visible. For example, if the axes and legends alone require more space than the specified width and height, some of the content will be clipped. Similar to <code class="docutils literal notranslate"><span class="pre">none</span></code>, by default the total width will be <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">+</span> <span class="pre">padding.left</span> <span class="pre">+</span> <span class="pre">padding.right</span></code>, relative to the original, unmodified <em>width</em> value. If <em>autosize.contains</em> is set to <code class="docutils literal notranslate"><span class="pre">&quot;padding&quot;</span></code>, the total width will instead be the original <em>width</em>.</li>
+</ul>
+<div class="section" id="limitations">
+<h4>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h4>
+<p>In order to <code class="docutils literal notranslate"><span class="pre">fit</span></code> a chart into specified dimensions, it has to satisfy two requirements:</p>
+<ul class="simple">
+<li>The view must be either a <a class="reference external" href="single">single</a> view or a <a class="reference internal" href="../../task_decription/retext.html#doc_test.doctest.DocTestClass.layer" title="doc_test.doctest.DocTestClass.layer"><a class="reference external" href="layer">layered</a></a> view. Fit does not work with other kinds of composed views (<code class="docutils literal notranslate"><span class="pre">facet</span></code>/<code class="docutils literal notranslate"><span class="pre">hconcat</span></code>/<code class="docutils literal notranslate"><span class="pre">vconcat</span></code>/<code class="docutils literal notranslate"><span class="pre">repeat</span></code>).</li>
+<li>The width and height of the chart cannot depend on an explicitly specified <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> of a discrete scale. Any specified <code class="docutils literal notranslate"><span class="pre">rangeStep</span></code> will be ignored.</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<p>Below is an example of a bar chart that fits exactly into 300px width.</p>
+<p><span class="vl-example" data-name="bar_fit"></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="width-and-height-of-multi-view-displays">
+<h2>Width and Height of Multi-View Displays<a class="headerlink" href="#width-and-height-of-multi-view-displays" title="Permalink to this headline">¶</a></h2>
+<p>Currently, width and height of multi-view displays including <a class="reference external" href="concat">concatenated</a>, <a class="reference external" href="facet">faceted</a>, and <a class="reference external" href="repeat">repeated</a> are determined based on the size of the composed unit and layered views.  To adjust the size of multi-view displays, you can <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> of the inner unit and layered views.</p>
+<p>For example, you can adjust <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> of the inner single view specification to adjust the size of a faceted plot.</p>
+<p><span class="vl-example" data-name="normalized/trellis_point_small_normalized"></span></p>
+<p><strong>Note:</strong> If you use the <code class="docutils literal notranslate"><span class="pre">row</span></code> or <code class="docutils literal notranslate"><span class="pre">column</span></code> channel to create a faceted plot, <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> will be applied to the inner single-view plot.
+For example, this specification is equivalent to the specification above.</p>
+<p><span class="vl-example" data-name="trellis_point_small"></span></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="title.html" class="btn btn-neutral float-right" title="View Title" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../spec.html" class="btn btn-neutral" title="Vega-Lite View Specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Projection &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mark" href="mark/mark.html" />
+    <link rel="prev" title="Window" href="transform/window.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Projection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Projection Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#projection-types">Projection Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Projection Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Projection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#properties">Projection Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#projection-types">Projection Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Projection Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Projection</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/projection.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="projection">
+<h1>Projection<a class="headerlink" href="#projection" title="Permalink to this headline">¶</a></h1>
+<p>A cartographic projection maps longitude and latitude pairs to x, y coordinates. As with Vega, one can use projections in Vega-lite to layout both geographic points (such as locations on a map) represented by longitude and latitude coordinates, or to project geographic regions (such as countries and states) represented using the GeoJSON format. Projection’s are specified at the unit specification level, alongside encoding. Geographic coordinate data can then be mapped to <a class="reference external" href="geo"><code class="docutils literal notranslate"><span class="pre">longitude</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude</span></code> channels</a> (and <code class="docutils literal notranslate"><span class="pre">longitude2</span></code> and <code class="docutils literal notranslate"><span class="pre">latitude2</span></code> for ranged marks).</p>
+<p>For example, this example chart shows all airports in the United States by projecting <code class="docutils literal notranslate"><span class="pre">latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude</span></code> as <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> coordinates using the albersUsa projection.</p>
+<p><span class="vl-example" data-name="geo_point"></span></p>
+<p>See <a class="reference external" href="geographical-maps">the example gallery for more examples with geographic projection</a>.</p>
+<p></p>
+<div class="section" id="properties">
+<h2>Projection Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,clipAngle,clipExtent,center,rotate,precision&quot; source=&quot;Projection&quot; %}
+</pre></div>
+</div>
+</p>
+<p>If you want to explore the various available properties in more depth, Vega’s projection documentation <a class="reference external" href="https://vega.github.io/vega/docs/projections/">hosts a useful demo</a></p>
+<p>In addition to the shared properties above, the following properties are supported for specific projection types in the <a class="reference external" href="https://github.com/d3/d3-geo-projection">d3-geo-projection</a> library: <a class="reference external" href="https://github.com/d3/d3-geo-projection#hammer_coefficient"><code class="docutils literal notranslate"><span class="pre">coefficient</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#satellite_distance"><code class="docutils literal notranslate"><span class="pre">distance</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#bottomley_fraction"><code class="docutils literal notranslate"><span class="pre">fraction</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#berghaus_lobes"><code class="docutils literal notranslate"><span class="pre">lobes</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#armadillo_parallel"><code class="docutils literal notranslate"><span class="pre">parallel</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#gingery_radius"><code class="docutils literal notranslate"><span class="pre">radius</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#hill_ratio"><code class="docutils literal notranslate"><span class="pre">ratio</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#lagrange_spacing"><code class="docutils literal notranslate"><span class="pre">spacing</span></code></a>, <a class="reference external" href="https://github.com/d3/d3-geo-projection#satellite_tilt"><code class="docutils literal notranslate"><span class="pre">tilt</span></code></a>.</p>
+<p><em>Note</em>: All <a class="reference external" href="properties">properties</a> of projections are <strong>optional</strong> with defaults as defined in the <a class="reference external" href="https://vega.github.io/vega/docs/projections/#properties">Vega projection properties</a>. Because of this, marks that don’t have explicitly defined projections may implicitly derive a projection. Implicit projections will be added for any <a class="reference external" href="geoshape"><code class="docutils literal notranslate"><span class="pre">geoshape</span></code></a> mark, any encoding with field of <a class="reference external" href="geojson"><code class="docutils literal notranslate"><span class="pre">geojson</span></code></a> type, and encoding with <a class="reference external" href="geo"><code class="docutils literal notranslate"><span class="pre">latitude</span></code></a> or <a class="reference external" href="geo"><code class="docutils literal notranslate"><span class="pre">longitude</span></code></a> channels.</p>
+<p></p>
+</div>
+<div class="section" id="projection-types">
+<h2>Projection Types<a class="headerlink" href="#projection-types" title="Permalink to this headline">¶</a></h2>
+<p>Vega-lite includes all cartographic projections provided by the <a class="reference external" href="https://github.com/d3/d3-geo#">d3-geo</a> library.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>table_block stub
+| Type          | Description   |
+| :------------ |:------------- |
+| [albers](https://github.com/d3/d3-geo#geoAlbers)          | The Albers’ equal-area conic projection. This is a U.S.-centric configuration of `&quot;conicEqualArea&quot;`. |
+| [albersUsa](https://github.com/d3/d3-geo#geoAlbersUsa) | A U.S.-centric composite with projections for the lower 48 states, Hawaii, and Alaska (scaled to 0.35 times the true relative area). |
+| [azimuthalEqualArea](https://github.com/d3/d3-geo#geoAzimuthalEqualArea) | The azimuthal equal-area projection. |
+| [azimuthalEquidistanct](https://github.com/d3/d3-geo#geoAzimuthalEquidistant) | The azimuthal equidistant projection. |
+| [conicConformal](https://github.com/d3/d3-geo#geoConicConformal) | The conic conformal projection. The parallels default to [30&amp;deg;, 30&amp;deg;] resulting in flat top. |
+| [conicEqualArea](https://github.com/d3/d3-geo#geoConicEqualArea) | The Albers’ equal-area conic projection. |
+| [conicEquidistant](https://github.com/d3/d3-geo#geoConicEquidistant) | The conic equidistant projection. |
+| [equirectangular](https://github.com/d3/d3-geo#geoEquirectangular) | The equirectangular (plate carr&amp;eacute;e) projection, akin to use longitude, latitude directly. |
+| [gnomonic](https://github.com/d3/d3-geo#geoGnomonic) | The gnomonic projection. |
+| [mercator](https://github.com/d3/d3-geo#geoMercator) | The spherical Mercator projection. Uses a default `clipExtent` such that the world is projected to a square, clipped to approximately ±85&amp;deg; latitude. |
+| [orthographic](https://github.com/d3/d3-geo#geoOrthographic) | The orthographic projection. |
+| [stereographic](https://github.com/d3/d3-geo#geoStereographic) | The stereographic projection. |
+| [transverseMercator](https://github.com/d3/d3-geo#geoTransverseMercator) | The transverse spherical Mercator projection. Uses a default `clipExtent` such that the world is projected to a square, clipped to approximately ±85&amp;deg; latitude. |
+</pre></div>
+</div>
+<p></p>
+</div>
+<div class="section" id="config">
+<h2>Projection Configuration<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...,
+  &quot;config&quot;: {          // Configuration Object
+    &quot;projection&quot;: { ... },   // - Projection Configuration
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">projection</span></code> property of the <a class="reference internal" href="config.html"><span class="doc">config</span></a> object determines the default properties and transformations applied to different types of <a class="reference internal" href="#"><span class="doc">projections</span></a>.
+The projection config can contain any of the projection properties <a class="reference external" href="properties">as specified above</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mark/mark.html" class="btn btn-neutral float-right" title="Mark" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="transform/window.html" class="btn btn-neutral" title="Window" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

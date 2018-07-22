@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Transformation" href="transform/transform.html" />
+    <link rel="prev" title="View Title" href="view/title.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#data">Data</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#types-of-data-sources">Types of Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#format">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="vega-lite-toc.html#data">Data</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#types-of-data-sources">Types of Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#format">Format</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasets">Datasets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/data.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<p>Akin to <a class="reference external" href="https://www.github.com/vega/vega">Vega</a>’s <a class="reference external" href="https://vega.github.io/vega/docs/data/">data model</a>, the basic data model used by Vega-Lite is <em>tabular</em> data, similar to a spreadsheet or a database table. Individual data sets are assumed to contain a collection of records, which may contain any number of named data fields.</p>
+<p>Vega-Lite’s <code class="docutils literal notranslate"><span class="pre">data</span></code> property describes the visualization’s data source as part of the specification, which can be either <a class="reference external" href="inline">inline data</a> (<code class="docutils literal notranslate"><span class="pre">values</span></code>) or <a class="reference external" href="url">a URL from which to load the data</a> (<code class="docutils literal notranslate"><span class="pre">url</span></code>).  Alternatively, we can create an empty, <a class="reference external" href="named">named data source</a> (<code class="docutils literal notranslate"><span class="pre">name</span></code>), which can be <a class="reference external" href="https://vega.github.io/vega/docs/api/view/#data">bound at runtime</a> or populated from top-level <a class="reference external" href="datasets">datasets</a>.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="types-of-data-sources">
+<h2>Types of Data Sources<a class="headerlink" href="#types-of-data-sources" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="section" id="inline">
+<h3>Inline Data<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h3>
+<p>Inline Data can be specified using <code class="docutils literal notranslate"><span class="pre">values</span></code> property.
+Here is a list of all properties of an inline <code class="docutils literal notranslate"><span class="pre">data</span></code> source:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;values,name,format&quot; source=&quot;InlineData&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the following specification embeds an inline data table with nine rows and two columns (<code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>).</p>
+<p><span class="vl-example" data-name="bar"></span></p>
+<p>If the input data is simply an array of primitive values, each value is mapped to the <code class="docutils literal notranslate"><span class="pre">data</span></code> property of a new object. For example <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">3,</span> <span class="pre">8,</span> <span class="pre">1]</span></code> is loaded as:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="p">{</span><span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span> <span class="p">{</span><span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also inline a string that will be parsed according to the specified format type.</p>
+<p><span class="vl-example" data-name="embed_csv"></span></p>
+<p></p>
+</div>
+<div class="section" id="url">
+<h3>Data from URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<p>Data can be loaded from a URL using the <code class="docutils literal notranslate"><span class="pre">url</span></code> property. In addition, the format of the input data can be specified using the <code class="docutils literal notranslate"><span class="pre">formatType</span></code> property. By default Vega-Lite will infer the type from the file extension.</p>
+<p>Here is a list of all properties describing a <code class="docutils literal notranslate"><span class="pre">data</span></code> source from URL:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;url,name,format&quot; source=&quot;UrlData&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the following specification loads data from a relative <code class="docutils literal notranslate"><span class="pre">url</span></code>: <code class="docutils literal notranslate"><span class="pre">data/cars.json</span></code>. Note that the format type is implicitly <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code> by default.</p>
+<p><span class="vl-example" data-name="point_2d"></span></p>
+<p></p>
+</div>
+<div class="section" id="named">
+<h3>Named Data Sources<a class="headerlink" href="#named" title="Permalink to this headline">¶</a></h3>
+<p>Data can also be added at runtime through the <a class="reference external" href="https://vega.github.io/vega/docs/api/view/#data">Vega View API</a>.
+Data sources are referenced by name, which is specified in Vega-Lite with <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>Here is a list of all properties describing a named <code class="docutils literal notranslate"><span class="pre">data</span></code> source:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;name,format&quot; source=&quot;NamedData&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to create a data source named <code class="docutils literal notranslate"><span class="pre">myData</span></code>, use the following data</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myData&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="format">
+<h2>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
+<p>The format object describes the data format and additional parsing instructions.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,parse&quot; source=&quot;CsvDataFormat&quot; %}
+</pre></div>
+</div>
+</p>
+<div class="section" id="json">
+<h3>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
+<p>Loads a JavaScript Object Notation (JSON) file. Assumes row-oriented data, where each row is an object with named attributes. This is the default file format, and so will be used if no format parameter is provided. If specified, the <code class="docutils literal notranslate"><span class="pre">format</span></code> parameter should have a type property of <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code>, and can also accept the following:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;property&quot; source=&quot;JsonDataFormat&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="csv">
+<h3>csv<a class="headerlink" href="#csv" title="Permalink to this headline">¶</a></h3>
+<p>Load a comma-separated values (CSV) file. This format type does not support any additional properties.</p>
+</div>
+<div class="section" id="tsv">
+<h3>tsv<a class="headerlink" href="#tsv" title="Permalink to this headline">¶</a></h3>
+<p>Load a tab-separated values (TSV) file. This format type does not support any additional properties.</p>
+</div>
+<div class="section" id="dsv">
+<h3>dsv<a class="headerlink" href="#dsv" title="Permalink to this headline">¶</a></h3>
+<p>Load a delimited text file with a custom delimiter. This is a general version of CSV and TSV.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;delimiter&quot; source=&quot;DsvDataFormat&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="topojson">
+<h3>topojson<a class="headerlink" href="#topojson" title="Permalink to this headline">¶</a></h3>
+<p>Load a JavaScript Object Notation (JSON) file using the TopoJSON format. The input file must contain valid TopoJSON data. The TopoJSON input is then converted into a GeoJSON format. There are two mutually exclusive properties that can be used to specify the conversion process:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;feature,mesh&quot; source=&quot;TopoDataFormat&quot; %}
+</pre></div>
+</div>
+</p>
+</div>
+</div>
+<div class="section" id="datasets">
+<h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
+<p>Vega-Lite supports a top-level <code class="docutils literal notranslate"><span class="pre">datasets</span></code> property. This can be useful when the same data should be inlined in different places in the spec. Instead of setting values inline, specify datasets at the top level and then refer to the <a class="reference external" href="named">named</a> datasource in the rest of the spec. <code class="docutils literal notranslate"><span class="pre">datasets</span></code> is a mapping from name to an <a class="reference external" href="inline">inline</a> dataset.</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;datasets&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;somedata&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">},</span>
+<span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;somedata&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transform/transform.html" class="btn btn-neutral float-right" title="Transformation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="view/title.html" class="btn btn-neutral" title="View Title" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

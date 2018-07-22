@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Type &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Value" href="value.html" />
+    <link rel="prev" title="Stack" href="stack.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Type</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#quantitative">Quantitative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#temporal">Temporal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ordinal">Ordinal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nominal">Nominal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geojson">GeoJSON</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Type</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#quantitative">Quantitative</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#temporal">Temporal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ordinal">Ordinal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nominal">Nominal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geojson">GeoJSON</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Type</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/type.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="type">
+<h1>Type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h1>
+<p>If a field is specified, the channel definition <strong>must</strong> describe the encoded data’s <a class="reference external" href="https://en.wikipedia.org/wiki/Level_of_measurement">type of measurement (level of measurement)</a>.
+The supported data types are: <a class="reference external" href="quantitative"><code class="docutils literal notranslate"><span class="pre">&quot;quantitative&quot;</span></code></a>, <a class="reference external" href="temporal"><code class="docutils literal notranslate"><span class="pre">&quot;temporal&quot;</span></code></a>, <a class="reference external" href="ordinal"><code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code></a>, <a class="reference external" href="nominal"><code class="docutils literal notranslate"><span class="pre">&quot;nominal&quot;</span></code></a>, and <a class="reference external" href="geojson"><code class="docutils literal notranslate"><span class="pre">&quot;geojson&quot;</span></code></a>.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type&quot; source=&quot;FieldDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>Notes</strong>:</p>
+<ol class="simple">
+<li>Data <code class="docutils literal notranslate"><span class="pre">type</span></code> describes the semantics of the data rather than the primitive data types (<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, etc.). The same primitive data type can have different types of measurement. For example, numeric data can represent quantitative, ordinal, or nominal data.</li>
+<li>When using with <a class="reference external" href="aggregate"><code class="docutils literal notranslate"><span class="pre">aggregate</span></code></a>, the <code class="docutils literal notranslate"><span class="pre">type</span></code> property refers to the post-aggregation data type.  For example, we can calculate count <code class="docutils literal notranslate"><span class="pre">distinct</span></code> of a categorical field <code class="docutils literal notranslate"><span class="pre">&quot;cat&quot;</span></code> using <code class="docutils literal notranslate"><span class="pre">{&quot;aggregate&quot;:</span> <span class="pre">&quot;distinct&quot;,</span> <span class="pre">&quot;field&quot;:</span> <span class="pre">&quot;cat&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;quantitative&quot;}</span></code>.  The <code class="docutils literal notranslate"><span class="pre">&quot;type&quot;</span></code> of the aggregate output is <code class="docutils literal notranslate"><span class="pre">&quot;quantitative&quot;</span></code>.</li>
+<li>When using with <a class="reference external" href="bin"><code class="docutils literal notranslate"><span class="pre">bin</span></code></a>, the <code class="docutils literal notranslate"><span class="pre">type</span></code> property can be either <code class="docutils literal notranslate"><span class="pre">&quot;quantitative&quot;</span></code> (for using a linear bin scale) or <a class="reference external" href="cast-bin"><code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> (for using an ordinal bin scale)</a>.</li>
+<li>When using with <a class="reference external" href="timeunit"><code class="docutils literal notranslate"><span class="pre">timeUnit</span></code></a>, the <code class="docutils literal notranslate"><span class="pre">type</span></code> property can be either <code class="docutils literal notranslate"><span class="pre">&quot;temporal&quot;</span></code> (for using a temporal scale) or <a class="reference external" href="cast-timeunit"><code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> (for using an ordinal scale)</a>.</li>
+</ol>
+<p></p>
+<div class="section" id="quantitative">
+<h2>Quantitative<a class="headerlink" href="#quantitative" title="Permalink to this headline">¶</a></h2>
+<p>Quantitative data expresses some kind of quantity. Typically this is numerical data. For example <code class="docutils literal notranslate"><span class="pre">7.3</span></code>, <code class="docutils literal notranslate"><span class="pre">42.0</span></code>, <code class="docutils literal notranslate"><span class="pre">12.1</span></code>.</p>
+<p></p>
+</div>
+<div class="section" id="temporal">
+<h2>Temporal<a class="headerlink" href="#temporal" title="Permalink to this headline">¶</a></h2>
+<p>Temporal data supports date-times and times. For example <code class="docutils literal notranslate"><span class="pre">2015-03-07</span> <span class="pre">12:32:17</span></code>, <code class="docutils literal notranslate"><span class="pre">17:01</span></code>, <code class="docutils literal notranslate"><span class="pre">2015-03-16</span></code>.</p>
+<p>Note that when a <code class="docutils literal notranslate"><span class="pre">&quot;temporal&quot;</span></code> type is used for a field, Vega-Lite will treat it as a continuous field and thus will use a <a class="reference external" href="time"><code class="docutils literal notranslate"><span class="pre">time</span></code> scale</a> to map its data to visual values. For example, the following bar chart shows the mean precipitation for different months.</p>
+<p><span class="vl-example" data-name="bar_month_temporal"></span></p>
+<p></p>
+</div>
+<div class="section" id="ordinal">
+<h2>Ordinal<a class="headerlink" href="#ordinal" title="Permalink to this headline">¶</a></h2>
+<p>Ordinal data represents ranked order (1st, 2nd, …) by which the data can be sorted. However, as opposed to quantitative data, there is no notion of <em>relative degree of difference</em> between them. For illustration, a “size” variable might have the following values <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code>, <code class="docutils literal notranslate"><span class="pre">large</span></code>, <code class="docutils literal notranslate"><span class="pre">extra-large</span></code>. We know that medium is larger than small and same for extra-large larger than large. However, we cannot compare the magnitude of relative difference, for example, between (1) <code class="docutils literal notranslate"><span class="pre">small</span></code> and <code class="docutils literal notranslate"><span class="pre">medium</span></code> and (2) <code class="docutils literal notranslate"><span class="pre">medium</span></code> and <code class="docutils literal notranslate"><span class="pre">large</span></code>. Similarly, we cannot say that <code class="docutils literal notranslate"><span class="pre">large</span></code> is two times as large as <code class="docutils literal notranslate"><span class="pre">small</span></code>.</p>
+<p></p>
+<div class="section" id="cast-timeunit">
+<h3>Casting a Temporal Field as an Ordinal Field<a class="headerlink" href="#cast-timeunit" title="Permalink to this headline">¶</a></h3>
+<p>To treat a date-time field with <code class="docutils literal notranslate"><span class="pre">timeUnit</span></code> as a discrete field, you can cast it be an <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> field.
+This type casting can be useful for time units with low cardinality such as <code class="docutils literal notranslate"><span class="pre">&quot;month&quot;</span></code>.</p>
+<p><span class="vl-example" data-name="bar_month"></span></p>
+<p></p>
+</div>
+<div class="section" id="cast-bin">
+<h3>Casting a Binned Field as an Ordinal Field<a class="headerlink" href="#cast-bin" title="Permalink to this headline">¶</a></h3>
+<p>Setting a binned field’s <code class="docutils literal notranslate"><span class="pre">type</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;ordinal&quot;</span></code> produces a histogram with an ordinal scale.</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="nominal">
+<h2>Nominal<a class="headerlink" href="#nominal" title="Permalink to this headline">¶</a></h2>
+<p>Nominal data, also known as categorical data, differentiates between values based only on their names or categories. For example, gender, nationality, music genre, and name are nominal data. Numbers maybe used to represent the variables but the number do not determine magnitude or ordering. For example, if a nominal variable contains three values 1, 2, and 3. We cannot claim that 1 is less than 2 nor 3.</p>
+<p></p>
+</div>
+<div class="section" id="geojson">
+<h2>GeoJSON<a class="headerlink" href="#geojson" title="Permalink to this headline">¶</a></h2>
+<p>GeoJSON data represents geographic shapes specified as <a class="reference external" href="http://geojson.org/">GeoJSON</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="value.html" class="btn btn-neutral float-right" title="Value" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stack.html" class="btn btn-neutral" title="Stack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Axis &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Condition" href="condition.html" />
+    <link rel="prev" title="Encoding" href="../encoding.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Axis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#axis-properties">Axis Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Axis Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Axis</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#axis-properties">Axis Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Axis Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sort.html">Sorting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Axis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/axis.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="axis">
+<h1>Axis<a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h1>
+<p>Axes provide axis lines, ticks, and labels to convey how a positional range represents a data range. Simply put, axes visualize scales.</p>
+<p>By default, Vega-Lite automatically creates axes with default properties for <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> channels when they encode data fields.
+User can set the <code class="docutils literal notranslate"><span class="pre">axis</span></code> property of x- or y-<a class="reference internal" href="field.html"><span class="doc">field definition</span></a> to an object to customize <a class="reference external" href="axis-properties">axis properties</a> or set <code class="docutils literal notranslate"><span class="pre">axis</span></code> to <code class="docutils literal notranslate"><span class="pre">null</span></code> to remove the axis.</p>
+<p>Besides <code class="docutils literal notranslate"><span class="pre">axis</span></code> property of a field definition, the configuration object (<a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a>) also provides <a class="reference external" href="config">axis config</a> (<code class="docutils literal notranslate"><span class="pre">config:</span> <span class="pre">{axis:</span> <span class="pre">{...}}</span></code>) for setting default axis properties for all axes.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="axis-properties">
+<h2>Axis Properties<a class="headerlink" href="#axis-properties" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,
+  &quot;encoding&quot;: {
+    &quot;x&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      &quot;axis&quot;: {                // Axis
+        ...
+      },
+      ...
+    },
+    &quot;y&quot;: ...,
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>To customize axis, an <code class="docutils literal notranslate"><span class="pre">axis</span></code> object in <a class="reference external" href="encoding">an encoding channel’s definition</a> can contain the following groups of properties:</p>
+<p></p>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;domain,grid,maxExtent,minExtent,orient,offset,position,zindex&quot; source=&quot;Axis&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="general-config">General Axis Config</a>.</p>
+<p></p>
+</div>
+<div class="section" id="labels">
+<h3>Labels<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;format,labels,labelAngle,labelOverlap,labelPadding&quot; source= &quot;Axis&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="labels-config">Axis Labels Config</a> and <a class="reference external" href="style-config"><code class="docutils literal notranslate"><span class="pre">guide-label</span></code> style config</a> (common styles for axis, <a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, and <a class="reference internal" href="header.html"><span class="doc">header</span></a> labels).</p>
+<p></p>
+</div>
+<div class="section" id="ticks">
+<h3>Ticks<a class="headerlink" href="#ticks" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;ticks,tickCount,tickSize,values&quot; source=&quot;Axis&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="ticks-config">Axis Ticks Config</a>.</p>
+<p></p>
+</div>
+<div class="section" id="title">
+<h3>Title<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;title,titleMaxLength,titlePadding&quot; source=&quot;Axis&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the following plot has a customized x-axis title.</p>
+<p><strong>See also:</strong> <a class="reference external" href="title-config">Axis Title Config</a> and <a class="reference external" href="style-config"><code class="docutils literal notranslate"><span class="pre">guide-title</span></code> style config</a> (common styles for axis, <a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, and <a class="reference internal" href="header.html"><span class="doc">header</span></a> titles).</p>
+<p></p>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Axis Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;axis&quot;: : ...,
+    &quot;axisX&quot;: : ...,
+    &quot;axisY&quot;: : ...,
+    &quot;axisLeft&quot;: : ...,
+    &quot;axisRight&quot;: : ...,
+    &quot;axisTop&quot;: : ...,
+    &quot;axisBottom&quot;: : ...,
+    &quot;axisBand&quot;: : ...,
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>Axis configuration defines default settings for axes. Properties defined under the <code class="docutils literal notranslate"><span class="pre">&quot;axis&quot;</span></code> property in the top-level <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> object are applied to <em>all</em> axes.</p>
+<p>Additional property blocks can target more specific axis types based on the orientation (<code class="docutils literal notranslate"><span class="pre">&quot;axisX&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;axisY&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;axisLeft&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;axisTop&quot;</span></code>, etc.) or band scale type (<code class="docutils literal notranslate"><span class="pre">&quot;axisBand&quot;</span></code>). For example, properties defined under the <code class="docutils literal notranslate"><span class="pre">&quot;axisBand&quot;</span></code> property will only apply to axes visualizing <code class="docutils literal notranslate"><span class="pre">&quot;band&quot;</span></code> scales. If multiple axis config blocks apply to a single axis, type-based options take precedence over orientation-based options, which in turn take precedence over general options.</p>
+<p></p>
+<div class="section" id="general-config">
+<h3>General<a class="headerlink" href="#general-config" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;bandPosition,domain,domainColor,domainWidth,maxExtent,minExtent&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="general">General Axis Properties</a>.</p>
+<p></p>
+</div>
+<div class="section" id="grid-config">
+<h3>Grid<a class="headerlink" href="#grid-config" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;grid,gridColor,gridDash,gridOpacity,gridWidth&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="labels-config">
+<h3>Labels<a class="headerlink" href="#labels-config" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;labels,labelAngle,labelColor,labelFont,labelFontSize,labelLimit,labelOverlap,labelPadding&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">shortTimeLabels</span></code> property is also available for the general axis config (<code class="docutils literal notranslate"><span class="pre">config.axis</span></code>), but not for specific axis config (e.g., <code class="docutils literal notranslate"><span class="pre">config.axisX</span></code>).</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;shortTimeLabels&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="labels">Axis Labels Properties</a> and <a class="reference external" href="style-config"><code class="docutils literal notranslate"><span class="pre">guide-label</span></code> style config</a> (common styles for by axis, <a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, and <a class="reference internal" href="header.html"><span class="doc">header</span></a> labels).</p>
+<p></p>
+</div>
+<div class="section" id="ticks-config">
+<h3>Ticks<a class="headerlink" href="#ticks-config" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;ticks,tickColor,tickRound,tickSize,tickWidth&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="ticks">Axis Tick Properties</a>.</p>
+<p></p>
+</div>
+<div class="section" id="title-config">
+<h3>Title<a class="headerlink" href="#title-config" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;titleAlign,titleAngle,titleBaseline,titleColor,titleFont,titleFontWeight,titleFontSize,titleLimit,titleMaxLength,titlePadding,titleX,titleY&quot; source=&quot;AxisConfig&quot; %}
+</pre></div>
+</div>
+</p>
+<p><strong>See also:</strong> <a class="reference external" href="title">Axis Title Properties</a> and <a class="reference external" href="style-config"><code class="docutils literal notranslate"><span class="pre">guide-title</span></code> style config</a> (common styles for axis, <a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, and <a class="reference internal" href="header.html"><span class="doc">header</span></a> titles).</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="condition.html" class="btn btn-neutral float-right" title="Condition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../encoding.html" class="btn btn-neutral" title="Encoding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

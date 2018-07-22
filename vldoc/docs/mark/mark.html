@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mark &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Area" href="area.html" />
+    <link rel="prev" title="Projection" href="../projection.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mark</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mark-definition-object">Mark Definition Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Mark Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#style-config">Mark Style Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Mark</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mark-definition-object">Mark Definition Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#config">Mark Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#style-config">Mark Style Config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="area.html">Area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bar.html">Bar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="circle.html">Circle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="geoshape.html">Geoshape</a></li>
+<li class="toctree-l3"><a class="reference internal" href="line.html">Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="point.html">Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rect.html">Rect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rule.html">Rule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="square.html">Square</a></li>
+<li class="toctree-l3"><a class="reference internal" href="text.html">Text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tick.html">Tick</a></li>
+<li class="toctree-l3"><a class="reference internal" href="trail.html">Trail</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Mark</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/mark/mark.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mark">
+<h1>Mark<a class="headerlink" href="#mark" title="Permalink to this headline">¶</a></h1>
+<p>Marks are the basic visual building block of a visualization. They provide basic shapes whose properties (such as position, size, and color) can be used to visually encode data, either from a data field, or a constant value.</p>
+<p>The supported <code class="docutils literal notranslate"><span class="pre">mark</span></code> types are
+<a class="reference internal" href="area.html"><span class="doc">&quot;area&quot;</span></a>,
+<a class="reference internal" href="bar.html"><span class="doc">&quot;bar&quot;</span></a>,
+<a class="reference internal" href="circle.html"><span class="doc">&quot;circle&quot;</span></a>,
+<a class="reference internal" href="line.html"><span class="doc">&quot;line&quot;</span></a>,
+<a class="reference internal" href="point.html"><span class="doc">&quot;point&quot;</span></a>,
+<a class="reference external" href="rectangle"><code class="docutils literal notranslate"><span class="pre">&quot;rect&quot;</span></code></a>,
+<a class="reference internal" href="rule.html"><span class="doc">&quot;rule&quot;</span></a>,
+<a class="reference internal" href="square.html"><span class="doc">&quot;square&quot;</span></a>,
+<a class="reference internal" href="text.html"><span class="doc">&quot;text&quot;</span></a>,
+<a class="reference internal" href="tick.html"><span class="doc">&quot;tick&quot;</span></a>,
+and <a class="reference internal" href="geoshape.html"><span class="doc">&quot;geoshape&quot;</span></a>.
+In general, one mark instance is generated per input data element. However, line and area marks represent multiple data elements as a contiguous line or shape.</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,       // mark
+  &quot;encoding&quot;: ... ,
+  ...
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mark</span></code> property of a <a class="reference external" href="single">single view specification</a> can either be (1) a string describing a mark type or (2) a <a class="reference external" href="mark-def">mark definition object</a>.</p>
+<p>For example, a bar chart has <code class="docutils literal notranslate"><span class="pre">mark</span></code> as a simple string <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code>.</p>
+<p><span class="vl-example" data-name="bar"></span></p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="mark-definition-object">
+<h2>Mark Definition Object<a class="headerlink" href="#mark-definition-object" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Single View Specification
+{
+  ...
+  &quot;mark&quot;: {
+    &quot;type&quot;: ...,       // mark
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>To customize properties of a mark, users can set <code class="docutils literal notranslate"><span class="pre">mark</span></code> to be a mark definition object instead of a string describing mark type. The rest of this section lists all standard mark properties.  In addition, some marks may have special mark properties (listed in their documentation page).</p>
+<p>Note: If <a class="reference external" href="mark-prop">mark property encoding channels</a> are specified, these mark properties will be overridden.</p>
+<div class="section" id="general-mark-properties">
+<h3>General Mark Properties<a class="headerlink" href="#general-mark-properties" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,style,clip&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="offset">
+<h3>Offset Properties<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;xOffset,x2Offset,yOffset,y2Offset&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="color">
+<h3>Color Properties<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;filled,color,fill,stroke,opacity,fillOpacity,strokeOpacity&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="stroke">
+<h3>Stroke Style Properties<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h3>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;strokeCap,strokeDash,strokeDashOffset,strokeJoin,strokeMiterLimit,strokeWidth&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p></p>
+</div>
+<div class="section" id="hyperlink">
+<h3>Hyperlink Properties<a class="headerlink" href="#hyperlink" title="Permalink to this headline">¶</a></h3>
+<p>Marks can act as hyperlinks when the <code class="docutils literal notranslate"><span class="pre">href</span></code> property or <a class="reference external" href="href">channel</a> is defined. When the <code class="docutils literal notranslate"><span class="pre">href</span></code> property is specified, the <a class="reference external" href="hyperlink"><code class="docutils literal notranslate"><span class="pre">cursor</span></code> mark property</a> is set to <code class="docutils literal notranslate"><span class="pre">&quot;pointer&quot;</span></code> by default to serve as affordance for hyperlinks.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;href,cursor&quot; source=&quot;MarkDef&quot; %}
+</pre></div>
+</div>
+</p>
+<p><span class="vl-example" data-name="point_href"></span></p>
+<p></p>
+</div>
+</div>
+<div class="section" id="config">
+<h2>Mark Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>// Top-level View Specification
+{
+  ...
+  &quot;config&quot;: {
+    &quot;mark&quot;: ...,
+    &quot;area&quot;: ...,
+    &quot;bar&quot;: ...,
+    &quot;circle&quot;: ...,
+    &quot;line&quot;: ...,
+    &quot;point&quot;: ...,
+    &quot;rect&quot;: ...,
+    &quot;rule&quot;: ...,
+    &quot;geoshape&quot;: ...,
+    &quot;square&quot;: ...,
+    &quot;text&quot;: ...,
+    &quot;tick&quot;: ...
+  }
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">mark</span></code> property of the <a class="reference external" href="config"><code class="docutils literal notranslate"><span class="pre">config</span></code></a> object sets the default properties for all marks. In addition, the <code class="docutils literal notranslate"><span class="pre">config</span></code> object also provides mark-specific config using its mark type as the property name (e.g., <code class="docutils literal notranslate"><span class="pre">config.area</span></code>) for defining default properties for each mark.</p>
+<p>The global mark config (<code class="docutils literal notranslate"><span class="pre">config.mark</span></code>) supports all standard mark properties (except <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">style</span></code>, <code class="docutils literal notranslate"><span class="pre">clip</span></code>, and <code class="docutils literal notranslate"><span class="pre">orient</span></code>).  For mark-specific config, please see the documentation for each mark type.</p>
+<p>Note:</p>
+<ol class="simple">
+<li>If <a class="reference external" href="mark-def">mark properties in mark definition</a> or <a class="reference external" href="mark-prop">mark property encoding channels</a> are specified, these config values will be overridden.</li>
+<li>Mark config do not support <a class="reference external" href="offset">offset mark properties</a>.</li>
+</ol>
+<p></p>
+</div>
+<div class="section" id="style-config">
+<h2>Mark Style Config<a class="headerlink" href="#style-config" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  // Top Level Specification
+  &quot;config&quot;: {
+    &quot;style&quot;: {
+      ...
+    }
+    ...
+  }
+}
+</pre></div>
+</div>
+<p>In addition to the default mark properties above, default values can be further customized using named <em>styles</em> defined under the <code class="docutils literal notranslate"><span class="pre">style</span></code> property in the config object.</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;style&quot; source=&quot;Config&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, to set a default shape and stroke width for <code class="docutils literal notranslate"><span class="pre">point</span></code> marks with a style named <code class="docutils literal notranslate"><span class="pre">&quot;triangle&quot;</span></code>:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;style&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;triangle&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;shape&quot;</span><span class="p">:</span> <span class="s2">&quot;triangle-up&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;strokeWidth&quot;</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Styles can then be invoked by including a <code class="docutils literal notranslate"><span class="pre">style</span></code> property within a <a class="reference external" href="mark-def">mark definition object</a>.</p>
+<p>In addition to custom <code class="docutils literal notranslate"><span class="pre">style</span></code> names, Vega-Lite includes the following built-in style names:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;guide-label&quot;</span></code>: style for axis, legend, and header labels</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;guide-title&quot;</span></code>: style for axis, legend, and header titles</li>
+</ul>
+<div class="section" id="example-styling-labels">
+<h3>Example: Styling Labels<a class="headerlink" href="#example-styling-labels" title="Permalink to this headline">¶</a></h3>
+<p>You can use <a class="reference internal" href="text.html"><span class="doc">text marks</span></a> as labels for other marks by setting <code class="docutils literal notranslate"><span class="pre">style</span></code> for the marks and using <a class="reference external" href="style-config">style config</a> to configure offset (<code class="docutils literal notranslate"><span class="pre">dx</span></code> or <code class="docutils literal notranslate"><span class="pre">dy</span></code>), <code class="docutils literal notranslate"><span class="pre">align</span></code>, and <code class="docutils literal notranslate"><span class="pre">baseline</span></code>.</p>
+<p><span class="vl-example" data-name="layer_bar_labels_style"></span></p>
+<p>See also: <a class="reference external" href="labels">a similar example that uses mark definition to configure offset, align, and baseline</a>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="area.html" class="btn btn-neutral float-right" title="Area" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../projection.html" class="btn btn-neutral" title="Projection" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

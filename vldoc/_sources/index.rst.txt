@@ -1,0 +1,32 @@
+.. test_doc documentation master file, created by
+   sphinx-quickstart on Tue Jul  3 00:16:36 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Test documentation!
+====================================
+
+.. Warning:: This is not original documentation! It is just a port of Vega-Lite_ documentation.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   task_decription/mdtext
+   task_decription/retext
+   docs/vega-lite-toc.rst
+
+.. toctree::
+   :maxdepth: 3
+   :name: vldoc
+
+   docs/vega-lite-toc.rst
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+.. _Vega-Lite: http://vega.github.io/vega-lite

@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sorting &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Stack" href="stack.html" />
+    <link rel="prev" title="Scale" href="scale.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sorting-continuous-fields">Sorting Continuous Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sorting-discrete-fields">Sorting Discrete Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vega-lite-toc.html">Vega-lite</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#specification-description">Specification description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-specification">View Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#transform">Transform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#projection">Projection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#marks">Marks</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vega-lite-toc.html#encoding">Encoding</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../encoding.html">Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="axis.html">Axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="condition.html">Condition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="field.html">Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="format.html">Format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="header.html">Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="legend.html">Legend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scale.html">Scale</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentation-overview">Documentation Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sorting-continuous-fields">Sorting Continuous Fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sorting-discrete-fields">Sorting Discrete Fields</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="stack.html">Stack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type.html">Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="value.html">Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#view-composition">View Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#selection">Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#config">Config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#parameter-types">Parameter Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vega-lite-toc.html#tooltip">Tooltip</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vega-lite-toc.html">Vega-lite</a> &raquo;</li>
+        
+      <li>Sorting</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/docs/encoding/sort.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sort">
+<h1>Sorting<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h1>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: ... ,
+  &quot;mark&quot;: ... ,
+  &quot;encoding&quot;: {
+    &quot;x&quot;: {
+      &quot;field&quot;: ...,
+      &quot;type&quot;: ...,
+      &quot;sort&quot;: ...,         // sort
+      ...
+    },
+    &quot;y&quot;: ...,
+    ...
+  },
+  ...
+}
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sort</span></code> property of <a class="reference external" href="mark-props">a mark properties channel</a> determines the order of the scale domain. Supported <code class="docutils literal notranslate"><span class="pre">sort</span></code> values depend on the field’s scale type.</p>
+<div class="section" id="documentation-overview">
+<h2>Documentation Overview<a class="headerlink" href="#documentation-overview" title="Permalink to this headline">¶</a></h2>
+<p></p>
+<ul class="simple">
+<li>TOC
+</li>
+</ul>
+</div>
+<div class="section" id="sorting-continuous-fields">
+<h2>Sorting Continuous Fields<a class="headerlink" href="#sorting-continuous-fields" title="Permalink to this headline">¶</a></h2>
+<p>If the channel has a continuous field (quantitative or time), <code class="docutils literal notranslate"><span class="pre">sort</span></code> can have the following values:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;ascending&quot;</span></code> (Default) –  the field is sorted by the field’s value in ascending order.</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;descending&quot;</span></code> –  the field is sorted by the field’s value in descending order.</li>
+</ul>
+<div class="section" id="example-reversed-x-scale">
+<h3>Example: Reversed X-Scale<a class="headerlink" href="#example-reversed-x-scale" title="Permalink to this headline">¶</a></h3>
+<p>Setting x’s <code class="docutils literal notranslate"><span class="pre">sort</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;descending&quot;</span></code> reverses the x-axis. Thus, the following visualization’s x-axis starts on the maximum value of the field “Horsepower” and ends on zero.</p>
+</div>
+</div>
+<div class="section" id="sorting-discrete-fields">
+<h2>Sorting Discrete Fields<a class="headerlink" href="#sorting-discrete-fields" title="Permalink to this headline">¶</a></h2>
+<p>If the channel has a discrete scale (ordinal or nominal), <code class="docutils literal notranslate"><span class="pre">sort</span></code> can be one of: <code class="docutils literal notranslate"><span class="pre">&quot;ascending&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;descending&quot;</span></code>, <a class="reference external" href="sort-field">a sort field definition</a> for sorting by another field, <a class="reference internal" href="#"><span class="doc">an array specifying preferred order</span></a>, or <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<div class="section" id="sort-by-the-field-s-natural-order">
+<h3>Sort by the Field’s Natural Order<a class="headerlink" href="#sort-by-the-field-s-natural-order" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li>Sorting by the values’ natural order in Javascript. For example, <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">sort</span></code> can be:</li>
+</ol>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">&quot;ascending&quot;</span></code> (Default) –  sort by the field’s value in ascending order.</li>
+<li><code class="docutils literal notranslate"><span class="pre">&quot;descending&quot;</span></code> –  sort by the field’s value in descending order.</li>
+</ul>
+</div>
+<div class="section" id="sort-by-a-different-field">
+<h3>Sort by a Different Field<a class="headerlink" href="#sort-by-a-different-field" title="Permalink to this headline">¶</a></h3>
+<p></p>
+<ol class="simple">
+<li>Sorting by aggregated value of another “sort” field. In this case, <code class="docutils literal notranslate"><span class="pre">sort</span></code> is an <strong>encoding sort field definition</strong>, which has the following properties:</li>
+</ol>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;field,op,order&quot; source=&quot;EncodingSortField&quot; %}
+</pre></div>
+</div>
+</p>
+<p>For example, the following plot sorts x by mean of Horsepower.</p>
+</div>
+<div class="section" id="specifying-custom-sort-order">
+<h3>Specifying Custom Sort Order<a class="headerlink" href="#specifying-custom-sort-order" title="Permalink to this headline">¶</a></h3>
+<p></p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">sort</span></code> property is an array, it specifies the preferred order of values.</p>
+<p>In the case that sort array contains every field value, the sort order will follow the specified values in the array.</p>
+<p>If some values are ignored, the sort order will precede by the specified values in the array while unspecified values will follow their original order.  For example, this plots orders <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> first, followed by <code class="docutils literal notranslate"><span class="pre">Z</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
+<p>For discrete time fields, values in the sort array can be <a class="reference external" href="datetime">date-time definition objects</a>.
+In addition, for time units <code class="docutils literal notranslate"><span class="pre">&quot;month&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;day&quot;</span></code>, the values can be the month or day names (case insensitive) or their 3-letter initials (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;Mon&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Tue&quot;</span></code>).</p>
+<p>For example, the following chart orders the day to start on Monday (instead of Sunday by default).</p>
+<p><strong>Note</strong>: It is also possible to sort by providing custom <code class="docutils literal notranslate"><span class="pre">scale</span></code>’s <a class="reference external" href="domain"><code class="docutils literal notranslate"><span class="pre">domain</span></code></a>. However, it is more error-prone compared to using a <code class="docutils literal notranslate"><span class="pre">sort</span></code> array since <code class="docutils literal notranslate"><span class="pre">domain</span></code> requires every possible value to be included in the array. Thus, any value omitted from <code class="docutils literal notranslate"><span class="pre">domain</span></code> will not render properly.</p>
+</div>
+<div class="section" id="no-sorting">
+<h3>No Sorting<a class="headerlink" href="#no-sorting" title="Permalink to this headline">¶</a></h3>
+<p>If <code class="docutils literal notranslate"><span class="pre">sort</span></code> is <code class="docutils literal notranslate"><span class="pre">null</span></code>, the field is not sorted. This is equivalent to specifying <code class="docutils literal notranslate"><span class="pre">sort:</span> <span class="pre">false</span></code> in <a class="reference external" href="https://vega.github.io/vega/docs/scales/#sort">Vega’s scales</a>.</p>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">null</span></code> is not supported for <code class="docutils literal notranslate"><span class="pre">row</span></code> and <code class="docutils literal notranslate"><span class="pre">column</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="stack.html" class="btn btn-neutral float-right" title="Stack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="scale.html" class="btn btn-neutral" title="Scale" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

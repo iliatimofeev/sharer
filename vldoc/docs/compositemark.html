@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Composite Mark &mdash; Vega-Lite Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme_overrides.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Vega-Lite Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/mdtext.html">The problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html">rst format tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_decription/retext.html#plain-test-of-layerchart-docstring-elements">Plain test of LayerChart docstring elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="vega-lite-toc.html">Vega-lite</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Vega-Lite Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Composite Mark</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/docs/compositemark.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compositemark">
+<h1>Composite Mark<a class="headerlink" href="#compositemark" title="Permalink to this headline">¶</a></h1>
+<p>Composite marks are “macros” for more complex layered graphics with multiple primitive marks. Composite marks are “macros” because under the hood they expand to become layered graphics. Currently, we include only one composite mark type: <code class="docutils literal notranslate"><span class="pre">box-plot</span></code>.</p>
+<p></p>
+<div class="section" id="boxplot">
+<h2>Box Plot<a class="headerlink" href="#boxplot" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">box-plot</span></code> composite mark represents a <a class="reference external" href="https://en.wikipedia.org/wiki/Box_plot">box plot</a>. The middle tick in the box represents the median. The lower and upper part of the box represents the first and third quartile respectively. The ends of the whiskers can represent several possible alternative values, depending on the <a class="reference external" href="box-plot-types"><code class="docutils literal notranslate"><span class="pre">extent</span></code></a> property.</p>
+<p><code class="docutils literal notranslate"><span class="pre">box-plot</span></code> is important because it effectively and quickly shows a summary of data with a five-number summary (lower and upper parts of the box, mid tick in the box, and the lower and upper whiskers). It is a great visualization choice to indicate whether the distribution is skewed.</p>
+<p>To create a box plot, you can set <code class="docutils literal notranslate"><span class="pre">mark</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;box-plot&quot;</span></code>:</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  ...
+  &quot;mark&quot;: &quot;box-plot&quot;,
+  ...
+}
+</pre></div>
+</div>
+<p>Alternatively, you can use box plot’s mark definition object, which supports the following properties:</p>
+<p><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>liqid template: like &quot;.. altair-object-table::&quot; 
+{% include table.html props=&quot;type,extent,orient&quot; source=&quot;BoxPlotDef&quot; %}
+</pre></div>
+</div>
+</p>
+<div class="section" id="basic-usage">
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
+<p></p>
+<p>Vega-Lite supports two types of box plots, defined by the <code class="docutils literal notranslate"><span class="pre">extent</span></code> property in the mark definition object.</p>
+<ol class="simple">
+<li><strong><code class="docutils literal notranslate"><span class="pre">min-max</span></code> Box Plot</strong>, which is a box plot where lower and upper whiskers are defined as the min and max respectively.</li>
+</ol>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;mark&quot;: {
+  &quot;type&quot;: &quot;box-plot&quot;,
+  &quot;extent&quot;: &quot;min-max&quot;
+}
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">extent</span></code> is not specified, this type of box plot will be used. Thus, we can just set the <code class="docutils literal notranslate"><span class="pre">mark</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;box-plot&quot;</span></code>:</p>
+<ol class="simple">
+<li><strong>Tukey Box Plot</strong>, which is a box plot where the whisker spans from <em>Q1 - k * IQR</em> to <em>Q3 + k * IQR</em> where <em>Q1</em> and <em>Q3</em> are the first and third quartiles while <em>IQR</em> is the interquartile range (<em>Q3-Q1</em>). In this type of box plot, you can specify the constant  <code class="docutils literal notranslate"><span class="pre">k</span></code> which is typically <code class="docutils literal notranslate"><span class="pre">1.5</span></code>.</li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;mark&quot;: {
+  &quot;type&quot;: &quot;box-plot&quot;,
+  &quot;extent&quot;: 1.5
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="dimension">
+<h3>Dimension<a class="headerlink" href="#dimension" title="Permalink to this headline">¶</a></h3>
+<p>There are two <code class="docutils literal notranslate"><span class="pre">box-plot</span></code> dimensions, one dimension (1D) and two dimension (2D).</p>
+<p>1D <code class="docutils literal notranslate"><span class="pre">box-plot</span></code> are used to see the distribution of a continuous field.</p>
+<p>2D <code class="docutils literal notranslate"><span class="pre">box-plot</span></code> are used to see the distribution of a continuous field, broken down by categories.</p>
+</div>
+<div class="section" id="orientation">
+<h3>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h3>
+<p>Box plot’s orientation is automatically determined by the continuous field axis.
+For example, you can create a vertical 1D box plot by encoding a continuous field on the y axis.</p>
+<p>For 2D box plots with one continuous and one discrete fields,
+the box plot will be horizontal if the continuous field is on the x axis.</p>
+<p>Similarly, if the continuous field is on the y axis, the box plot will be vertical.</p>
+</div>
+<div class="section" id="customizing-box-plots">
+<h3>Customizing Box Plots<a class="headerlink" href="#customizing-box-plots" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="color-size-and-opacity-encoding-channels">
+<h4>Color, Size, and Opacity Encoding Channels<a class="headerlink" href="#color-size-and-opacity-encoding-channels" title="Permalink to this headline">¶</a></h4>
+<p>You can customize the color, size, and opacity of the box in the <code class="docutils literal notranslate"><span class="pre">box-plot</span></code> by using the <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, and <code class="docutils literal notranslate"><span class="pre">opacity</span></code> <a class="reference external" href="channels">encoding channels</a>.</p>
+<p>An example of a <code class="docutils literal notranslate"><span class="pre">box-plot</span></code> where the <code class="docutils literal notranslate"><span class="pre">size</span></code> encoding channel is specified.</p>
+</div>
+<div class="section" id="role-config">
+<h4>Role Config<a class="headerlink" href="#role-config" title="Permalink to this headline">¶</a></h4>
+<p>To customize different parts of the box, we can use roles config to customize different parts of the box plot (<code class="docutils literal notranslate"><span class="pre">box</span></code>, <code class="docutils literal notranslate"><span class="pre">boxWhisker</span></code>, <code class="docutils literal notranslate"><span class="pre">boxMid</span></code>).</p>
+<p></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+  &quot;config&quot;: {
+    &quot;box&quot;: ...,
+    &quot;boxWhiskers&quot;: ...,
+    &quot;boxMid&quot;: ...
+  }
+}
+</pre></div>
+</div>
+<p>These are possible because under the hood, the <code class="docutils literal notranslate"><span class="pre">&quot;box-plot&quot;</span></code> mark is a macro that expands into a layered plot.  For example, <a class="reference external" href="box-plot-type">a basic 1D boxplot shown above</a> is expanded to:</p>
+</div>
+</div>
+<div class="section" id="aggregate-property-for-box-plots">
+<h3><code class="docutils literal notranslate"><span class="pre">aggregate</span></code> Property for Box Plots<a class="headerlink" href="#aggregate-property-for-box-plots" title="Permalink to this headline">¶</a></h3>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">aggregate</span></code> property of the continuous field is implicitly <code class="docutils literal notranslate"><span class="pre">box-plot</span></code>.
+For example, <a class="reference external" href="box-plot-type">a basic 1D boxplot shown above</a> is equivalent to:</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, UW Interactive Data Lab, ported by Ilia Timofeev.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/vlexample.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
